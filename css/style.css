@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    --container-width: 1280px;
+    --container-padding: 15px;
+    --padding-todo: 32px 80px;
+
+    --text-white:rgb(245, 244, 244);
+    --secondary:rgb(15, 31, 28, 0.5);
+    --grey: rgb(112, 112, 112);
+    --grey-opacity:rgba(112, 112, 112, 0.1);
+}
+body{
+    font-family: "Raleway", sans-serif;
+    color: var(--text-white);
+}
+.family-base{
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0px;  
+}
+.container{
+    min-width: var(--container-width);
+    padding: 32px 80px;
+}
+/* HEADER */
+.header{
+    background: url(/public/bg.jpeg) no-repeat center ;
+    background-size: cover;
+    background-attachment: fixed; /*при скролле фон фиксирован */
+    min-height: 100vh;
+}
+.header__inner{
+    padding: 32px 32px 270px 32px; /*270px по макету под свободное место */
+    max-width: 1120px;
+    margin: 0 auto;
+    border-radius: 8px;
+    backdrop-filter: blur(50px);
+    background-color: var(--grey-opacity);
+    padding-inline: 32px;
+}
+.header__top{
+    display: flex;
+    justify-content: center;
+    column-gap: 358px;
+    padding-bottom:32px;
+}
+.header__form{
+    display: flex;
+    width: 506px;
+    padding: 12px 16px;
+    column-gap: 19px;
+    border-radius: 8px;
+    background-color: rgba(245, 244, 244, 0.4);
+}
+.header__form-search{
+    color: var(--grey);
+    width: 100%;
+}
+.header__form-search::placeholder{
+    color: var(--grey);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0px;
+}
+
+/* WEATHER */
+.weather{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 16px;
+    padding-top: 32px;
+}
+
+.weather__info{
+    width: 534px;
+    text-align: center;
+    
+}
+.weather__card{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 16px;
+}
+
+.weather__item{
+    width: 158px;
+    height: 196px;  
+    border-radius: 8px;
+    background-color: rgba(245, 244, 244, 0.4);
+}
+
+/* weather__cityDetails */
+.weather__cityDetails{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 8px;
+}
+.weather__city{
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: 0px;
+}
+
+.weather__temperature{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 112px;
+    font-weight: 700;
+    line-height: 112px;
+    letter-spacing: 0px;
+    margin-top: 64px;
+}
+.weather__type{
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+    justify-content: center;
+    margin-top: 69px;
+}
+.weather__fells{
+    margin-top: 8px;
+}
