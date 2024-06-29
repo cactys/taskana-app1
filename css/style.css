@@ -3,15 +3,19 @@
 :root{
     --container-width: 1280px;
     --container-padding: 15px;
-    --padding-todo: 32px 80px;
+    --padding-container: 32px 80px;
+    
 
     --text-white:rgb(245, 244, 244);
     --secondary:rgb(15, 31, 28, 0.5);
     --grey: rgb(112, 112, 112);
     --grey-opacity:rgba(112, 112, 112, 0.1);
+    --bg-grey-opacity:rgba(245, 244, 244, 0.4);
+
+    --font-Raleway:"Raleway", sans-serif ; 
 }
 body{
-    font-family: "Raleway", sans-serif;
+    font-family:var(--font-Raleway);
     color: var(--text-white);
 }
 .family-base{
@@ -22,14 +26,15 @@ body{
 }
 .container{
     min-width: var(--container-width);
-    padding: 32px 80px;
+    padding: var(--padding-container);
+    min-height: 100vh;
 }
+
 /* HEADER */
 .header{
     background: url(/public/bg.jpeg) no-repeat center ;
     background-size: cover;
     background-attachment: fixed; /*при скролле фон фиксирован */
-    min-height: 100vh;
 }
 .header__inner{
     padding: 32px 32px 270px 32px; /*270px по макету под свободное место */
@@ -52,7 +57,7 @@ body{
     padding: 12px 16px;
     column-gap: 19px;
     border-radius: 8px;
-    background-color: rgba(245, 244, 244, 0.4);
+    background-color: var(--bg-grey-opacity);
 }
 .header__form-search{
     color: var(--grey);
@@ -90,7 +95,7 @@ body{
     width: 158px;
     height: 196px;  
     border-radius: 8px;
-    background-color: rgba(245, 244, 244, 0.4);
+    background-color: var(--bg-grey-opacity);
 }
 
 /* weather__cityDetails */
