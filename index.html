@@ -14,9 +14,9 @@
             <header class="header">
                 <div class="header__inner flex ">
                     <a href="#" class="logo"><img src="/public/logo.png" alt="логотип"></a>
-                    <form class="header__form flex" action="#" >
+                    <form id = 'form' class="header__form flex" action="#" >
                         <input class="header__form-search family-base" id="header-search" type="search" placeholder="Поиск по городу" required>
-                        <button class="header__form-button">
+                        <button type="submit" class="header__form-button">
                             <svg class="button-search" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <path d="M11 19C6.58 19 3 15.41 3 11C3 6.58 6.58 3 11 3C15.41 3 19 6.58 19 11C19 15.41 15.41 19 11 19Z" stroke="#545454" stroke-opacity="1.000000" stroke-width="2.000000" stroke-linejoin="round"/>
                                 <path d="M20.99 21L16.64 16.65" stroke="#545454" stroke-opacity="1.000000" stroke-width="2.000000" stroke-linejoin="round" stroke-linecap="round"/>
@@ -42,8 +42,8 @@
                             <span class="weather__value">-7<span class="weather__deg">°</span></span>     
                         </div>
 
-                        <div class="weather__fells ">
-                            <div class="weather__type">
+                        <div class="weather__fells flex">
+                            <div class="weather__type flex">
                                 <svg width="24.000000" height="24.000000" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                     <defs>
                                         <pattern id="pattern_3_340" patternContentUnits="objectBoundingBox" width="1.000000" height="1.000000">
@@ -60,12 +60,72 @@
                     </div>
                     <div class="weather__right-column">
                         <ul class="weather__card">
-                            <li class="weather__item"></li>
-                            <li class="weather__item"></li>
-                            <li class="weather__item"></li>
-                            <li class="weather__item"></li>
-                            <li class="weather__item"></li>
-                            <li class="weather__item"></li>
+                            <li class="weather__item">
+                                <article class="weather__item-content">
+                                    <div class="weather__item-info">
+                                        <h3 class="weather__item-title">Влажность</h3>
+                                        <img class="weather__item-img" src="/public/card-icons/humidity.svg" alt="влажность">
+                                        <p class="weather__item-value"><span id="humidity">75</span>%</p>
+                                        <input type="range" id="range" class="weather__item-range" min="0" max="100" value="50">
+                                    </div>
+                                    <div class="range-borders">
+                                        <span class="range-borders__item">0%</span>
+                                        <span class="range-borders__item">100%</span>
+                                    </div>
+                                </article>
+                            </li>
+                            <li class="weather__item">
+                                <article class="weather__item-content">
+                                    <div class="weather__item-info">
+                                        <h3 class="weather__item-title">Давление</h3>
+                                        <img class="weather__item-img" src="/public/card-icons/barometr.svg"alt="давление">
+                                        <p class="weather__item-value"><span id="barometr">761</span></p>
+                                        <input type="range" id="range" class="weather__item-range" min="0" max="100" value="50">
+                                    </div>
+                                    <span id="barometr-comment" class="weather__status">Повышенное</span>
+                                </article>
+                            </li>
+                            <li class="weather__item">
+                                <article class="weather__item-content">
+                                    <div class="weather__item-info">
+                                        <h3 class="weather__item-title">Видимость</h3>
+                                        <img class="weather__item-img" src="/public/card-icons/visibility.svg" alt="видимость">
+                                        <p class="weather__item-value"><span id="visibility">28</span> км</p>
+                                        <input type="range" id="range" class="weather__item-range" min="600" max="800">
+                                    </div>
+                                    <span id="visibility-comment" class="weather__status">Нормальная</span>
+                                </article>
+                            </li>
+                            <li class="weather__item">
+                                <article class="weather__item-content">
+                                    <div class="weather__item-info">
+                                        <h3 class="weather__item-title">Рассвет</h3>
+                                        <img class="weather__item-img" src="/public/card-icons/sunrise.svg" alt="рассвет">
+                                        <p class="weather__item-value"><span id="sunrise">8:42</span></p>
+                                        <p class="weather__item-comment">Прошло: <span id="sunrise-comment" class="weather__comment">02:47</span></p>
+                                    </div>
+                                </article>
+                            </li>
+                            <li class="weather__item">
+                                <article class="weather__item-content">
+                                    <div class="weather__item-info">
+                                        <h3 class="weather__item-title">Закат</h3>
+                                        <img class="weather__item-img" src="/public/card-icons/sunset.svg" alt="закат">
+                                        <p class="weather__item-value"><span id="sunset">16:37</span></p>
+                                        <p class="weather__item-comment">Осталось: <span id="sunset-comment" class="weather__comment">05:08</span></p>
+                                    </div>
+                                </article>
+                            </li>
+                            <li class="weather__item">
+                                <article class="weather__item-content">
+                                    <div class="weather__item-info">
+                                        <h3 class="weather__item-title">Сила ветра</h3>
+                                        <img class="weather__item-img" src="/public/card-icons/wind.svg" alt="сила ветра">
+                                        <p class="weather__item-value"><span id="wind">2</span>м/с</p>
+                                        <p class="weather__item-comment"><span id="wind-comment" class="weather__comment">Северо-западный</span></p>
+                                    </div>
+                                </article>
+                            </li>
                         </ul>
                     </div>
                 </section>
@@ -74,6 +134,7 @@
             <footer class="footer"></footer>
         </div>
     </div>
+    <script src="card-info.js"></script>
     <script src="main.js"></script>
 </body>
 </html>

@@ -1,9 +1,10 @@
-inputSearch = document.querySelector('#header-search')
-buttonSearch = document.querySelector('.button-search')
-buttonClose = document.querySelector('.button-dagger')
+const inputSearch = document.querySelector('#header-search')
+const buttonSearch = document.querySelector('.button-search')
+const buttonClose = document.querySelector('.button-dagger')
+const form = document.querySelector('#form')
 
 
-inputSearch.addEventListener('input', () => {
+form.addEventListener('input', () => {
     
 
     if (inputSearch.value !== '') {
