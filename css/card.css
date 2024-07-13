@@ -1,3 +1,10 @@
+.weather__item-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 16px;
+}
+
 .weather__item-info{
     display: flex;
     flex-direction: column;
@@ -17,12 +24,6 @@
     font-weight: 400;
     line-height: 32px;
 }
-
-.range-borders{
-    margin-top: 8px;
-    display: flex;
-    justify-content: space-between;
-}
 .range-borders__item{
     font-size: 12px;
     font-weight: 400;
@@ -31,19 +32,22 @@
 }
 .weather__status{
     display: block;
-    text-align: center;
     color: var(--grey-52);
     font-size: 12px;
     font-weight: 400;
     line-height: 16px;
-    margin-top: 8px;
-}
 
+}
 .weather__item-comment{
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 8px;
     color: var(--grey-52);
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 16px;
+}
+.range-borders{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
 }
   

@@ -1,8 +1,14 @@
+.weatherApp-content{
+    max-width: 1120px;
+    margin: 0 auto;
+    border-radius: 8px;
+    backdrop-filter: blur(25px);
+    background-color: var(--grey-opacity);
+    padding: 32px; 
+}
 .weaher__content{
     column-gap: 16px;
     margin-top: 64px;
-
-    font-variant-numeric: lining-nums /*выравнивание*/
 }
 .weather__left-column{
     width: 100%;

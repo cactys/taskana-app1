@@ -1,9 +1,8 @@
-
-@import './base.css';
+@import './footer.css';
+@import './slider.css';
 @import './card.css';
 @import './inputRange.css';
 @import './header.css';
 @import './weather.css';
-
-
+@import './base.css';
 

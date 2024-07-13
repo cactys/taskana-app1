@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WeatherApp</title>
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
-
 </head>
 <body>
-    <div class="container ">
+    <div class="container">
         <div class="weatherApp-content">
             <header class="header">
                 <div class="header__inner flex ">
@@ -27,11 +30,12 @@
             </header>
             <main class="weather">
                 <section class="weaher__content flex">
+                    <h2 class="visually-hidden">Погода</h2>
                     <div class="weather__left-column flex">
                         <div class="weather__cityDetails flex">
                             <span class="weather__city" id="city">Москва</span>
                             <span class="weather__data family-base" id="weather">Суббота, 06 января</span>
-                            <span class="weather__time family-base">11:29</span>
+                            <time class="weather__time family-base">11:29</time>
                         </div>
 
                         <div class="weather__temperature flex">
@@ -48,81 +52,127 @@
                     </div>
                     <div class="weather__right-column">
                         <ul class="weather__card">
-                            <li class="weather__item">
-                                <article class="weather__item-content">
-                                    <div class="weather__item-info">
-                                        <h3 class="weather__item-title">Влажность</h3>
-                                        <img class="weather__item-img" src="./public/card-icons/humidity.svg" alt="влажность">
-                                        <p class="weather__item-value"><span id="humidity">75</span> %</p>
-                                        <input type="range" id="range" class="weather__item-range" min="0" max="100">
-                                    </div>
-                                        <div class="range-borders">
-                                            <span class="range-borders__item">0%</span>
-                                            <span class="range-borders__item">100%</span>
-                                        </div>
-                                </article>
-                            </li>
-                            <li class="weather__item">
-                                <article class="weather__item-content">
-                                    <div class="weather__item-info">
-                                        <h3 class="weather__item-title">Давление</h3>
-                                        <img class="weather__item-img" src="./public/card-icons/barometr.svg"alt="давление">
-                                        <p class="weather__item-value"><span id="barometr">761</span></p>
-                                        <input type="range" id="range" class="weather__item-range" min="0" max="100" value="50">
-                                    </div>
-                                    <span id="barometr-comment" class="weather__status">Повышенное</span>
-                                </article>
-                            </li>
-                            <li class="weather__item">
-                                <article class="weather__item-content">
-                                    <div class="weather__item-info">
-                                        <h3 class="weather__item-title">Видимость</h3>
-                                        <img class="weather__item-img" src="./public/card-icons/visibility.svg" alt="видимость">
-                                        <p class="weather__item-value"><span id="visibility">28</span> км</p>
-                                        <input type="range" id="range" class="weather__item-range" min="600" max="800">
-                                    </div>
-                                    <span id="visibility-comment" class="weather__status">Нормальная</span>
-                                </article>
-                            </li>
-                            <li class="weather__item">
-                                <article class="weather__item-content">
-                                    <div class="weather__item-info">
-                                        <h3 class="weather__item-title">Рассвет</h3>
-                                        <img class="weather__item-img" src="./public/card-icons/sunrise.svg" alt="рассвет">
-                                        <p class="weather__item-value"><span id="sunrise">8:42</span></p>
-                                        <p class="weather__item-comment">Прошло: <span id="sunrise-comment" class="weather__comment">02:47</span></p>
-                                    </div>
-                                </article>
-                            </li>
-                            <li class="weather__item">
-                                <article class="weather__item-content">
-                                    <div class="weather__item-info">
-                                        <h3 class="weather__item-title">Закат</h3>
-                                        <img class="weather__item-img" src="./public/card-icons/sunset.svg" alt="закат">
-                                        <p class="weather__item-value"><span id="sunset">16:37</span></p>
-                                        <p class="weather__item-comment">Осталось: <span id="sunset-comment" class="weather__comment">05:08</span></p>
-                                    </div>
-                                </article>
-                            </li>
-                            <li class="weather__item">
-                                <article class="weather__item-content">
-                                    <div class="weather__item-info">
-                                        <h3 class="weather__item-title">Сила ветра</h3>
-                                        <img class="weather__item-img" src="./public/card-icons/wind.svg" alt="сила ветра">
-                                        <p class="weather__item-value"><span id="wind">2</span> м/с</p>
-                                        <p class="weather__item-comment"><span id="wind-comment" class="weather__comment">Северо-западный</span></p>
-                                    </div>
-                                </article>
-                            </li>
                         </ul>
                     </div>
                 </section>
-                <section class="slider"></section>
+                <section class="slider">
+                    <h2 class="visually-hidden">Слайдер</h2>
+                    <div class="slider__top">
+                        <h3 class="slider__top-title">Прогноз:</h3>
+                        <button id="selector-hours" class="slider__top-selector slider__top--active">на 24 часа</button>
+                        <button id="selector-days" class="slider__top-selector">на 5 дней</button>
+                    </div>
+                    <div class="slider">
+                         <div class="slider__inner">
+                            <div class="slider__change--one">
+                                <div class="swiper-one">
+                                    <div class="swiper-wrapper">
+                                        <article class="swiper__item swiper-slide">
+                                            <time class="swiper__time">12:00</time>
+                                            <img class="swiper__img" src="./public/swiper/24 hours/cloud-weather.svg" alt="погода">
+                                            <span class="swiper__value">-7°</span>
+                                        </article>
+                                        <article class="swiper__item swiper-slide">
+                                            <time class="swiper__time">15:00</time>
+                                            <img class="swiper__img" src="./public/swiper/24 hours/cloud-weather.svg" alt="погода">
+                                            <span class="swiper__value">-5°</span>
+                                        </article>
+                                        <article class="swiper__item swiper-slide">
+                                            <time class="swiper__time">18:00</time>
+                                            <img class="swiper__img" src="./public/swiper/24 hours/cloud-weather.svg" alt="погода">
+                                            <span class="swiper__value">-7°</span>
+                                        </article>
+                                        <article class="swiper__item swiper-slide ">
+                                            <time class="swiper__time">21:00</time>
+                                            <img class="swiper__img" src="./public/swiper/24 hours/cloud-weather.svg" alt="погода">
+                                            <span class="swiper__value">-9°</span>
+                                        </article>
+                                        <article class="swiper__item swiper-slide">
+                                            <time class="swiper__time">00:00</time>
+                                            <img class="swiper__img" src="./public/swiper/24 hours/cloud-weather.svg" alt="погода">
+                                            <span class="swiper__value">-11°</span>
+                                        </article>
+                                        <article class="swiper__item swiper-slide">
+                                            <time class="swiper__time">01:00</time>
+                                            <img class="swiper__img" src="./public/swiper/24 hours/cloud-weather.svg" alt="погода">
+                                            <span class="swiper__value">-12°</span>
+                                        </article>
+                                    </div>
+                                </div>
+                                <button id="SliderPrev-one" class="slider__button slider__button--prev">
+                                    <svg width="24.000000" height="24.000000" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <path d="M16 3L7 12L16 21" stroke="#545454" stroke-opacity="1.000000" stroke-width="2.000000" stroke-linejoin="round" stroke-linecap="round"/>
+                                    </svg>
+                                </button>
+                                <button id="SliderNext-one" class="slider__button slider__button--next">
+                                    <svg width="24.000000" height="24.000000" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <path id="Vector" d="M8 3L17 12L8 21" stroke="#545454" stroke-opacity="1.000000" stroke-width="2.000000" stroke-linejoin="round" stroke-linecap="round"/>
+                                    </svg>                                
+                                </button>
+                            </div>
+                            <div class="slider__change--two none">
+                                <div class="swiper-two">
+                                    <div class="swiper-wrapper">
+                                        <article class="swiper__item-days swiper-slide">
+                                            <time class="swiper__time">Вс, 07 янв.</time>
+                                            <img class="swiper__img" src="./public/swiper/5 days/day.svg" alt="погода">
+                                            <span class="swiper__value">от -17° до -11°</span>
+                                        </article>
+                                        <article class="swiper__item-days swiper-slide">
+                                            <time class="swiper__time">Пн, 08 янв.</time>
+                                            <img class="swiper__img" src="./public/swiper/5 days/day.svg" alt="погода">
+                                            <span class="swiper__value">от -16° до -8°</span>
+                                        </article>
+                                        <article class="swiper__item-days swiper-slide">
+                                            <time class="swiper__time">Вт, 09 янв.</time>
+                                            <img class="swiper__img" src="./public/swiper/24 hours/cloud-weather.svg" alt="погода">
+                                            <span class="swiper__value">от -8° до -2°</span>
+                                        </article>
+                                        <article class="swiper__item-days swiper-slide">
+                                            <time class="swiper__time">Ср, 10 янв.</time>
+                                            <img class="swiper__img" src="./public/swiper/24 hours/cloud-weather.svg" alt="погода">
+                                            <span class="swiper__value">от -8° до -2°</span>
+                                        </article>
+                                        <article class="swiper__item-days swiper-slide">
+                                            <time class="swiper__time">Чт, 11 янв.</time>
+                                            <img class="swiper__img" src="./public/swiper/24 hours/cloud-weather.svg" alt="погода">
+                                            <span class="swiper__value">от -8° до -2°</span>
+                                        </article>
+                                        <article class="swiper__item-days swiper-slide">
+                                            <time class="swiper__time">Пят, 12 янв.</time>
+                                            <img class="swiper__img" src="./public/swiper/24 hours/cloud-weather.svg" alt="погода">
+                                            <span class="swiper__value">от -13 до -20°</span>
+                                        </article>
+                                        <article class="swiper__item-days swiper-slide">
+                                            <time class="swiper__time">Сб, 13 янв.</time>
+                                            <img class="swiper__img" src="./public/swiper/24 hours/cloud-weather.svg" alt="погода">
+                                            <span class="swiper__value">-16° до -8°</span>
+                                        </article>
+                                    </div>
+                                </div>
+                                <button id="SliderPrev-two" class="slider__button slider__button--prev">
+                                    <svg width="24.000000" height="24.000000" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <path d="M16 3L7 12L16 21" stroke="#545454" stroke-opacity="1.000000" stroke-width="2.000000" stroke-linejoin="round" stroke-linecap="round"/>
+                                    </svg>
+                                </button>
+                                <button id="SliderNext-two" class="slider__button slider__button--next">
+                                    <svg width="24.000000" height="24.000000" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <path id="Vector" d="M8 3L17 12L8 21" stroke="#545454" stroke-opacity="1.000000" stroke-width="2.000000" stroke-linejoin="round" stroke-linecap="round"/>
+                                    </svg>                                
+                                </button>
+                            </div>
+                        </div> 
+                    </div>
+                </section>
             </main>
-            <footer class="footer"></footer>
+            <footer class="footer">
+                <div>Проект выполнен в рамках стажировки
+                    <a href="https://preax.ru">PREAX</a>
+                </div>
+            </footer>
         </div>
     </div>
-    <script src="card-info.js"></script>
-    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="module" src="main.js"></script>
 </body>
 </html>
