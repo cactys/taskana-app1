@@ -1,6 +1,7 @@
-import { weatherInfo } from './card-info.js';
-import { swiperOne } from './slider.js';
-import { swiperTWo } from './slider.js';
+
+import { weatherInfo } from './cardAdd.js';
+import { getWeatherHours } from './sliderAdd.js';
+import { getWeatherDays } from './sliderAdd.js'
 
 const inputSearch = document.querySelector('#header-search')
 const buttonSearch = document.querySelector('.search')
@@ -9,8 +10,12 @@ const form = document.querySelector('#form')
 const sliderTop = document.querySelector('.slider__top')
 const selectorHours = document.querySelector('#selector-hours')
 const selectorDays = document.querySelector('#selector-days')
-const reverse1 = document.querySelector('.slider__change--one')
-const reverse2 = document.querySelector('.slider__change--two')
+const reverseHours = document.querySelector('.slider__change--hours')
+const reverseDays = document.querySelector('.slider__change--days')
+const swiperHours = document.querySelector('.swiper-wrapper--hours')
+const swiperDays = document.querySelector('.swiper-wrapper--days')
+
+swiperHours.insertAdjacentHTML('beforeend',getWeatherHours.join(''))
 
 function formInputHandler(){
     console.log(inputSearch.value);
@@ -31,18 +36,22 @@ function keyEnterHandler(event){
 }
 function selectorHandler(event){
     if(event.target === selectorDays){
-        reverse1.classList.add('none')
-        reverse2.classList.remove('none')
+        reverseHours.classList.add('none')
+        reverseDays.classList.remove('none')
         selectorDays.classList.add('slider__top--active')
         selectorHours.classList.remove('slider__top--active')
+        swiperDays.insertAdjacentHTML('beforeend',getWeatherDays.join(''))
+        
 
     }else if(event.target === selectorHours){
-        reverse1.classList.remove('none')
-        reverse2.classList.add('none')
+        reverseHours.classList.remove('none')
+        reverseDays.classList.add('none')
         selectorDays.classList.remove('slider__top--active')
         selectorHours.classList.add('slider__top--active')
+        swiperHours.insertAdjacentHTML('beforeend',getWeatherHours.join(''))
     }
 }
+
 
 inputSearch.addEventListener('keydown',keyEnterHandler );
 form.addEventListener('input',formInputHandler)

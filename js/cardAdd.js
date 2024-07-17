@@ -54,4 +54,5 @@ export const getWeatherData = weatherData.map((item, index) => {
   });
   
   export const weatherInfo = (document.querySelector('.weather__card').insertAdjacentHTML('beforeend',getWeatherData.join('')));
+
   
