@@ -12,7 +12,10 @@
         <div class="weatherApp-content">
             <header class="header">
                 <div class="header__inner flex ">
-                    <a href="#" class="logo"><img src="./public/logo.png" alt="логотип"></a>
+                    <a href="#" class="logo">
+                        <img class="header__img" src="./public/logo.png" alt="логотип">
+                        <img class="header__img-replace" src="./public/logo886.png" alt="">
+                    </a>
                     <form id = 'form' class="header__form flex" action="#" >
                         <input class="header__form-search family-base" id="header-search" type="search" placeholder="Поиск по городу">
                         <button type="submit" class="header__form-button search">
@@ -29,7 +32,7 @@
                     <h2 class="visually-hidden">Погода</h2>
                     <div class="weather__left-column flex">
                         <div class="weather__cityDetails flex">
-                            <span class="weather__city" id="city">Москва</span>
+                            <span class="weather__city" id="city">Кременчуг-константиновское</span>
                             <span class="weather__data family-base" id="weather">Суббота, 06 января</span>
                             <time class="weather__time family-base">11:29</time>
                         </div>
@@ -41,7 +44,7 @@
                         <div class="weather__fells flex">
                             <div class="weather__type flex">
                                 <img src="./public/weather-icons/clouds.svg" alt="облака">
-                                <span class="weather__description family-base">Облачно</span>
+                                <span class="weather__description family-base">Облачно с прояснениями</span>
                             </div>
                             <p class="weather__fell-desc family-base">Ощущается как <span id ='fell-weather'>-11</span>°</p>
                         </div>  
@@ -60,21 +63,17 @@
                     </div>
                     <div class="slider">
                          <div class="slider__inner">
-                            <div class="slider__change--hours">
-                                <div class="swiper-wrapper--hours">     
-                                    <!-- Здесь будут карточки -->
-                                </div>  
-                            </div>
-                            <div class="slider__change--days none">
-                                <div class="swiper-wrapper--days">
-                                    <!-- Здесь будут карточки -->
-                                </div> 
-                            </div>
                             <button  class="slider__button slider__button--prev">
                                 <svg width="24.000000" height="24.000000" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                     <path d="M16 3L7 12L16 21" stroke="#545454" stroke-opacity="1.000000" stroke-width="2.000000" stroke-linejoin="round" stroke-linecap="round"/>
                                 </svg>
                             </button>
+                            <div class="swiper-wrapper--hours">     
+                                    <!-- Здесь будут карточки -->
+                             </div>  
+                            <div class="swiper-wrapper--days none">
+                                    <!-- Здесь будут карточки -->
+                            </div> 
                             <button  class="slider__button slider__button--next">
                                 <svg width="24.000000" height="24.000000" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                     <path id="Vector" d="M8 3L17 12L8 21" stroke="#545454" stroke-opacity="1.000000" stroke-width="2.000000" stroke-linejoin="round" stroke-linecap="round"/>

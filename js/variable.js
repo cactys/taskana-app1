@@ -2,7 +2,7 @@ export const weatherData = [
     {
       name: 'humidity',
       title: 'Влажность',
-      value: '23',
+      value: '75',
       img: './public/card-icons/humidity.svg',
       smv: '%',
     },
@@ -38,7 +38,7 @@ export const weatherData = [
     },
     {
       name: 'wind',
-      title: 'Скорость ветра',
+      title: 'Сила ветра',
       value: '2',
       img: './public/card-icons/wind.svg',
       direction: 'Северо-западный',
@@ -116,9 +116,9 @@ export const sliderHours = [
       smv: '°',
     },
     {
-      time: '01:00',
+      time: '03:00',
       img: './public/swiper/24hours/cloud-weather.svg',
-      value:'-12',
+      value:'-13',
       smv: '°',
     },
 ];

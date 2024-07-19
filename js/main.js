@@ -36,16 +36,16 @@ function keyEnterHandler(event){
 }
 function selectorHandler(event){
     if(event.target === selectorDays){
-        reverseHours.classList.add('none')
-        reverseDays.classList.remove('none')
+        swiperHours.classList.add('none')
+        swiperDays.classList.remove('none')
         selectorDays.classList.add('slider__top--active')
         selectorHours.classList.remove('slider__top--active')
         swiperDays.insertAdjacentHTML('beforeend',getWeatherDays.join(''))
         
 
     }else if(event.target === selectorHours){
-        reverseHours.classList.remove('none')
-        reverseDays.classList.add('none')
+        swiperHours.classList.remove('none')
+        swiperDays.classList.add('none')
         selectorDays.classList.remove('slider__top--active')
         selectorHours.classList.add('slider__top--active')
         swiperHours.insertAdjacentHTML('beforeend',getWeatherHours.join(''))

@@ -16,7 +16,7 @@ export const getWeatherHours = sliderHours.map((item) => {
 export const getWeatherDays = sliderdays.map((item) => {
 
     return `
-        <article class="swiper__item">
+        <article class="swiper__item swiper__item--days">
             <time class="swiper__time ">${item.data}</time>
             <img class="swiper__img" src="${item.img}" alt="погода">
             <span class="swiper__value">${item.range}</span>

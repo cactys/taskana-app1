@@ -12,7 +12,7 @@ export const getWeatherData = weatherData.map((item, index) => {
       progressValueText = item.value > 20 ? 'Нормальная' : ' Пониженая';
     } else if (item.title === 'Рассвет' || item.title === 'Закат') {
       progressValueText = `Прошло: ${item.remainingTime}`;
-    } else if (item.title === 'Скорость ветра') {
+    } else if (item.title === 'Сила ветра') {
       progressValueText = item.direction;
     }
   

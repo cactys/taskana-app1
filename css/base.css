@@ -3,8 +3,7 @@
 :root{
     --container-width: 1280px;
     --container-padding: 15px;
-    --padding-container: 32px 80px;
-    --padding-block32 : 32px;
+    --padding-container: 32px;
     
     
 
@@ -59,7 +58,6 @@ body{
     align-items: center;
 }
 .container{
-    min-width: var(--container-width);
     padding: var(--padding-container);
     min-height:  100vh;
 }
@@ -72,6 +70,9 @@ body{
     white-space: nowrap;
     width: 1px;
     
+}
+.header__img-replace{
+    display: none;
 }
 .none{
     display: none;
