@@ -1,0 +1,11 @@
+.footer{
+    margin-top: 64px;
+    text-align: center;
+    color: var(--text-white);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+}
+.footer a{
+    border-bottom: 1px solid var(--text-white);
+}

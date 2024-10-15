@@ -8,5 +8,23 @@ export default [
   { languageOptions: { globals: globals.browser } },
   pluginJs.configs.recommended,
   pluginReact.configs.flat.recommended,
+  {
+    rules: {
+      'react/react-in-jsx-scope': 'off',
+      'react/jsx-uses-react': 'off',
+      'react/jsx-filename-extension': [
+        1,
+        { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
+      ],
+      'react/prop-types': 'off',
+      "react/function-component-definition": [
+        2,
+        {
+          namedComponents: "arrow-function",
+          unnamedComponents: "arrow-function",
+        },
+      ],
+    },
+  },
   eslintConfigPrettier,
 ];
