@@ -1,0 +1,60 @@
+.forecast {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  column-gap: var(--padding);
+}
+
+.forecast__card {
+  display: flex;
+  align-items: center;
+  gap: var(--padding);
+  padding: var(--padding);
+  border-radius: var(--border-radius);
+  background-color: var(--field-bg-color);
+  font-size: calc(var(--font-size) * 0.8);
+  line-height: 1.25;
+  color: var(--field-text-color);
+  text-wrap: nowrap;
+
+  @media screen and (max-width: 1023px) {
+    padding: calc(var(--padding) * 4 / 3);
+    gap: calc(var(--padding) * 4 / 3);
+  }
+
+  @media screen and (max-width: 885px) {
+    flex-direction: column;
+  }
+
+  @media screen and (max-width: 767px) {
+    flex-direction: row;
+    gap: calc(var(--padding) * 1.5);
+    padding: calc(var(--padding) * 1.5);
+    font-size: calc(var(--font-size) * 6 / 7 );
+    line-height: calc( 4 / 3);
+  }
+
+  @media screen and (max-width: 639px) {
+    flex-direction: column;
+  }
+}
+
+.forecast__card-datetime {
+  text-wrap: nowrap;
+}
+
+.forecast__card-temp {
+  margin: 0;
+}
+
+.forecast__card-icon {
+  width: 32px;
+  height: 32px;
+
+  @media screen and (max-width: 767px) {
+    width: 24px;
+    height: 24px;
+  }
+}
+

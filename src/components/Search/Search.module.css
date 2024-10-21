@@ -1,0 +1,78 @@
+.search {
+  display: flex;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  transition: var(--transition-delay);
+  background-color: var(--field-bg-color);
+
+  &:has(input:focus, input:hover) {
+    background: var(--field-bg-color-active);
+  }
+}
+
+.item {
+  border: none;
+  padding: calc(var(--padding) *.75) var(--padding);
+  background: none;
+
+  @media screen and (max-width: 1023px) {
+    padding: var(--padding) calc(var(--padding) * 1.25);
+
+  }
+
+  @media screen and (max-width: 767px) {
+    padding: var(--padding) calc(var(--padding) * 1.5);
+    line-height: 16px;
+  }
+}
+
+.input {
+  flex-grow: 1;
+  font-size: var(--font-size);
+  line-height: 1.2;
+  font-family: inherit;
+  font-variant-numeric: inherit;
+  transition: var(--transition-delay);
+  color: var(--placeholder-color);
+
+  &::placeholder {
+    color: var(--placeholder-color);
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+  }
+}
+
+.button {
+  display: grid;
+  place-content: center;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+  }
+
+  &:hover .icon,
+  &:focus-visible .icon {
+    transform: scale(1.1);
+    fill: var(--field-text-color);
+    stroke: var(--field-text-color);
+  }
+}
+
+.icon {
+  display: grid;
+  place-content: center;
+}
+
+svg.iconSearch {
+  fill: transparent;
+}
+
+

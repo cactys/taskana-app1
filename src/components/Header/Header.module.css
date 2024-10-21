@@ -1,0 +1,21 @@
+.header {
+  display: grid;
+  grid-template-columns: minmax(374px, 534px) 506px;
+  gap: var(--padding);
+  align-items: start;
+
+  @media screen and (max-width: 1023px) {
+    grid-template-columns: auto 1fr;
+    gap: 135px;
+  }
+
+  @media screen and (max-width: 639px) {
+    grid-template-columns: auto 1fr;
+    gap: calc(var(--padding) * 2)
+  }
+
+}
+
+.logo {
+  justify-self: stretch;
+}

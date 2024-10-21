@@ -1,0 +1,110 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  gap: var(--padding);
+  padding: var(--padding);
+  width: 100%;
+  color: var(--field-text-color);
+  --rotation-coefficient: 0;
+
+  @media screen and (max-width: 767px) {
+    padding: calc(var(--padding) * 4 / 3);
+  }
+
+  @media screen and (max-width: 639px) {
+    gap: calc(var(--padding) * 1.5);
+    justify-content: flex-start;
+  }
+
+  @media screen and (min-width: 768px) {
+    --padding: 16px;
+  }
+
+}
+
+.title {
+  margin: 0;
+  text-align: center;
+  font-size: var(--card-font-size);
+  line-height: 1.25;
+  font-weight: 700;
+
+  @media screen and (max-width: 767px) {
+    line-height: calc(4 / 3);
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--padding);
+
+  @media screen and (max-width: 639px) {
+    gap: calc(var(--padding) * 1.5);
+  }
+
+}
+
+.icon {
+  width: calc(var(--padding) * 2);
+  height: calc(var(--padding) * 2);
+  rotate: calc(45deg * var(--rotation-coefficient));
+
+  @media screen and (max-width: 767px) {
+    width: calc(var(--padding) * 4);
+    height: calc(var(--padding) * 4);
+  }
+
+  @media screen and (max-width: 639px) {
+    width: calc(var(--padding) * 3);
+    height: calc(var(--padding) * 3);
+  }
+}
+
+.value {
+  font-size: calc(var(--card-font-size) * 2);
+  line-height: 1;
+  margin: 0;
+
+  @media screen and (max-width: 767px) {
+    font-size: 22px;
+    line-height: 1;
+  }
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--padding) / 2);
+  @media screen and (max-width: 767px) {
+    gap: calc(var(--padding) * 3 / 4);
+  }
+
+  @media screen and (max-width: 639px) {
+    gap: calc(var(--padding) * 0.75);
+  }
+}
+
+.description {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  font-size: calc(var(--card-font-size) * 0.75);
+  line-height: calc(4 / 3);
+  text-align: center;
+
+  &:has(:not(:only-child)) {
+    justify-content: space-between;
+  }
+
+  @media screen and (max-width: 767px) {
+    font-size: calc(var(--card-font-size) * 5 / 6);
+    line-height: 1.2;
+  }
+}
+
+.descriptionSpaceBetween {
+  justify-content: space-between;
+}

@@ -1,0 +1,14 @@
+.icon {
+  stroke: var(--icon-color);
+  fill: var(--icon-color);
+  transition: var(--transition-delay);
+  width: 20px;
+  height: 20px;
+
+  @media screen and (max-width: 767px) {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+

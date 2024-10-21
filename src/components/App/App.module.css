@@ -1,0 +1,12 @@
+.app {
+  max-width: 1120px;
+  background-color: rgba(139.19, 139.19, 139.19, 0.10);
+  backdrop-filter: blur(30px);
+  border-radius: var(--border-radius);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+
+  @media screen and (max-width: 1023px) {
+    max-width: 100%;
+  }
+}

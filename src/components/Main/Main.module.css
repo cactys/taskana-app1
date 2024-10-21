@@ -1,0 +1,16 @@
+.todayWeather {
+  display: grid;
+  grid-template-columns: minmax(374px, 534px) 506px;
+  gap: var(--padding);
+
+
+  @media screen and (max-width: 1023px) {
+    grid-template-columns: 513px;
+    row-gap: calc(var(--padding) * 4);
+    justify-content: center;
+  }
+
+  @media screen and (max-width: 767px) {
+    grid-template-columns: min(100%, 400px);
+  }
+}

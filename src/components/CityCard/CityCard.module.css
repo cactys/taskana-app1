@@ -1,0 +1,71 @@
+.cityCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: calc(var(--padding) / 2);
+  gap: calc(var(--padding) * 2);
+
+  @media screen and (max-width: 1023px) {
+    padding-block: 0;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--padding) / 2);
+  align-items: center;
+}
+
+.paragraph {
+  margin: 0;
+  display: inline-flex;
+  justify-content: center;
+  gap: calc(var(--padding) / 2);
+
+  @media screen and (max-width: 767px) {
+    line-height: calc(8 / 7);
+  }
+}
+
+.date {
+  display: block;
+
+  &:first-letter {
+    text-transform: uppercase;
+  }
+}
+
+.loc {
+  font-size: 1.2em;
+  font-weight: 700;
+  line-height: calc(var(--padding) * 2);
+  text-align: center;
+
+  @media screen and (max-width: 1023px) {
+    line-height: calc(4 / 3);
+  }
+
+  @media screen and (max-width: 767px) {
+    font-size: calc(1em * 8 / 7);
+    line-height: 1.25;
+  }
+}
+
+.temp {
+  font-size: var(--font-size-xxl);
+  line-height: 1;
+  font-weight: 700;
+}
+
+.weatherIcon {
+  width: 24px;
+  height: 24px;
+
+  @media screen and (max-width: 767px) {
+    width: 16px;
+    height: 16px;
+  }
+
+}

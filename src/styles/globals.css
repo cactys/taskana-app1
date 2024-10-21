@@ -1,0 +1,54 @@
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+#root {
+  min-height: 100vh;
+  min-width: var(--min-width);
+  padding: calc(var(--padding) * 2) calc(var(--padding) * 2);
+  display: grid;
+  place-content: center;
+  background-image: url("../assets/images/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 0;
+  background-attachment: fixed;
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variant-numeric: lining-nums;
+  font-size: var(--font-size);
+  line-height: 1.2;
+  color: var(--text-color);
+
+  @media screen and (max-width: 1023px) {
+    align-content: start;
+    justify-content: stretch;
+  }
+}
+
+.container {
+  padding: calc(var(--padding) * 2);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}

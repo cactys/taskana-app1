@@ -1,0 +1,17 @@
+.content {
+  text-align: center;
+  margin: 0;
+  font-size: calc(var(--font-size) * 0.8);
+  line-height: 1.25;
+
+  @media screen and (max-width: 767px) {
+    font-size: 12px;
+    line-height: calc(4 / 3);
+  }
+}
+
+.link {
+  color: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}

@@ -1,0 +1,20 @@
+.cardList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: var(--padding);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  @media screen and (max-width: 767px) {
+    grid-template-rows: repeat(2, 148px);
+  }
+}
+
+.item {
+  background-color: var(--field-bg-color);
+  border-radius: var(--border-radius);
+  display: flex;
+}
+
