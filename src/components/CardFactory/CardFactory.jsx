@@ -54,7 +54,6 @@ export const CardFactory = (props) => {
           unit={'км'}
           icon={type + '.png'}
           barPosition={getVisibilityBarPosition(value)}
-          barType="radial-gradient"
           description={getVisibilityDescription(value)}
         />
       );

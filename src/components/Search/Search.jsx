@@ -1,6 +1,7 @@
 import styles from './Search.module.css';
 import { SvgIcon } from '../SvgIcon/SvgIcon';
 import { useState } from 'react';
+import { Input } from '../Input/Input';
 
 export const Search = () => {
   const [showResetButton, setShowResetButton] = useState(false);
@@ -34,17 +35,13 @@ export const Search = () => {
       className={styles.search}
       onReset={callbacks.handleReset}
       onSubmit={callbacks.handleSubmit}
+      onFocus={callbacks.handleFocus}
+      onBlur={callbacks.handleBlur}
     >
-      <input
-        className={`${styles.input} ${styles.item}`}
-        id="search"
-        name="search"
-        placeholder="Поиск по городу"
-        type="text"
-        onFocus={callbacks.handleFocus}
-        onBlur={callbacks.handleBlur}
-        onChange={callbacks.handleChange}
+      <Input
         value={value}
+        onChange={callbacks.handleChange}
+        className={`${styles.input} ${styles.item}`}
       />
       {showResetButton ? (
         <button className={`${styles.button} ${styles.item}`} type="reset">
