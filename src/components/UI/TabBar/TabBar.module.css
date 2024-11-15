@@ -1,0 +1,30 @@
+.tabBar {
+  display: flex;
+  align-items: flex-end;
+  column-gap: var(--padding-container);
+  margin-top: 64px;
+}
+
+.tabBarTitle {
+  color: var(--text-color);
+  font-weight: 700;
+  font-size: var(--font-size-lg);
+  line-height: 32px;
+}
+
+@media screen and (max-width: 887px) {
+  .tabBar {
+    column-gap: var(--padding-tablet);
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .tabBar {
+    column-gap: var(--padding-mobile);
+  }
+
+  .tabBarTitle {
+    font-size: var(--font-size-m);
+    line-height: 20px;
+  }
+}

@@ -1,8 +1,9 @@
 import styles from './Main.module.css';
 import { CityCard } from '../CityCard/CityCard';
 import { CardList } from '../CardList/CardList';
-import { Slider } from '../Slider/Slider';
 import * as data from '../../data.js';
+import TabBar from '../UI/TabBar/TabBar.jsx';
+import Slider from '../UI/Slider/Slider.jsx';
 
 export const Main = () => {
   return (
@@ -11,7 +12,10 @@ export const Main = () => {
         <CityCard weather={data.weather} />
         <CardList weather={data.weather} />
       </section>
-      <Slider />
+      <section className={`${styles.sliderContainer} container`}>
+        <TabBar />
+        <Slider />
+      </section>
     </main>
   );
 };

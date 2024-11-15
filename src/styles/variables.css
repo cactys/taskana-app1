@@ -1,9 +1,15 @@
 :root {
   --min-width: 1280px;
+  --padding-container: 32px;
+  --padding-tablet: 24px;
+  --padding-mobile: 16px;
   --padding: 16px;
   --border-radius: 8px;
 
+  --font-size-sm: 12px;
+  --font-size-m: 16px;
   --font-size: 20px;
+  --font-size-lg: 24px;
   --font-size-xxl: 112px;
 
   --card-font-size: 16px;
