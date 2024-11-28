@@ -4,6 +4,7 @@ import { CardList } from '../CardList/CardList';
 import * as data from '../../data.js';
 import TabBar from '../UI/TabBar/TabBar.jsx';
 import Slider from '../UI/Slider/Slider.jsx';
+import { SliderContextProvider } from '../../contexts/SliderContext.jsx';
 
 export const Main = () => {
   return (
@@ -14,7 +15,9 @@ export const Main = () => {
       </section>
       <section className={`${styles.sliderContainer} container`}>
         <TabBar />
-        <Slider />
+        <SliderContextProvider>
+          <Slider />
+        </SliderContextProvider>
       </section>
     </main>
   );
