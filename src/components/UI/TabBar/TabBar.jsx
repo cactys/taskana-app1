@@ -1,8 +1,13 @@
 import { useContext } from 'react';
-import Tab from '../Tab/Tab';
-import styles from './TabBar.module.css';
 import { TabContext } from '../../../contexts/TabContext';
+import Tab from '../Tab/Tab';
 
+import styles from './TabBar.module.css';
+
+/**
+ *
+ * @returns {JSX.Element} JSX.Element for the TabBar
+ */
 const TabBar = () => {
   const { tabLabels, isActive, setIsActive } = useContext(TabContext);
 

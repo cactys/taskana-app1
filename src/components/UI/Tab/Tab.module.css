@@ -3,26 +3,36 @@
   display: flex;
   color: var(--inactive-tab-color);
   font-weight: 700;
-  font-size: var(--font-size-m);
-  line-height: 20px;
+  font-size: var(--card-font-size);
+  line-height: var(--line-height);
+  transition: var(--transition-delay);
   cursor: pointer;
 }
 
-.tabLabel:hover::after {
+.tabLabel::after {
   content: '';
   position: absolute;
-  bottom: -2px;
+  right: 0;
+  bottom: -4px;
   left: 0;
   display: inline-block;
   box-sizing: border-box;
   width: 100%;
   border-radius: 2px;
   border-bottom: 2px solid var(--inactive-tab-color);
+  opacity: 0;
+  transition: var(--transition-delay);
+}
+
+.tabLabel:hover::after {
+  bottom: -2px;
+  opacity: 1;
 }
 
 .isActive {
   position: relative;
   color: var(--text-color);
+  transition: var(--transition-delay);
   cursor: default;
 }
 
@@ -36,6 +46,8 @@
   width: 100%;
   border-radius: 2px;
   border-bottom: 2px solid var(--text-color);
+  opacity: 1;
+  transition: all .5s ease;
 }
 
 .isActive:hover::after {
@@ -43,9 +55,8 @@
 }
 
 @media screen and (max-width: 640px) {
-  .tabLabel {
-    font-size: var(--font-size-sm);
-    line-height: 16px;
+  .tabLabel::after {
+    bottom: -2px;
   }
 
   .tabLabel:hover::after {

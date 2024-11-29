@@ -1,0 +1,22 @@
+.sliderContainer {
+  display: flex;
+  flex-direction: column;
+  row-gap: 32px;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 32px;
+}
+
+@media screen and (max-width: 887px) {
+  .sliderContainer {
+    row-gap: 24px;
+    padding: 24px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .sliderContainer {
+    row-gap: 16px;
+    padding: 16px;
+  }
+}

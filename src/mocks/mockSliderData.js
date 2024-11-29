@@ -1,36 +1,36 @@
 export const sliderDays = [
   {
-    data: 'Вс, 07 янв.',
+    date: 'Вс, 07 янв.',
     imgId: 'day-clear-sky-svg',
     range: 'от -17° до -11°',
   },
   {
-    data: 'Пн, 08 янв.',
+    date: 'Пн, 08 янв.',
     imgId: 'day-clear-sky-svg',
     range: 'от -16° до -8°',
   },
   {
-    data: 'Вт, 09 янв.',
+    date: 'Вт, 09 янв.',
     imgId: 'day-clear-sky-svg',
     range: 'от -8° до -2°',
   },
   {
-    data: 'Ср, 10 янв.',
+    date: 'Ср, 10 янв.',
     imgId: 'day-few-clouds-svg',
     range: 'от -16° до -8°',
   },
   {
-    data: 'Чт, 11 янв.',
+    date: 'Чт, 11 янв.',
     imgId: 'day-few-clouds-svg',
     range: 'от -16° до -8°',
   },
   {
-    data: 'Пят, 12 янв.',
+    date: 'Пят, 12 янв.',
     imgId: 'day-few-clouds-svg',
     range: 'от -13 до -20°',
   },
   {
-    data: 'Сб, 13 янв.',
+    date: 'Сб, 13 янв.',
     imgId: 'day-few-clouds-svg',
     range: 'от -16° до -8°',
   },

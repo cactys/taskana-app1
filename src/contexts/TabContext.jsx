@@ -2,6 +2,11 @@ import { createContext, useMemo, useState } from 'react';
 
 export const TabContext = createContext();
 
+/**
+ *
+ * @param {JSX.Element} children of the context
+ * @returns {JSX.Element} JSX.Element for the context
+ */
 export const TabContextProvider = ({ children }) => {
   const [isActive, setIsActive] = useState(0);
 

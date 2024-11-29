@@ -9,7 +9,7 @@
   color: var(--text-color);
   font-weight: 700;
   font-size: var(--font-size-lg);
-  line-height: 32px;
+  line-height: var(--line-height-lg);
 }
 
 @media screen and (max-width: 887px) {
@@ -21,10 +21,5 @@
 @media screen and (max-width: 640px) {
   .tabBar {
     column-gap: var(--padding-mobile);
-  }
-
-  .tabBarTitle {
-    font-size: var(--font-size-m);
-    line-height: 20px;
   }
 }

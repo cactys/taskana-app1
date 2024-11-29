@@ -1,8 +1,8 @@
 .content {
-  text-align: center;
   margin: 0;
   font-size: calc(var(--font-size) * 0.8);
   line-height: 1.25;
+  text-align: center;
 
   @media screen and (max-width: 767px) {
     font-size: 12px;
@@ -14,4 +14,12 @@
   color: inherit;
   font-size: inherit;
   line-height: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-transform: uppercase;
+  transition: var(--transition-delay);
+}
+
+.link:hover {
+  opacity: .5;
 }

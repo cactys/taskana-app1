@@ -2,9 +2,7 @@ import styles from './Main.module.css';
 import { CityCard } from '../CityCard/CityCard';
 import { CardList } from '../CardList/CardList';
 import * as data from '../../data.js';
-import TabBar from '../UI/TabBar/TabBar.jsx';
-import Slider from '../UI/Slider/Slider.jsx';
-import { SliderContextProvider } from '../../contexts/SliderContext.jsx';
+import ProgressBar from '../UI/ProgressBar/ProgressBar.jsx';
 
 export const Main = () => {
   return (
@@ -13,12 +11,7 @@ export const Main = () => {
         <CityCard weather={data.weather} />
         <CardList weather={data.weather} />
       </section>
-      <section className={`${styles.sliderContainer} container`}>
-        <TabBar />
-        <SliderContextProvider>
-          <Slider />
-        </SliderContextProvider>
-      </section>
+      <ProgressBar />
     </main>
   );
 };
