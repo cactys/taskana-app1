@@ -1,0 +1,42 @@
+.button {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 8px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.2);
+  transition: background-color 0.4s;
+  cursor: pointer;
+}
+
+.button:active {
+  transform: scale(0.98);
+}
+
+/* Варианты */
+.primary {
+  background-color: var(--primary-400);
+}
+
+.primary:hover {
+  background-color: var(--primary-500);
+}
+
+.secondary {
+  background-color: var(--neutral-light-800);
+}
+
+.secondary:hover {
+  background-color: var(--neutral-light-700);
+}
+
+.medium {
+  padding: 8px 16px 8px 12px;
+}
+
+.large {
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  padding: 8px;
+}

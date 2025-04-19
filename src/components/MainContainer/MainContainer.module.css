@@ -1,0 +1,25 @@
+.container {
+  position: static;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0px;
+  width: 100%;
+  max-width: 996px;
+  height: calc(100vh - (64px + 56px));
+  overflow-y: auto;
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  padding: 24px;
+  color: var(--neutral-light-800);
+  font: var(--typography-h1);
+}
