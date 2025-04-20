@@ -1,8 +1,12 @@
-import React from 'react';
-import styles from './NavBar.module.css';
 import Button from '../Button/Button';
 import Icons from '../Icons/Icons';
 
+import styles from './NavBar.module.css';
+
+/**
+ * Навигационная панель
+ * @returns {JSX.Element} - JSX элемент навигационной панели
+ */
 const NavBar = () => {
   return (
     <nav className={styles.navbar}>

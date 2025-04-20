@@ -1,14 +1,13 @@
-import React from 'react';
 import styles from './Button.module.css';
 
 /**
- *
- * @param {string} children - Text to be displayed on the button.
- * @param {string} variant - Type of button to be displayed. Can be 'primary'-default, or 'secondary' color.
- * @param {string} size - Size of the button. Can be 'medium'-default, or 'large'.
- * @param {string} className - Additional CSS classes to be added to the button.
- * @param {object} settings - Additional settings for the button.
- * @returns
+ * Компонент кнопки
+ * @param {ReactNode} children - Содержимое кнопки (текст или другие компоненты)
+ * @param {string} variant - Тип кнопки ('primary' - по умолчанию, 'secondary')
+ * @param {string} size - Размер кнопки ('medium' - по умолчанию, 'large')
+ * @param {string} className - Дополнительные CSS классы
+ * @param {Object} settings - Дополнительные атрибуты и настройки кнопки
+ * @returns {JSX.Element} - JSX элемент кнопки с указанными свойствами
  */
 const Button = ({ children, variant = 'primary', size = 'medium', className, ...settings }) => {
   return (

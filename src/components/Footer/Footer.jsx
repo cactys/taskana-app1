@@ -1,6 +1,9 @@
-import React from 'react';
 import styles from './Footer.module.css';
 
+/**
+ * Компонент футера приложения
+ * @returns {JSX.Element} - JSX элемент футера
+ */
 const Footer = () => {
   return (
     <footer className={styles.footer}>

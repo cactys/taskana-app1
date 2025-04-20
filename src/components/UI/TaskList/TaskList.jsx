@@ -1,22 +1,12 @@
-import React from 'react';
+import useTaskContext from '@hooks/useTaskContext';
 import styles from './TaskList.module.css';
-import illustrationEmptyTaskSvg from '@assets/images/illustration-EmptyTask-light.svg';
-import illustrationEmptyTaskWebp from '@assets/images/illustration-EmptyTask-light.webp';
-import illustrationEmptyTaskJpeg from '@assets/images/illustration-EmptyTask-light.jpg';
 
+/**
+ * Список задач
+ * @returns {JSX.Element} - JSX элемент списка задач
+ */
 const TaskList = () => {
-  const tasks = [
-    {
-      id: 1,
-      title: 'Все твои задачи организованы как надо',
-      description: 'Отличная работа! Ты большой молодец!',
-      images: {
-        svg: illustrationEmptyTaskSvg,
-        webp: illustrationEmptyTaskWebp,
-        jpeg: illustrationEmptyTaskJpeg,
-      },
-    },
-  ];
+  const { tasks } = useTaskContext();
 
   return (
     <section className={styles.taskList}>

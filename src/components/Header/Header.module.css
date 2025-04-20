@@ -23,6 +23,6 @@
 }
 
 .buttonTitle {
-  font: var(--typography-button);
   color: var(--neutral-light-0);
+  font: var(--typography-button);
 }

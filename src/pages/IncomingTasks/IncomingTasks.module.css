@@ -1,9 +1,9 @@
 .incomingTasks {
   position: relative;
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   gap: 0px;
   width: 100%;
   height: calc(100vh - 64px);

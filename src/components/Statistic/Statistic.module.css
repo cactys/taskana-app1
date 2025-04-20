@@ -5,31 +5,31 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 4px;
   max-width: 400px;
   height: calc(100vh - 64px);
   border-left: 1px solid var(--neutral-light-300);
   padding: 24px;
   background: var(--neutral-light-100);
-  gap: 4px;
 }
 
 .statisticContainer {
-  overflow-y: auto;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 24px;
   width: 100%;
-  align-items: center;
+  overflow-y: auto;
 }
 
 .statisticPicture {
+  display: block;
   width: 234px;
   height: 168px;
-  display: block;
 }
 
 .statisticText {
+  color: var(--neutral-light-800);
   font: var(--typography-subtitle2);
   text-align: center;
-  color: var(--neutral-light-800);
 }

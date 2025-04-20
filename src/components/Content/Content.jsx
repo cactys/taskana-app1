@@ -1,15 +1,19 @@
-import IncomingTasks from '@/pages/IncomingTasks/IncomingTasks';
-import NavBar from '../UI/NavBar/NavBar';
+import IncomingTasks from '@pages/IncomingTasks/IncomingTasks';
+import NavBar from '@UI/NavBar/NavBar';
 import Statistic from '../Statistic/Statistic';
 
 import styles from './Content.module.css';
 
+/**
+ * Контейнер основного содержимого приложения
+ * @returns {JSX.Element} - JSX элемент страницы
+ */
 const Content = () => {
   return (
     <div className={styles.content}>
-      <NavBar className={styles.navbar} />
+      <NavBar />
       <IncomingTasks />
-      <Statistic className={styles.statistic} />
+      <Statistic />
     </div>
   );
 };

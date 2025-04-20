@@ -1,7 +1,11 @@
-import React from 'react';
-import TaskList from '../UI/TaskList/TaskList';
+import TaskList from '@UI/TaskList/TaskList';
+
 import styles from './MainContainer.module.css';
 
+/**
+ * Основной контейнер для содержимого страницы
+ * @returns {JSX.Element} - JSX элемент основного контейнера
+ */
 const MainContainer = () => {
   return (
     <section className={styles.container}>

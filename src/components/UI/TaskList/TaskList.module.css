@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 40px;
+  gap: 4px;
   width: 100%;
   height: 100%;
 }
@@ -24,17 +24,21 @@
 
 .taskHeader {
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 16px;
 }
 
 .taskTitle {
-  font: var(--typography-h2)
+  font: var(--typography-h2);
 }
 
 .taskDescription {
   color: var(--neutral-light-700);
   font: var(--typography-subtitle1);
+}
+
+.taskPicture {
+  display: flex;
 }
