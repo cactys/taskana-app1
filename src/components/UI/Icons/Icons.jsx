@@ -9,7 +9,7 @@ import sprite from '@assets/sprite.svg';
 const Icons = ({ id, className }) => {
   return (
     <svg className={className}>
-      <use href={`${sprite}#${id}`} />
+      <use xlinkHref={`${sprite}#${id}`} />
     </svg>
   );
 };
