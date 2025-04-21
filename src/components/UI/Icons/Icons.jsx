@@ -1,4 +1,4 @@
-import sprite from './sprite.svg';
+import sprite from '@assets/sprite.svg';
 
 /**
  * Компонент для отображения иконок из спрайта
