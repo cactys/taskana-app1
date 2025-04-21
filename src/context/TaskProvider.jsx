@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import TaskContext from './TaskContext';
-import illustrationEmptyTaskSvg from '@assets/images/illustration-EmptyTask-light.svg';
-import illustrationEmptyTaskWebp from '@assets/images/illustration-EmptyTask-light.webp';
-import illustrationEmptyTaskJpeg from '@assets/images/illustration-EmptyTask-light.jpg';
+import illustrationEmptyTaskSvg from '@assets/images/Illustration-EmptyTask-light.svg';
+import illustrationEmptyTaskWebp from '@assets/images/Illustration-EmptyTask-light.webp';
+import illustrationEmptyTaskJpeg from '@assets/images/Illustration-EmptyTask-light.jpg';
 
 /**
  * Провайдер контекста задач
