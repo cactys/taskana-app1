@@ -1,4 +1,4 @@
-import sprite from './sprite.svg';
+import sprite from '@assets/sprite.svg';
 
 /**
  * Компонент для отображения иконок из спрайта
@@ -9,7 +9,7 @@ import sprite from './sprite.svg';
 const Icons = ({ id, className }) => {
   return (
     <svg className={className}>
-      <use href={`${sprite}#${id}`} />
+      <use xlinkHref={`${sprite}#${id}`} />
     </svg>
   );
 };
