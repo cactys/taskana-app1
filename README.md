@@ -1,7 +1,7 @@
 # Taskana App
-![image](https://github.com/user-attachments/assets/ef2cdd00-b070-4f09-b209-3d7082a119de)
 
 Приложение для управления задачами.
+![image](https://github.com/user-attachments/assets/ef2cdd00-b070-4f09-b209-3d7082a119de)
 
 ## Разработчик
 
