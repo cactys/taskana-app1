@@ -28,6 +28,10 @@
   width: 100%;
 }
 
+.logo:active {
+  transform: scale(0.98);
+}
+
 .logoText {
   color: var(--neutral-light-0);
   font-weight: var(--font-weight-bold);

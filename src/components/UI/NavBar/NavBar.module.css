@@ -12,6 +12,7 @@
   border-right: 1px solid var(--neutral-light-300);
   padding: 24px 16px;
   background-color: var(--neutral-light-100);
+  overflow-y: auto;
 }
 
 .navList {
@@ -19,7 +20,6 @@
   flex-direction: column;
   gap: 4px;
   width: 100%;
-  overflow-y: auto;
   list-style: none;
 }
 

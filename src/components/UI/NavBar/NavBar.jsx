@@ -1,5 +1,5 @@
-import Button from '../Button/Button';
 import Icons from '../Icons/Icons';
+import NavLink from '../NavLink/NavLink';
 
 import styles from './NavBar.module.css';
 
@@ -12,15 +12,196 @@ const NavBar = () => {
     <nav className={styles.navbar}>
       <ul className={styles.navList}>
         <li>
-          <Button
-            variant="secondary"
-            size="large"
-            aria-label="Входящие задачи"
-            type="button"
+          <NavLink
+            hrefLink={'/'}
           >
             <Icons id="inbox-icon-svg" className={styles.buttonIcon} />
             <span className={styles.buttonTitle}>Входящие</span>
-          </Button>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            hrefLink={'/'}
+          >
+            <Icons id="inbox-icon-svg" className={styles.buttonIcon} />
+            <span className={styles.buttonTitle}>Входящие</span>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            hrefLink={'/'}
+          >
+            <Icons id="inbox-icon-svg" className={styles.buttonIcon} />
+            <span className={styles.buttonTitle}>Входящие</span>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            hrefLink={'/'}
+          >
+            <Icons id="inbox-icon-svg" className={styles.buttonIcon} />
+            <span className={styles.buttonTitle}>Входящие</span>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            hrefLink={'/'}
+          >
+            <Icons id="inbox-icon-svg" className={styles.buttonIcon} />
+            <span className={styles.buttonTitle}>Входящие</span>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            hrefLink={'/'}
+          >
+            <Icons id="inbox-icon-svg" className={styles.buttonIcon} />
+            <span className={styles.buttonTitle}>Входящие</span>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            hrefLink={'/'}
+          >
+            <Icons id="inbox-icon-svg" className={styles.buttonIcon} />
+            <span className={styles.buttonTitle}>Входящие</span>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            hrefLink={'/'}
+          >
+            <Icons id="inbox-icon-svg" className={styles.buttonIcon} />
+            <span className={styles.buttonTitle}>Входящие</span>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            hrefLink={'/'}
+          >
+            <Icons id="inbox-icon-svg" className={styles.buttonIcon} />
+            <span className={styles.buttonTitle}>Входящие</span>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            hrefLink={'/'}
+          >
+            <Icons id="inbox-icon-svg" className={styles.buttonIcon} />
+            <span className={styles.buttonTitle}>Входящие</span>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            hrefLink={'/'}
+          >
+            <Icons id="inbox-icon-svg" className={styles.buttonIcon} />
+            <span className={styles.buttonTitle}>Входящие</span>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            hrefLink={'/'}
+          >
+            <Icons id="inbox-icon-svg" className={styles.buttonIcon} />
+            <span className={styles.buttonTitle}>Входящие</span>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            hrefLink={'/'}
+          >
+            <Icons id="inbox-icon-svg" className={styles.buttonIcon} />
+            <span className={styles.buttonTitle}>Входящие</span>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            hrefLink={'/'}
+          >
+            <Icons id="inbox-icon-svg" className={styles.buttonIcon} />
+            <span className={styles.buttonTitle}>Входящие</span>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            hrefLink={'/'}
+          >
+            <Icons id="inbox-icon-svg" className={styles.buttonIcon} />
+            <span className={styles.buttonTitle}>Входящие</span>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            hrefLink={'/'}
+          >
+            <Icons id="inbox-icon-svg" className={styles.buttonIcon} />
+            <span className={styles.buttonTitle}>Входящие</span>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            hrefLink={'/'}
+          >
+            <Icons id="inbox-icon-svg" className={styles.buttonIcon} />
+            <span className={styles.buttonTitle}>Входящие</span>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            hrefLink={'/'}
+          >
+            <Icons id="inbox-icon-svg" className={styles.buttonIcon} />
+            <span className={styles.buttonTitle}>Входящие</span>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            hrefLink={'/'}
+          >
+            <Icons id="inbox-icon-svg" className={styles.buttonIcon} />
+            <span className={styles.buttonTitle}>Входящие</span>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            hrefLink={'/'}
+          >
+            <Icons id="inbox-icon-svg" className={styles.buttonIcon} />
+            <span className={styles.buttonTitle}>Входящие</span>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            hrefLink={'/'}
+          >
+            <Icons id="inbox-icon-svg" className={styles.buttonIcon} />
+            <span className={styles.buttonTitle}>Входящие</span>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            hrefLink={'/'}
+          >
+            <Icons id="inbox-icon-svg" className={styles.buttonIcon} />
+            <span className={styles.buttonTitle}>Входящие</span>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            hrefLink={'/'}
+          >
+            <Icons id="inbox-icon-svg" className={styles.buttonIcon} />
+            <span className={styles.buttonTitle}>Входящие</span>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            hrefLink={'/'}
+          >
+            <Icons id="inbox-icon-svg" className={styles.buttonIcon} />
+            <span className={styles.buttonTitle}>Входящие</span>
+          </NavLink>
         </li>
       </ul>
     </nav>

@@ -1,4 +1,4 @@
-.button {
+.navLink {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -7,14 +7,21 @@
   box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.2);
   transition: background-color 0.4s;
   cursor: pointer;
-  padding: 8px 16px 8px 12px;
-  background-color: var(--primary-400);
+  background-color: var(--neutral-light-800);
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  padding: 8px;
 }
 
-.button:active {
+.navLink:active {
   transform: scale(0.98);
 }
 
-.button:hover {
-  background-color: var(--primary-500);
+.navLink:hover {
+  background-color: var(--neutral-light-700);
+}
+
+.medium {
+  padding: 8px 16px 8px 12px;
 }
