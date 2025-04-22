@@ -1,0 +1,40 @@
+.logo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: auto;
+  height: 40px;
+  padding: 0 14px;
+  text-decoration: none;
+}
+
+.logoBox {
+  position: absolute;
+  left: 0;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: linear-gradient(to bottom, var(--primary-400-500));
+  transition: all 0.4s ease-in-out;
+  transform-origin: left;
+}
+
+.logo:hover .logoBox {
+  width: 100%;
+}
+
+.logo:active {
+  transform: scale(0.98);
+}
+
+.logoText {
+  color: var(--neutral-light-0);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-4xl);
+  line-height: var(--line-height-3xl);
+}
