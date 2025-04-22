@@ -11,8 +11,8 @@
   height: calc(100vh - 64px);
   border-right: 1px solid var(--neutral-light-300);
   padding: 24px 16px;
-  background-color: var(--neutral-light-100);
   overflow-y: auto;
+  background-color: var(--neutral-light-100);
 }
 
 .navList {

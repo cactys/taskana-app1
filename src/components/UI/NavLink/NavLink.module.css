@@ -3,15 +3,15 @@
   justify-content: flex-start;
   align-items: center;
   column-gap: 8px;
-  border-radius: 8px;
-  box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.2);
-  transition: background-color 0.4s;
-  cursor: pointer;
-  background-color: var(--neutral-light-800);
   width: 100%;
   min-width: 100%;
   max-width: 100%;
+  border-radius: 8px;
   padding: 8px;
+  box-shadow: var(--shadow);
+  background-color: var(--neutral-light-800);
+  transition: background-color 0.4s;
+  cursor: pointer;
 }
 
 .navLink:active {

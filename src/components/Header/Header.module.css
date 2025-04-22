@@ -3,8 +3,8 @@
   top: 0;
   z-index: 100;
   width: 100%;
+  box-shadow: var(--shadow);
   background-color: var(--base-black);
-  box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
 .headerContent {

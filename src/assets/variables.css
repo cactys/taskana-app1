@@ -1,5 +1,5 @@
 :root {
-  /* */
+  /* Минимальная ширина */
   --min-width: 1280px;
 
   /* Нейтральные цвета */
@@ -9,20 +9,20 @@
   --neutral-light-300: #ECECEC;
   --neutral-light-400: #BFBFBF;
   --neutral-light-500: #8C8C8C;
-  --neutral-light-600: #8C8C8C;
-  --neutral-light-700: #595959;
+  --neutral-light-600: #6C6C6C;
+  --neutral-light-700: #393939;
   --neutral-light-800: #1C1C1C;
   --neutral-light-900: #141414;
 
   /* Основные цвета */
   --primary-0: #FFF4F4;
-  --primary-100: #FAD7D7;
-  --primary-200: #FCAA4A;
+  --primary-100: #FAB7B7;
+  --primary-200: #FCA9A9;
   --primary-300: #F25959;
-  --primary-400: #D31616;
+  --primary-400: #D51010;
   --primary-500: #A60C0C;
   --primary-600: #760909;
-  --primary-400-500: #051010;
+  --primary-400-500: var(--primary-400), var(--primary-500);
 
   /* Базовые цвета */
   --base-black: #000000;
@@ -55,6 +55,9 @@
   --font-weight-regular: 400;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
+
+  /* Тень */
+  --shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.2);
 
   /* шрифт */
   --font-family-source-sans3: 'Source Sans 3', sans-serif;
