@@ -1,5 +1,5 @@
-import MainContainer from '@components/MainContainer/MainContainer';
-import Footer from '@components/Footer/Footer';
+import MainContainer from '@components/mainContainer/MainContainer';
+import Footer from '@components/footer/Footer';
 
 import styles from './IncomingTasks.module.css';
 

@@ -1,0 +1,80 @@
+.switchContainer {
+  position: relative;
+  display: inline-block;
+  border-radius: 8px;
+  padding: 4px;
+  background-color: var(--base-800);
+  transition: outline-offset var(--transition-duration) ease;
+  cursor: pointer;
+}
+
+.input {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.switchContainer:focus-visible {
+  outline: 2px solid var(--base-white);
+  outline-offset: 2px;
+}
+
+.track {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 4px;
+  border-radius: 4px;
+}
+
+/* Тумблер без иконки */
+.thumb {
+  position: absolute;
+  z-index: 1;
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  background-color: var(--primary-400);
+  transition: transform var(--transition-duration) ease;
+}
+
+.switchContainer:hover .thumb {
+  background-color: var(--base-white);
+}
+
+.light {
+  transform: translateX(0);
+}
+
+.dark {
+  transform: translateX(36px);
+}
+
+/* Статичные контейнеры для иконок */
+.iconContainer {
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  opacity: 0.5;
+  transition: opacity var(--transition-duration) ease;
+}
+
+.active {
+  opacity: 1;
+}
+
+/* Иконка */
+.icon {
+  fill: var(--base-white);
+  transition: fill var(--transition-duration) ease;
+}
+
+/* Hover-эффект */
+.switchContainer:hover .active .icon {
+  fill: var(--base-900);
+}

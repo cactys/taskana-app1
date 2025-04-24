@@ -9,10 +9,11 @@
   align-self: flex-start;
   min-width: 204px;
   height: calc(100vh - 64px);
-  border-right: 1px solid var(--neutral-light-300);
+  border-right: 1px solid var(--neutral-300);
   padding: 24px 16px;
   overflow-y: auto;
-  background-color: var(--neutral-light-100);
+  background-color: var(--neutral-100);
+  transition: background-color var(--transition-duration), border-right var(--transition-duration) ease;
 }
 
 .navList {
@@ -23,13 +24,12 @@
   list-style: none;
 }
 
-.buttonTitle {
-  color: var(--neutral-light-0);
-  font: var(--typography-button);
+.linkIcon {
+  transition: fill var(--transition-duration) ease;
 }
 
-.buttonIcon {
-  width: 24px;
-  height: 24px;
-  fill: var(--neutral-light-0);
+.buttonTitle {
+  color: var(--neutral-0);
+  font: var(--typography-button);
+  transition: color var(--transition-duration) ease;
 }

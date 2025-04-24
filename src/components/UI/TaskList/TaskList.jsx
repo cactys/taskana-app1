@@ -1,4 +1,6 @@
 import useTaskContext from '@hooks/useTaskContext';
+import Illustration from '@components/illustration/Illustration';
+
 import styles from './TaskList.module.css';
 
 /**
@@ -19,16 +21,7 @@ const TaskList = () => {
               <h2 className={styles.taskTitle}>{task.title}</h2>
               <p className={styles.taskDescription}>{task.description}</p>
             </header>
-            <picture className={styles.taskPicture}>
-              <source type="image/svg+xml" srcSet={task.images.svg} />
-              <source type="image/webp" srcSet={task.images.webp} />
-              <img
-                src={task.images.jpeg}
-                alt="Задачи организованны"
-                width={463}
-                height={319}
-              />
-            </picture>
+            <Illustration id={task.image} className={styles.taskImage} />
           </article>
         ))
       )}

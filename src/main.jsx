@@ -1,13 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import AppLayout from '@layouts/AppLayout/AppLayout';
-import { TaskProvider } from '@context';
+import AppLayout from '@layouts/appLayout/AppLayout';
+import { TaskProvider, ThemeProvider } from '@context';
 import './assets/global.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <TaskProvider>
-      <AppLayout />
+      <ThemeProvider>
+        <AppLayout />
+      </ThemeProvider>
     </TaskProvider>
   </React.StrictMode>
 );

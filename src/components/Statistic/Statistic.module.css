@@ -5,10 +5,11 @@
   gap: 4px;
   max-width: 400px;
   height: calc(100vh - 64px);
-  border-left: 1px solid var(--neutral-light-300);
+  border-left: 1px solid var(--neutral-300);
   padding: 24px;
   overflow-y: auto;
-  background: var(--neutral-light-100);
+  background-color: var(--neutral-100);
+  transition: background-color var(--transition-duration), border-left var(--transition-duration) ease;
 }
 
 .statisticContainer {
@@ -21,14 +22,13 @@
   width: 100%;
 }
 
-.statisticPicture {
-  display: block;
-  width: 234px;
-  height: 168px;
+.statisticImage, path {
+  transition: fill var(--transition-duration) ease;
 }
 
 .statisticText {
-  color: var(--neutral-light-800);
+  color: var(--neutral-800);
   font: var(--typography-subtitle2);
   text-align: center;
+  transition: color var(--transition-duration) ease;
 }

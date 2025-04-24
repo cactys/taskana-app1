@@ -1,6 +1,6 @@
-import IncomingTasks from '@pages/IncomingTasks/IncomingTasks';
-import NavBar from '@UI/NavBar/NavBar';
-import Statistic from '../Statistic/Statistic';
+import IncomingTasks from '@pages/incomingTasks/IncomingTasks';
+import NavBar from '@components/UI/navBar/NavBar';
+import Statistic from '../statistic/Statistic';
 
 import styles from './Content.module.css';
 

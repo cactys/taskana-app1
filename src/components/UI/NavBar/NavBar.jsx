@@ -1,5 +1,5 @@
-import Icons from '../Icons/Icons';
-import NavLink from '../NavLink/NavLink';
+import Icon from '@components/icon/Icon';
+import NavLink from '../navLink/NavLink';
 
 import styles from './NavBar.module.css';
 
@@ -12,10 +12,12 @@ const NavBar = () => {
     <nav className={styles.navbar}>
       <ul className={styles.navList}>
         <li>
-          <NavLink
-            hrefLink={'/'}
-          >
-            <Icons id="inbox-icon-svg" className={styles.buttonIcon} />
+          <NavLink hrefLink={'/'}>
+            <Icon
+              id="inboxIcon"
+              fill="var(--neutral-0)"
+              className={styles.linkIcon}
+            />
             <span className={styles.buttonTitle}>Входящие</span>
           </NavLink>
         </li>

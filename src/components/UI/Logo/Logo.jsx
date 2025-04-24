@@ -8,7 +8,7 @@ const Logo = () => {
   return (
     <a href="/" className={styles.logo} aria-label="Taskana - на главную">
       <div className={styles.logoBox} />
-      <span className={styles.logoText}>taskana</span>
+      <p className={styles.logoText}>taskana</p>
     </a>
   );
 };

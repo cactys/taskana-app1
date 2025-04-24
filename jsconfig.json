@@ -10,9 +10,6 @@
       "@components/*": [
         "./src/components/*"
       ],
-      "@UI/*": [
-        "./src/components/UI/*"
-      ],
       "@pages/*": [
         "./src/pages/*"
       ],

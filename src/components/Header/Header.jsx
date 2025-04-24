@@ -1,6 +1,7 @@
-import Logo from '@UI/Logo/Logo';
-import Button from '@UI/Button/Button';
-import Icons from '@UI/Icons/Icons';
+import Logo from '@components/UI/logo/Logo';
+import Button from '@components/UI/button/Button';
+import Switch from '@components/UI/switch/Switch';
+import Icon from '@components/icon/Icon';
 
 import styles from './Header.module.css';
 
@@ -10,13 +11,14 @@ import styles from './Header.module.css';
  */
 const Header = () => {
   return (
-    <header className={styles.header} role="banner">
+    <header className={styles.header}>
+      <Logo />
       <div className={styles.headerContent}>
-        <Logo />
         <Button aria-label="Создать новую задачу" type="button">
-          <Icons id="plus-icon-svg" className={styles.buttonIcon} />
+          <Icon id="plusIcon" fill="var(--base-white)" />
           <span className={styles.buttonTitle}>Создать</span>
         </Button>
+        <Switch />
       </div>
     </header>
   );

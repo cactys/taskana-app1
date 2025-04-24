@@ -1,4 +1,4 @@
-import TaskList from '@UI/TaskList/TaskList';
+import TaskList from '@components/UI/taskList/TaskList';
 
 import styles from './MainContainer.module.css';
 

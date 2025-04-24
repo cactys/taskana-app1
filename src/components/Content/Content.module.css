@@ -6,4 +6,6 @@
   min-width: var(--min-width);
   margin: 0 auto;
   overflow: hidden;
+  background-color: var(--neutral-0);
+  transition: background-color var(--transition-duration) ease;
 }

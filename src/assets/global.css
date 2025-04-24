@@ -13,9 +13,6 @@ body {}
 
 #root {
   min-height: 100vh;
-  color: var(--neutral-light-800);
-  font: var(--typography-subtitle1);
-  background-color: var(--neutral-light-0);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
