@@ -1,0 +1,29 @@
+.button {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 8px;
+  border-radius: 8px;
+  padding: 8px 16px 8px 12px;
+  box-shadow: var(--shadow);
+  background-color: var(--primary-400);
+  transition: background-color var(--transition-duration), outline-offset var(--transition-duration) ease;
+  cursor: pointer;
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--base-white);
+  outline-offset: 2px;
+}
+
+.button:hover {
+  background-color: var(--primary-500);
+}
+
+.button:active {
+  background-color: var(--primary-300);
+}
+
+.button:disabled {
+  opacity: 0.5;
+}

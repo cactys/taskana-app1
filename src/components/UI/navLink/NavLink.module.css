@@ -1,0 +1,33 @@
+.navLink {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 8px;
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  border-radius: 8px;
+  padding: 8px;
+  box-shadow: var(--shadow);
+  background-color: var(--neutral-800);
+  transition: background-color var(--transition-duration), outline-offset var(--transition-duration) ease;
+  cursor: pointer;
+}
+
+.navLink:focus-visible {
+  outline: 2px solid var(--neutral-900);
+  outline-offset: 2px;
+  background-color: var(--neutral-700);
+}
+
+.navLink:active {
+  transform: scale(0.98);
+}
+
+.navLink:hover {
+  background-color: var(--neutral-700);
+}
+
+.medium {
+  padding: 8px 16px 8px 12px;
+}

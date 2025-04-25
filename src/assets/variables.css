@@ -2,21 +2,21 @@
   /* Минимальная ширина */
   --min-width: 1280px;
 
-  /* Нейтральные цвета */
-  --neutral-light-0: #FFFFFF;
-  --neutral-light-100: #FBFBFB;
-  --neutral-light-200: #F3F3F3;
-  --neutral-light-300: #ECECEC;
-  --neutral-light-400: #BFBFBF;
-  --neutral-light-500: #8C8C8C;
-  --neutral-light-600: #6C6C6C;
-  --neutral-light-700: #393939;
-  --neutral-light-800: #1C1C1C;
-  --neutral-light-900: #141414;
+  /* Нейтральные светлые цвета */
+  --neutral-0: #FFFFFF;
+  --neutral-100: #FBFBFB;
+  --neutral-200: #F3F3F3;
+  --neutral-300: #ECECEC;
+  --neutral-400: #BFBFBF;
+  --neutral-500: #8C8C8C;
+  --neutral-600: #6C6C6C;
+  --neutral-700: #393939;
+  --neutral-800: #1C1C1C;
+  --neutral-900: #141414;
 
   /* Основные цвета */
   --primary-0: #FFF4F4;
-  --primary-100: #FAB7B7;
+  --primary-100: #FFCECE;
   --primary-200: #FCA9A9;
   --primary-300: #F25959;
   --primary-400: #D51010;
@@ -25,11 +25,15 @@
   --primary-400-500: var(--primary-400), var(--primary-500);
 
   /* Базовые цвета */
+  --base-white: #FFFFFF;
+  --base-600: #6C6C6C;
+  --base-800: #262626;
+  --base-900: #141414;
   --base-black: #000000;
 
   /* Цвета границ */
-  --border-primary: var(--neutral-light-400);
-  --border-secondary: var(--neutral-light-300);
+  --border-primary: var(--neutral-400);
+  --border-secondary: var(--neutral-300);
 
   /* Переменные типографики */
   /* Размеры шрифтов */
@@ -59,6 +63,9 @@
   /* Тень */
   --shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.2);
 
+  /* Время анимации */
+  --transition-duration: 0.2s;
+
   /* шрифт */
   --font-family-source-sans3: 'Source Sans 3', sans-serif;
 
@@ -68,4 +75,18 @@
   --typography-subtitle1: var(--font-weight-regular) var(--font-size-lg)/var(--line-height-md) var(--font-family-source-sans3);
   --typography-subtitle2: var(--font-weight-regular) var(--font-size-md)/var(--line-height-md) var(--font-family-source-sans3);
   --typography-button: var(--font-weight-semibold) var(--font-size-md)/var(--line-height-md) var(--font-family-source-sans3);
+}
+
+[data-theme="dark"] {
+  /* Нейтральные темные цвета */
+  --neutral-0: #141414;
+  --neutral-100: #1C1C1C;
+  --neutral-200: #262626;
+  --neutral-300: #333333;
+  --neutral-400: #6C6C6C;
+  --neutral-500: #8C8C8C;
+  --neutral-600: #BFBFBF;
+  --neutral-700: #ECECEC;
+  --neutral-800: #FBFBFB;
+  --neutral-900: #FFFFFF;
 }
