@@ -2,7 +2,9 @@
 
 Приложение для управления задачами.
 
-![image](https://github.com/user-attachments/assets/ef2cdd00-b070-4f09-b209-3d7082a119de)
+![image](https://github.com/user-attachments/assets/362bad3a-b729-4864-84eb-50fd3fb6443d)
+![image](https://github.com/user-attachments/assets/b99ab2dd-880c-4592-8757-7f77e47fe35f)
+
 
 ## Разработчик
 
