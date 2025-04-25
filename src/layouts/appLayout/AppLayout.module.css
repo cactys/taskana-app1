@@ -1,0 +1,4 @@
+.layout {
+  width: 100vw;
+  min-width: var(--min-width);
+}

@@ -1,0 +1,48 @@
+.taskList {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+}
+
+.emptyState {
+  color: var(--neutral-700);
+  font: var(--typography-subtitle1);
+  transition: color var(--transition-duration) ease;
+}
+
+.taskItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 0px 24px 24px 24px;
+}
+
+.taskHeader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.taskTitle {
+  color: var(--neutral-800);
+  font: var(--typography-h2);
+  transition: color var(--transition-duration) ease;
+}
+
+.taskDescription {
+  color: var(--neutral-800);
+  font: var(--typography-subtitle1);
+  transition: color var(--transition-duration) ease;
+}
+
+.taskImage, path {
+  transition: fill var(--transition-duration) ease;
+}
