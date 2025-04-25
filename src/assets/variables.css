@@ -61,8 +61,14 @@
   --font-weight-bold: 700;
 
   /* Тень */
-  --shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.2);
-  --shadow-link-hover: 2px 8px 12px 0 rgba(0, 0, 0, 0.25);
+  --shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.5);
+  --header-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.2);
+  --header-button-shadow-hover: 2px 8px 12px 0 rgba(0, 0, 0, 0.8);
+  --base-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.2);
+  --base-shadow-hover: 2px 8px 12px 0 rgba(0, 0, 0, 0.25);
+  --sm-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.1);
+  --sm-shadow-hover: 2px 8px 12px 0 rgba(0, 0, 0, 0.2);
+
 
   /* Время анимации */
   --transition-duration: 0.2s;
@@ -90,4 +96,10 @@
   --neutral-700: #ECECEC;
   --neutral-800: #FBFBFB;
   --neutral-900: #FFFFFF;
+
+  /* Тень */
+  --base-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.5);
+  --base-shadow-hover: 2px 8px 12px 0 rgba(0, 0, 0, 0.8);
+  --sm-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.3);
+  --sm-shadow-hover: 2px 8px 12px 0 var(--neutral-200);
 }

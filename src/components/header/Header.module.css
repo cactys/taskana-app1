@@ -1,3 +1,5 @@
+@import url('@assets/animations.css');
+
 .header {
   position: sticky;
   top: 0;
@@ -8,7 +10,7 @@
   min-width: var(--min-width);
   margin: 0 auto;
   padding: 12px 24px 12px 16px;
-  box-shadow: var(--shadow);
+  box-shadow: var(--header-shadow);
   background-color: var(--base-black);
 }
 
@@ -17,6 +19,16 @@
   justify-content: space-between;
   align-items: center;
   column-gap: 24px;
+}
+
+.onLoading {
+  background-color: var(--primary-300);
+  width: 108px;
+  justify-content: center;
+}
+
+.loadingIcon {
+  animation: loading 2s linear infinite;
 }
 
 .buttonTitle {
