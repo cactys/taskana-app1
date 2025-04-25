@@ -10,7 +10,7 @@ const Icon = ({ id, ...props }) => {
   const iconName = id.charAt(0).toUpperCase() + id.slice(1);
 
   try {
-    const IconComponent = lazy(() => import(`./icons/${iconName}`));
+    const IconComponent = lazy(() => import(`./icons/${iconName}.jsx`));
 
     return (
       <Suspense fallback={<span>...</span>}>

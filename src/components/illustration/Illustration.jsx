@@ -7,10 +7,10 @@ import { Suspense, lazy } from 'react';
  * @returns {JSX.Element} - Выбранная картинка или null, если картинка не найдена
  */
 const Illustration = ({ id, ...props }) => {
-  const imageName = id.charAt(0).toLowerCase() + id.slice(1);
+  const imageName = id.charAt(0).toUpperCase() + id.slice(1);
 
   try {
-    const ImageComponent = lazy(() => import(`./illustrations/${imageName}`));
+    const ImageComponent = lazy(() => import(`./illustrations/${imageName}.jsx`));
 
     return (
       <Suspense fallback={<span>Загрузка...</span>}>
