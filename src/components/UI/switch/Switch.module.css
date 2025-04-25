@@ -3,6 +3,7 @@
   display: inline-block;
   border-radius: 8px;
   padding: 4px;
+  box-shadow: var(--shadow);
   background-color: var(--base-800);
   transition: outline-offset var(--transition-duration) ease;
   cursor: pointer;
@@ -36,6 +37,7 @@
   width: 32px;
   height: 32px;
   border-radius: 4px;
+  box-shadow: var(--shadow);
   background-color: var(--primary-400);
   transition: transform var(--transition-duration) ease;
 }
