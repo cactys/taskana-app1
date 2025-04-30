@@ -1,7 +1,7 @@
 import MainContainer from '@components/mainContainer/MainContainer';
 import Footer from '@components/footer/Footer';
 
-import styles from './IncomingTasks.module.css';
+import styles from './incomingTasks.module.css';
 
 /**
  * Страница входящих задач

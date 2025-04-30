@@ -1,7 +1,7 @@
 import Icon from '@components/icon/Icon';
 import NavLink from '../navLink/NavLink';
 
-import styles from './NavBar.module.css';
+import styles from './navBar.module.css';
 
 /**
  * Навигационная панель

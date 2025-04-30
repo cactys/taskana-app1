@@ -16,7 +16,7 @@
   opacity: 0;
 }
 
-.switchContainer:focus-visible {
+.switchContainer:has(.input:focus-visible) {
   outline: 2px solid var(--base-white);
   outline-offset: 2px;
 }
@@ -39,10 +39,14 @@
   border-radius: 4px;
   box-shadow: var(--shadow);
   background-color: var(--primary-400);
-  transition: transform var(--transition-duration) ease;
+  transition: background-color var(--transition-duration), transform var(--transition-duration) ease;
 }
 
-.switchContainer:hover .thumb {
+.switchContainer:has(.input:focus-visible) .thumb {
+  background-color: var(--base-white);
+}
+
+.switchContainer:has(.input:hover) .thumb {
   background-color: var(--base-white);
 }
 
@@ -76,7 +80,11 @@
   transition: fill var(--transition-duration) ease;
 }
 
+.switchContainer:has(.input:focus-visible) .active .icon {
+  fill: var(--base-900)
+}
+
 /* Hover-эффект */
-.switchContainer:hover .active .icon {
+.switchContainer:has(.input:hover) .active .icon {
   fill: var(--base-900);
 }

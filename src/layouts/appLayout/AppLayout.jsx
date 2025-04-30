@@ -1,7 +1,7 @@
 import Header from '@components/header/Header';
 import Content from '@components/content/Content';
 
-import styles from './AppLayout.module.css';
+import styles from './appLayout.module.css';
 
 /**
  * Основной макет приложения
