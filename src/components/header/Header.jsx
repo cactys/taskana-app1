@@ -1,6 +1,6 @@
 import Logo from '@components/UI/logo/Logo';
 import Button from '@components/UI/button/Button';
-import Switch from '@components/UI/switch/Switch';
+import ThemeSwitcher from '@components/UI/themeSwitcher/ThemeSwitcher';
 import Icon from '@components/icon/Icon';
 
 import styles from './Header.module.css';
@@ -43,7 +43,7 @@ const Header = () => {
             </>
           )}
         </Button>
-        <Switch />
+        <ThemeSwitcher />
       </div>
     </header>
   );
