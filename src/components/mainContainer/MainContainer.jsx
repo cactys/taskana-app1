@@ -1,6 +1,6 @@
 import TaskList from '@components/UI/taskList/TaskList';
 
-import styles from './MainContainer.module.css';
+import styles from './mainContainer.module.css';
 
 /**
  * Основной контейнер для содержимого страницы

@@ -1,7 +1,7 @@
 import useTaskContext from '@hooks/useTaskContext';
 import Illustration from '@components/illustration/Illustration';
 
-import styles from './TaskList.module.css';
+import styles from './taskList.module.css';
 
 /**
  * Список задач

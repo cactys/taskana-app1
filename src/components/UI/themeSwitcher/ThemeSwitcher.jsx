@@ -2,13 +2,13 @@ import { useContext } from 'react';
 import { ThemeContext } from '@context';
 import Icon from '@components/icon/Icon';
 
-import styles from './Switch.module.css';
+import styles from './themeSwitcher.module.css';
 
 /**
  * Переключатель тем (светлая/темная)
  * @returns {JSX.Element} - JSX элемент компонента Switch
  */
-const Switch = () => {
+const ThemeSwitcher = () => {
   const { isLightTheme, toggleTheme } = useContext(ThemeContext);
 
   const handleKeyDown = (e) => {
@@ -21,7 +21,7 @@ const Switch = () => {
     <label
       className={styles.switchContainer}
       onKeyDown={handleKeyDown}
-      tabIndex="0"
+      tabIndex="-1"
     >
       <input
         type="checkbox"
@@ -29,7 +29,7 @@ const Switch = () => {
         checked={isLightTheme}
         onChange={toggleTheme}
         aria-label="Переключить тему"
-        tabIndex="-1"
+        tabIndex="0"
       />
       <div className={styles.track}>
         <div
@@ -56,4 +56,4 @@ const Switch = () => {
   );
 };
 
-export default Switch;
+export default ThemeSwitcher;

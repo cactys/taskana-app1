@@ -1,0 +1,11 @@
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  min-width: var(--min-width);
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: var(--neutral-0);
+  transition: background-color var(--transition-duration) ease;
+}

@@ -1,6 +1,6 @@
 import Illustration from '@components/illustration/Illustration';
 
-import styles from './Statistic.module.css';
+import styles from './statistic.module.css';
 
 /**
  * Компонент статистики

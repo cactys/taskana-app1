@@ -3,7 +3,7 @@ import Button from '@components/UI/button/Button';
 import ThemeSwitcher from '@components/UI/themeSwitcher/ThemeSwitcher';
 import Icon from '@components/icon/Icon';
 
-import styles from './Header.module.css';
+import styles from './header.module.css';
 import { useState } from 'react';
 
 /**

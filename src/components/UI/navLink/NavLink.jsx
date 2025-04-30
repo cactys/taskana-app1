@@ -1,4 +1,4 @@
-import styles from './NavLink.module.css';
+import styles from './navLink.module.css';
 
 /**
  * Компонент ссылки для навигации
