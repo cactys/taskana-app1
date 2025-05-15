@@ -17,8 +17,6 @@ const Header = () => {
     setLoading(!loading);
   };
 
-  console.log(loading);
-
   return (
     <header className={styles.header}>
       <Logo />

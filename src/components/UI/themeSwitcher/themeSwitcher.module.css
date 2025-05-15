@@ -81,7 +81,7 @@
 }
 
 .switchContainer:has(.input:focus-visible) .active .icon {
-  fill: var(--base-900)
+  fill: var(--base-900);
 }
 
 /* Hover-эффект */

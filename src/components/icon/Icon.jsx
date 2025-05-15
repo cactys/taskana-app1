@@ -1,4 +1,18 @@
-import { Suspense, lazy } from 'react';
+import { lazy } from 'react';
+
+const InboxIcon = lazy(() => import(`./icons/InboxIcon.jsx`));
+const LoadingIcon = lazy(() => import(`./icons/LoadingIcon.jsx`));
+const MoonIcon = lazy(() => import(`./icons/MoonIcon.jsx`));
+const PlusIcon = lazy(() => import(`./icons/PlusIcon.jsx`));
+const SunIcon = lazy(() => import(`./icons/SunIcon.jsx`));
+
+const icons = {
+  inboxIcon: InboxIcon,
+  plusIcon: PlusIcon,
+  sunIcon: SunIcon,
+  moonIcon: MoonIcon,
+  loadingIcon: LoadingIcon,
+};
 
 /**
  * Компонент для рендеринга различных иконок
@@ -7,16 +21,10 @@ import { Suspense, lazy } from 'react';
  * @returns {JSX.Element} - Выбранная иконка или null, если иконка не найдена
  */
 const Icon = ({ id, ...props }) => {
-  const iconName = id.charAt(0).toUpperCase() + id.slice(1);
+  const IconComponent = icons[id];
 
   try {
-    const IconComponent = lazy(() => import(`./icons/${iconName}.jsx`));
-
-    return (
-      <Suspense fallback={<span>...</span>}>
-        <IconComponent {...props} />
-      </Suspense>
-    );
+    return <IconComponent {...props} />;
   } catch (error) {
     console.warn(`Иконка "${id}" не найдена.`, error);
     return null;

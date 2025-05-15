@@ -14,16 +14,7 @@ const ThemeProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    document.body.setAttribute('data-theme', isLightTheme ? 'light' : 'dark');
-
-    // Обновляем мета-тег для мобильных браузеров
-    const metaThemeColor = document.querySelector('meta[name="theme-color"]');
-    if (metaThemeColor) {
-      metaThemeColor.setAttribute(
-        'content',
-        isLightTheme ? 'var(--neutral-100)' : 'var(--neutral-900)'
-      );
-    }
+    document.documentElement.setAttribute('data-theme', isLightTheme ? 'light' : 'dark');
   }, [isLightTheme]);
 
   const valueThemeContext = useMemo(
