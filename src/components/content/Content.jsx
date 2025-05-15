@@ -1,6 +1,6 @@
 import IncomingTasks from '@pages/incomingTasks/IncomingTasks';
 import NavBar from '@components/UI/navBar/NavBar';
-import Statistic from '../statistic/Statistic';
+import SideBar from '@components/sideBar/SideBar';
 
 import styles from './content.module.css';
 
@@ -13,7 +13,7 @@ const Content = () => {
     <div className={styles.content}>
       <NavBar />
       <IncomingTasks />
-      <Statistic />
+      <SideBar />
     </div>
   );
 };

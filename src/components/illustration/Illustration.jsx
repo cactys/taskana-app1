@@ -1,4 +1,12 @@
-import { Suspense, lazy } from 'react';
+import { lazy } from 'react';
+
+const EmptyTaskImage = lazy(() => import('./illustrations/EmptyTaskImage.jsx'));
+const NotebookImage = lazy(() => import('./illustrations/NotebookImage.jsx'));
+
+const illustrations = {
+  emptyTaskImage: EmptyTaskImage,
+  notebookImage: NotebookImage,
+};
 
 /**
  * Компонент для рендеринга различных картинок
@@ -7,16 +15,10 @@ import { Suspense, lazy } from 'react';
  * @returns {JSX.Element} - Выбранная картинка или null, если картинка не найдена
  */
 const Illustration = ({ id, ...props }) => {
-  const imageName = id.charAt(0).toUpperCase() + id.slice(1);
+  const ImageComponent = illustrations[id];
 
   try {
-    const ImageComponent = lazy(() => import(`./illustrations/${imageName}.jsx`));
-
-    return (
-      <Suspense fallback={<span>Загрузка...</span>}>
-        <ImageComponent {...props} />
-      </Suspense>
-    );
+    return <ImageComponent {...props} />;
   } catch (error) {
     console.warn(`Картинка "${id}" не найдена.`, error);
     return null;

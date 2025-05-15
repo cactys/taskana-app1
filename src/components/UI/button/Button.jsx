@@ -8,7 +8,6 @@ import styles from './button.module.css';
  * @returns {JSX.Element} - JSX элемент кнопки с указанными свойствами
  */
 const Button = ({ children, className, ...settings }) => {
-  console.log(className)
   return (
     <button className={`${styles.button} ${className || ''}`} {...settings}>
       {children}

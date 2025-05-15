@@ -42,7 +42,10 @@ const ThemeSwitcher = () => {
             isLightTheme ? styles.active : ''
           }`}
         >
-          <Icon id="sunIcon" className={styles.icon} />
+          <Icon
+            id="sunIcon"
+            className={styles.icon}
+          />
         </div>
         <div
           className={`${styles.iconContainer} ${
