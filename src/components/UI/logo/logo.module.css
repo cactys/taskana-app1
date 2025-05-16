@@ -38,7 +38,6 @@
   transition-duration: var(--transition-duration);
   transform-origin: left;
 }
-
 .logoText {
   color: var(--base-white);
   font: var(--typography-h1);
