@@ -29,32 +29,32 @@
   font: var(--typography-subtitle2);
   text-decoration: none;
   transition: outline-offset var(--transition-duration), color var(--transition-duration) ease;
-}
 
-.link:focus-visible {
-  border-radius: 4px;
-  outline: 2px solid var(--neutral-800);
-  outline-offset: 4px;
-}
+  &:focus-visible {
+    border-radius: var(--border-radius-sm);
+    outline: 2px solid var(--neutral-800);
+    outline-offset: 4px;
+  }
 
-.link::after {
-  content: '';
-  position: absolute;
-  bottom: 5px;
-  left: 0;
-  display: block;
-  width: 100%;
-  height: 1px;
-  opacity: 1;
-  background-color: var(--neutral-600);
-  transition: all var(--transition-duration) ease;
-}
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 1px;
+    opacity: 1;
+    background-color: var(--neutral-600);
+    transition: all var(--transition-duration) ease;
+  }
 
-.link:hover::after {
-  bottom: -5px;
-  opacity: 0;
-}
+  &:hover::after {
+    bottom: -5px;
+    opacity: 0;
+  }
 
-.link:hover {
-  color: var(--neutral-800);
+  &:hover {
+    color: var(--neutral-800);
+  }
 }

@@ -1,10 +1,10 @@
+import { startTransition, useState } from 'react';
 import Logo from '@components/UI/logo/Logo';
 import Button from '@components/UI/button/Button';
 import ThemeSwitcher from '@components/UI/themeSwitcher/ThemeSwitcher';
 import Icon from '@components/icon/Icon';
 
 import styles from './header.module.css';
-import { useState } from 'react';
 
 /**
  * Компонент шапки приложения
@@ -14,7 +14,9 @@ const Header = () => {
   const [loading, setLoading] = useState(false);
 
   const handleOnLoading = () => {
-    setLoading(!loading);
+    startTransition(() => {
+      setLoading(!loading);
+    });
   };
 
   return (

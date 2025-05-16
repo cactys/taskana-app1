@@ -12,17 +12,24 @@ const TaskList = () => {
 
   return (
     <section className={styles.taskList}>
-      {tasks.length === 0 ? (
-        <p className={styles.emptyState}>У вас пока нет задач</p>
+      {!tasks.length ? (
+        <article className={styles.taskItem}>
+          <header className={styles.taskHeader}>
+            <h2 className={styles.taskTitle}>
+              Все твои задачи организованы как надо
+            </h2>
+            <p className={styles.taskDescription}>
+              Отличная работа! Ты большой молодец!
+            </p>
+          </header>
+          <Illustration id="emptyTaskImage" className={styles.taskImage} />
+        </article>
       ) : (
         tasks.map((task) => (
-          <article key={task.id} className={styles.taskItem}>
-            <header className={styles.taskHeader}>
-              <h2 className={styles.taskTitle}>{task.title}</h2>
-              <p className={styles.taskDescription}>{task.description}</p>
-            </header>
-            <Illustration id={task.image} className={styles.taskImage} />
-          </article>
+          <p key={task.id} className={styles.emptyState}>
+            {task.id} : {task.title} : {task.priority} : {task.createdAt} :{' '}
+            {task.updatedAt}
+          </p>
         ))
       )}
     </section>
