@@ -1,3 +1,4 @@
 import useTaskContext from './useTaskContext';
+import useForm from './useForm';
 
-export { useTaskContext };
+export { useTaskContext, useForm };

@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react';
 import TaskContext from './TaskContext';
+import { generateUniqueId, timeStamp } from '@utils/utils';
 
 /**
  * Провайдер контекста задач
@@ -8,19 +9,20 @@ import TaskContext from './TaskContext';
  */
 const TaskProvider = ({ children }) => {
   // Исходные данные из TaskList.jsx
-  const [tasks, setTasks] = useState([
-    {
-      id: 1,
-      title: 'Все твои задачи организованы как надо',
-      description: 'Отличная работа! Ты большой молодец!',
-      image: 'emptyTaskImage',
-    },
-  ]);
+  const [tasks, setTasks] = useState([]);
 
   const valueTask = useMemo(() => {
     // Методы для работы с задачами
     const addTask = (newTask) => {
-      setTasks([...tasks, { ...newTask, id: Date.now() }]);
+      setTasks([
+        ...tasks,
+        {
+          ...newTask,
+          id: generateUniqueId(),
+          createdAt: timeStamp(),
+          updatedAt: timeStamp(),
+        },
+      ]);
     };
 
     const deleteTask = (taskId) => {
