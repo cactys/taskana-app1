@@ -3,6 +3,7 @@ import NavBar from '@components/UI/navBar/NavBar';
 import SideBar from '@components/sideBar/SideBar';
 
 import styles from './content.module.css';
+import TaskEditor from '@components/taskEditor/TaskEditor';
 
 /**
  * Контейнер основного содержимого приложения
@@ -14,6 +15,7 @@ const Content = () => {
       <NavBar />
       <IncomingTasks />
       <SideBar />
+      <TaskEditor />
     </div>
   );
 };

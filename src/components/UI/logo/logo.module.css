@@ -7,12 +7,20 @@
   padding: 0 14px;
   text-decoration: none;
   transition: outline-offset var(--transition-duration) ease;
-}
 
-.logo:focus-visible {
-  border-radius: 8px;
-  outline: 2px solid var(--base-white);
-  outline-offset: 4px;
+  &:focus-visible {
+    border-radius: var(--border-radius-md);
+    outline: 2px solid var(--base-white);
+    outline-offset: 4px;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  &:hover .logoBox {
+    width: 100%;
+  }
 }
 
 .logoBox {
@@ -24,21 +32,12 @@
   align-items: center;
   width: 40px;
   height: 40px;
-  border-radius: 8px;
+  border-radius: var(--border-radius-md);
   overflow: hidden;
   background: linear-gradient(to bottom, var(--primary-400-500));
   transition: all var(--transition-duration) ease;
   transform-origin: left;
 }
-
-.logo:hover .logoBox {
-  width: 100%;
-}
-
-.logo:active {
-  transform: scale(0.98);
-}
-
 .logoText {
   color: var(--base-white);
   font: var(--typography-h1);
