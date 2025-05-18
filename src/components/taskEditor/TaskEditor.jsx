@@ -2,11 +2,11 @@ import { useForm, useTaskContext } from '@hooks';
 import Button from '@components/UI/button/Button';
 import Icon from '@components/icon/Icon';
 import styles from './TaskEditor.module.css';
+import { priorityIcons } from '@utils/constants';
 
 const TaskEditor = () => {
-  const { addTask, tasks } = useTaskContext();
-  const { inputValue, setInputValue, isInputBlur, handleChange, resetForm } =
-    useForm();
+  const { addTask } = useTaskContext();
+  const { inputValue, isInputBlur, handleChange, resetForm } = useForm();
 
   const handleCreate = () => {
     addTask(inputValue);
@@ -17,14 +17,6 @@ const TaskEditor = () => {
     resetForm();
   };
 
-  const priorityIcons = [
-    { priority: 1, iconName: 'minusIcon' },
-    { priority: 2, iconName: 'chevronTopIcon' },
-    { priority: 3, iconName: 'twoArrowIcon' },
-  ];
-
-  console.log(inputValue.priority);
-  console.log(tasks);
   return (
     <form className={styles.taskEditor}>
       <header className={styles.taskHeader}>
@@ -79,10 +71,19 @@ const TaskEditor = () => {
         </div>
       </div>
       <footer className={styles.taskFooter}>
-        <Button type="button" aria-label="Создать" onClick={handleCreate}>
+        <Button
+          type="button"
+          aria-label="Создать"
+          onClick={handleCreate}
+          disabled={!isInputBlur}
+        >
           Создать
         </Button>
-        <Button type="button" aria-label="Отмена" onClick={handleCancel}>
+        <Button
+          type="button"
+          aria-label="Отмена"
+          onClick={handleCancel}
+        >
           Отмена
         </Button>
       </footer>

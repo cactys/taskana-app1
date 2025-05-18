@@ -124,24 +124,55 @@
   padding: 8px;
   cursor: pointer;
 
-  &:has(.priorityCheck:checked) {
+  &:has(.priorityCheck:checked + .minusIcon) {
     box-shadow: var(--sm-shadow);
     background-color: var(--neutral-200);
   }
 
-  &:has(.minusIcon:hover) {
+  &:has(.priorityCheck:checked + .chevronTopIcon) {
+    box-shadow: var(--sm-shadow);
+    background-color: var(--secondary-0);
+  }
+
+  &:has(.priorityCheck:checked + .twoArrowIcon) {
+    box-shadow: var(--sm-shadow);
+    background-color: var(--primary-100);
+  }
+
+  &:has(.priorityCheck:hover + .minusIcon) {
     box-shadow: var(--sm-shadow-hover);
     background-color: var(--neutral-300);
   }
 
-  &:has(.chevronTopIcon:hover) {
+  &:has(.priorityCheck:hover + .chevronTopIcon) {
     box-shadow: var(--sm-shadow-hover);
     background-color: var(--secondary-100);
   }
 
-  &:has(.twoArrowIcon:hover) {
+  &:has(.priorityCheck:hover + .twoArrowIcon) {
     box-shadow: var(--sm-shadow-hover);
     background-color: var(--primary-100);
+  }
+
+  &:has(.priorityCheck:focus-visible + .minusIcon) {
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--base-shadow-hover);
+    outline: 2px solid var(--neutral-900);
+    outline-offset: 2px;
+  }
+
+  &:has(.priorityCheck:focus-visible + .chevronTopIcon) {
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--base-shadow-hover);
+    outline: 2px solid var(--neutral-900);
+    outline-offset: 2px;
+  }
+
+  &:has(.priorityCheck:focus-visible + .twoArrowIcon) {
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--base-shadow-hover);
+    outline: 2px solid var(--neutral-900);
+    outline-offset: 2px;
   }
 }
 
@@ -155,17 +186,17 @@
 
 .minusIcon {
   fill: var(--neutral-600);
-  transition: box-shadow var(--transition-duration), background-color var(--transition-duration), fill var(--transition-duration) ease;
+  transition: outline var(--transition-duration), box-shadow var(--transition-duration), background-color var(--transition-duration), fill var(--transition-duration) ease;
 }
 
 .chevronTopIcon {
   fill: var(--secondary-400);
-  transition: box-shadow var(--transition-duration), background-color var(--transition-duration), fill var(--transition-duration) ease;
+  transition: outline var(--transition-duration), box-shadow var(--transition-duration), background-color var(--transition-duration), fill var(--transition-duration) ease;
 }
 
 .twoArrowIcon {
   fill: var(--primary-400);
-  transition: box-shadow var(--transition-duration), background-color var(--transition-duration), fill var(--transition-duration) ease;
+  transition: outline var(--transition-duration), box-shadow var(--transition-duration), background-color var(--transition-duration), fill var(--transition-duration) ease;
 }
 
 .taskFooter {

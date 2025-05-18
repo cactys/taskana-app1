@@ -1,4 +1,4 @@
-import { startTransition, useCallback, useState } from 'react';
+import { useCallback, useState } from 'react';
 
 const useForm = () => {
   const [inputValue, setInputValue] = useState({
@@ -11,17 +11,18 @@ const useForm = () => {
   const [isInputBlur, setIsInputBlur] = useState(false);
 
   const handleChange = (event) => {
-    const { value, name } = event.target;
+    const { value, name, type } = event.target;
 
-    console.log(value.length);
-
-    setInputValue({ ...inputValue, [name]: value });
-    startTransition(() => {
-      setIsInputBlur(true);
-    });
+    if (type === 'radio') {
+      setInputValue({ ...inputValue, [name]: parseInt(value, 10) });
+    } else {
+      setInputValue({ ...inputValue, [name]: value });
+    }
 
     if (name === 'title') {
-      if (value.length === 0) {
+      if (value.length !== 0) {
+        setIsInputBlur(true);
+      } else {
         setIsInputBlur(false);
       }
     }
@@ -29,7 +30,13 @@ const useForm = () => {
 
   const resetForm = useCallback(() => {
     setIsInputBlur(false);
-    setInputValue('');
+    setInputValue({
+      id: '',
+      priority: 1,
+      title: '',
+      createdAt: '',
+      updatedAt: '',
+    });
   }, [setInputValue]);
 
   return { inputValue, setInputValue, isInputBlur, handleChange, resetForm };
