@@ -26,6 +26,7 @@ const Header = () => {
         <Button
           aria-label="Создать новую задачу"
           type="button"
+          variant="danger"
           className={loading ? styles.onLoading : ''}
           onClick={handleOnLoading}
         >

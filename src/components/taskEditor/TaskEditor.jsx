@@ -8,12 +8,14 @@ const TaskEditor = () => {
   const { addTask } = useTaskContext();
   const { inputValue, isInputBlur, handleChange, resetForm } = useForm();
 
-  const handleCreate = () => {
+  const handleCreate = (e) => {
+    e.preventDefault();
     addTask(inputValue);
     resetForm();
   };
 
-  const handleCancel = () => {
+  const handleCancel = (e) => {
+    e.preventDefault();
     resetForm();
   };
 
@@ -79,11 +81,7 @@ const TaskEditor = () => {
         >
           Создать
         </Button>
-        <Button
-          type="button"
-          aria-label="Отмена"
-          onClick={handleCancel}
-        >
+        <Button type="button" aria-label="Отмена" onClick={handleCancel}>
           Отмена
         </Button>
       </footer>

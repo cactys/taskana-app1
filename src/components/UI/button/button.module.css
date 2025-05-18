@@ -6,7 +6,6 @@
   border-radius: var(--border-radius-md);
   padding: 8px 16px 8px 12px;
   box-shadow: var(--shadow);
-  background-color: var(--primary-400);
   transition: background-color var(--transition-duration), outline-offset var(--transition-duration), box-shadow var(--transition-duration) ease;
   cursor: pointer;
 
@@ -16,6 +15,14 @@
     outline-offset: 2px;
   }
 
+  &:disabled {
+    opacity: 0.5;
+  }
+}
+
+.danger {
+  background-color: var(--primary-400);
+
   &:hover {
     box-shadow: var(--header-button-shadow-hover);
     background-color: var(--primary-500);
@@ -24,8 +31,8 @@
   &:active {
     background-color: var(--primary-300);
   }
-
-  &:disabled {
-    opacity: 0.5;
-  }
 }
+
+.primary {}
+
+.secondary {}
