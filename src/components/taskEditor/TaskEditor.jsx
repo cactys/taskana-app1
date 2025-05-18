@@ -1,7 +1,7 @@
 import { useForm, useTaskContext } from '@hooks';
 import Button from '@components/UI/button/Button';
 import Icon from '@components/icon/Icon';
-import styles from './TaskEditor.module.css';
+import styles from './taskEditor.module.css';
 import { priorityIcons } from '@utils/constants';
 
 const TaskEditor = () => {
