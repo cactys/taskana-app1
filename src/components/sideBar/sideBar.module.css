@@ -9,5 +9,6 @@
   padding: 24px;
   overflow-y: auto;
   background-color: var(--neutral-100);
-  transition: background-color var(--transition-duration), border-left var(--transition-duration) ease;
+  transition: background-color var(--transition-duration) ease,
+    border-left var(--transition-duration) ease;
 }

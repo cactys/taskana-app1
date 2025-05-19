@@ -8,11 +8,12 @@ import { generateUniqueId, timeStamp } from '@utils/utils';
  * @returns {JSX.Element} - JSX элемент провайдера контекста
  */
 const TaskProvider = ({ children }) => {
-  // Исходные данные из TaskList.jsx
   const [tasks, setTasks] = useState([]);
+  const [isOpenTaskEditor, setIsOpenTaskEditor] = useState(false);
 
   const valueTask = useMemo(() => {
-    // Методы для работы с задачами
+    const handleOpenTaskEditor = () => setIsOpenTaskEditor(!isOpenTaskEditor);
+
     const addTask = (newTask) => {
       setTasks([
         ...tasks,
@@ -29,8 +30,14 @@ const TaskProvider = ({ children }) => {
       setTasks(tasks.filter((task) => task.id !== taskId));
     };
 
-    return { tasks, addTask, deleteTask };
-  }, [tasks]);
+    return {
+      tasks,
+      addTask,
+      deleteTask,
+      isOpenTaskEditor,
+      handleOpenTaskEditor,
+    };
+  }, [tasks, isOpenTaskEditor]);
 
   return (
     <TaskContext.Provider value={valueTask}>{children}</TaskContext.Provider>

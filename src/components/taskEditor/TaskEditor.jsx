@@ -3,31 +3,46 @@ import Button from '@components/UI/button/Button';
 import Icon from '@components/icon/Icon';
 import styles from './taskEditor.module.css';
 import { priorityIcons } from '@utils/constants';
+import { startTransition, useState } from 'react';
 
 const TaskEditor = () => {
-  const { addTask } = useTaskContext();
+  const { addTask, isOpenTaskEditor, handleOpenTaskEditor } = useTaskContext();
   const { inputValue, isInputBlur, handleChange, resetForm } = useForm();
+  const [loading, setLoading] = useState(false);
 
   const handleCreate = (e) => {
     e.preventDefault();
-    addTask(inputValue);
+
+    startTransition(() => {
+      setLoading(true);
+      setTimeout(() => {
+        setLoading(false);
+        addTask(inputValue);
+        handleOpenTaskEditor(false);
+      }, 2000);
+    });
     resetForm();
   };
 
   const handleCancel = (e) => {
     e.preventDefault();
     resetForm();
+    handleOpenTaskEditor(false);
   };
 
   return (
-    <form className={styles.taskEditor}>
+    <form
+      className={`${styles.taskEditor} ${
+        isOpenTaskEditor ? styles.isOpen : ''
+      }`}
+    >
       <header className={styles.taskHeader}>
         <h2 className={styles.taskTitle}>Создание задачи</h2>
         <fieldset className={styles.fieldsetWrapper}>
           <label className={styles.taskLabel} htmlFor="taskInput">
             Название <span>*</span>
           </label>
-          <div className={styles.inputWrapper}>
+          <label className={styles.inputWrapper} htmlFor="taskInput">
             <input
               id="taskInput"
               onChange={handleChange}
@@ -42,11 +57,11 @@ const TaskEditor = () => {
               aria-label="Сброс"
               type="button"
               disabled={!isInputBlur}
-              onClick={handleCancel}
+              onClick={resetForm}
             >
               <Icon id="cancelIcon" className={styles.cancelIcon} />
             </button>
-          </div>
+          </label>
         </fieldset>
       </header>
       <div className={styles.taskContent}>
@@ -65,6 +80,7 @@ const TaskEditor = () => {
                   value={priority}
                   onChange={handleChange}
                   checked={inputValue.priority === priority}
+                  disabled={inputValue.priority === priority}
                 />
                 <Icon id={iconName} className={styles[`${iconName}`]} />
               </label>
@@ -78,10 +94,18 @@ const TaskEditor = () => {
           aria-label="Создать"
           onClick={handleCreate}
           disabled={!isInputBlur}
+          variant="primary"
+          onLoading={loading}
         >
           Создать
         </Button>
-        <Button type="button" aria-label="Отмена" onClick={handleCancel}>
+        <Button
+          type="button"
+          aria-label="Отмена"
+          onClick={handleCancel}
+          variant="secondary"
+          onLoading={loading}
+        >
           Отмена
         </Button>
       </footer>

@@ -1,13 +1,27 @@
 .taskEditor {
-  position: absolute;
+  position: fixed;
   right: 0;
+  z-index: 1;
+  visibility: hidden;
   display: flex;
   flex-direction: column;
-  width: 400px;
+  min-width: 400px;
   height: calc(100vh - 64px);
   border-left: 1px solid var(--neutral-300);
+  opacity: 0;
   background: var(--neutral-100);
-  transition: background var(--transition-duration), border-left var(--transition-duration) ease;
+  transition: transform var(--task-editor-open-delay) ease-out,
+    visibility var(--task-editor-open-delay) ease-out,
+    opacity var(--task-editor-open-delay) ease-out,
+    background var(--transition-duration) ease,
+    border-left var(--transition-duration) ease;
+  transform: translateX(100%);
+}
+
+.isOpen {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .taskHeader {
@@ -174,6 +188,24 @@
     outline: 2px solid var(--neutral-900);
     outline-offset: 2px;
   }
+
+  &:has(.priorityCheck:disabled + .minusIcon) {
+    box-shadow: var(--sm-shadow);
+    background-color: var(--neutral-200);
+    cursor: default;
+  }
+
+  &:has(.priorityCheck:disabled + .chevronTopIcon) {
+    box-shadow: var(--sm-shadow);
+    background-color: var(--secondary-0);
+    cursor: default;
+  }
+
+  &:has(.priorityCheck:disabled + .twoArrowIcon) {
+    box-shadow: var(--sm-shadow);
+    background-color: var(--primary-100);
+    cursor: default;
+  }
 }
 
 
@@ -186,20 +218,33 @@
 
 .minusIcon {
   fill: var(--neutral-600);
-  transition: outline var(--transition-duration), box-shadow var(--transition-duration), background-color var(--transition-duration), fill var(--transition-duration) ease;
+  transition: outline var(--transition-duration) ease,
+    box-shadow var(--transition-duration) ease,
+    background-color var(--transition-duration) ease,
+    fill var(--transition-duration) ease;
 }
 
 .chevronTopIcon {
   fill: var(--secondary-400);
-  transition: outline var(--transition-duration), box-shadow var(--transition-duration), background-color var(--transition-duration), fill var(--transition-duration) ease;
+  transition: outline var(--transition-duration) ease,
+    box-shadow var(--transition-duration) ease,
+    background-color var(--transition-duration) ease,
+    fill var(--transition-duration) ease;
 }
 
 .twoArrowIcon {
   fill: var(--primary-400);
-  transition: outline var(--transition-duration), box-shadow var(--transition-duration), background-color var(--transition-duration), fill var(--transition-duration) ease;
+  transition: outline var(--transition-duration) ease,
+    box-shadow var(--transition-duration) ease,
+    background-color var(--transition-duration) ease,
+    fill var(--transition-duration) ease;
 }
 
 .taskFooter {
   position: sticky;
   bottom: 0;
+  display: flex;
+  column-gap: 16px;
+  border-top: 1px solid var(--neutral-300);
+  padding: 16px 24px;
 }

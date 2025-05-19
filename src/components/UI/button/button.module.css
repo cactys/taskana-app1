@@ -1,3 +1,5 @@
+@import url('@assets/animations.css');
+
 .button {
   display: flex;
   justify-content: flex-start;
@@ -6,8 +8,36 @@
   border-radius: var(--border-radius-md);
   padding: 8px 16px 8px 12px;
   box-shadow: var(--shadow);
-  transition: background-color var(--transition-duration), outline-offset var(--transition-duration), box-shadow var(--transition-duration) ease;
+  font: var(--typography-button);
+  transition: background-color var(--transition-duration) ease,
+    outline-offset var(--transition-duration) ease,
+    box-shadow var(--transition-duration) ease;
   cursor: pointer;
+
+  &:hover {
+    box-shadow: var(--header-button-shadow-hover);
+  }
+
+  &:disabled {
+    box-shadow: var(--shadow);
+    opacity: 0.5;
+    cursor: default;
+
+    &:active {
+      box-shadow: var(--shadow);
+      background-color: var(--button-background-color);
+    }
+  }
+}
+
+.danger {
+  --button-background-color: var(--primary-400);
+  color: var(--base-white);
+  background-color: var(--primary-400);
+
+  &:hover {
+    background-color: var(--primary-500);
+  }
 
   &:focus-visible {
     box-shadow: var(--header-button-shadow-hover);
@@ -15,24 +45,77 @@
     outline-offset: 2px;
   }
 
-  &:disabled {
-    opacity: 0.5;
-  }
-}
-
-.danger {
-  background-color: var(--primary-400);
-
-  &:hover {
-    box-shadow: var(--header-button-shadow-hover);
-    background-color: var(--primary-500);
-  }
-
   &:active {
+    box-shadow: none;
+    background-color: var(--primary-300);
+  }
+
+  &.onLoading {
+    background-color: var(--primary-300);
+    fill: var(--primary-200);
+  }
+
+  &.onLoading:hover {
     background-color: var(--primary-300);
   }
 }
 
-.primary {}
+.primary {
+  --button-background-color: var(--neutral-800);
+  color: var(--neutral-0);
+  background-color: var(--neutral-800);
 
-.secondary {}
+  &:focus-visible {
+    box-shadow: var(--header-button-shadow-hover);
+    outline: 2px solid var(--neutral-900);
+    outline-offset: 2px;
+  }
+
+  &:active {
+    box-shadow: none;
+    background-color: var(--neutral-600);
+  }
+
+  &.onLoading {
+    background-color: var(--neutral-600);
+  }
+
+  &.onLoading:hover {
+    background-color: var(--neutral-600);
+  }
+}
+
+.secondary {
+  --button-background-color: var(--neutral-200);
+  color: var(--neutral-800);
+  background-color: var(--neutral-200);
+
+  &:focus-visible {
+    box-shadow: var(--header-button-shadow-hover);
+    outline: 2px solid var(--neutral-900);
+    outline-offset: 2px;
+  }
+
+  &:active {
+    box-shadow: none;
+    background-color: var(--neutral-100);
+  }
+
+  &.onLoading {
+    background-color: var(--neutral-100);
+  }
+
+  &.onLoading:hover {
+    background-color: var(--neutral-100);
+  }
+}
+
+.onLoading {
+  justify-content: center;
+  width: 108px;
+  cursor: default;
+}
+
+.loadingIcon {
+  animation: loading var(--loading-animation-delay) linear infinite;
+}

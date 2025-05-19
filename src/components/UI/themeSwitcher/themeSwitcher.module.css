@@ -56,7 +56,8 @@
   border-radius: var(--border-radius-sm);
   box-shadow: var(--shadow);
   background-color: var(--primary-400);
-  transition: background-color var(--transition-duration), transform var(--transition-duration) ease;
+  transition: background-color var(--transition-duration) ease,
+    transform var(--transition-duration) ease;
 }
 
 .light {

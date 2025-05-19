@@ -25,5 +25,6 @@
   color: var(--neutral-800);
   font: var(--typography-h1);
   background-color: var(--neutral-0);
-  transition: background-color var(--transition-duration), color var(--transition-duration) ease;
+  transition: background-color var(--transition-duration) ease,
+    color var(--transition-duration) ease;
 }

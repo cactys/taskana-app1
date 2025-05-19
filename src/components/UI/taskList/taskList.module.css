@@ -43,6 +43,7 @@
   transition: color var(--transition-duration) ease;
 }
 
-.taskImage, path {
+.taskImage,
+path {
   transition: fill var(--transition-duration) ease;
 }

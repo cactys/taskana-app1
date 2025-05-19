@@ -39,6 +39,7 @@
   --base-900: #141414;
   --base-black: #000000;
 
+
   /* Радиус границ */
   --border-radius-sm: 4px;
   --border-radius-md: 8px;
@@ -80,6 +81,7 @@
   /* Время анимации */
   --transition-duration: 0.2s;
   --task-editor-open-delay: 0.4s;
+  --loading-animation-delay: 2s;
 
   /* шрифт */
   --font-family-source-sans3: 'Source Sans 3', sans-serif;
