@@ -1,3 +1,4 @@
+import Icon from '@components/icon/Icon';
 import styles from './button.module.css';
 
 /**

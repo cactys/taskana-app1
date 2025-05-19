@@ -1,3 +1,5 @@
+@import url('@assets/animations.css');
+
 .button {
   display: flex;
   justify-content: flex-start;
@@ -152,6 +154,62 @@
   }
 }
 
-.primary {}
+.primary {
+  --button-background-color: var(--neutral-800);
+  color: var(--neutral-0);
+  background-color: var(--neutral-800);
 
-.secondary {}
+  &:focus-visible {
+    box-shadow: var(--header-button-shadow-hover);
+    outline: 2px solid var(--neutral-900);
+    outline-offset: 2px;
+  }
+
+  &:active {
+    box-shadow: none;
+    background-color: var(--neutral-600);
+  }
+
+  &.onLoading {
+    background-color: var(--neutral-600);
+  }
+
+  &.onLoading:hover {
+    background-color: var(--neutral-600);
+  }
+}
+
+.secondary {
+  --button-background-color: var(--neutral-200);
+  color: var(--neutral-800);
+  background-color: var(--neutral-200);
+
+  &:focus-visible {
+    box-shadow: var(--header-button-shadow-hover);
+    outline: 2px solid var(--neutral-900);
+    outline-offset: 2px;
+  }
+
+  &:active {
+    box-shadow: none;
+    background-color: var(--neutral-100);
+  }
+
+  &.onLoading {
+    background-color: var(--neutral-100);
+  }
+
+  &.onLoading:hover {
+    background-color: var(--neutral-100);
+  }
+}
+
+.onLoading {
+  justify-content: center;
+  width: 108px;
+  cursor: default;
+}
+
+.loadingIcon {
+  animation: loading var(--loading-animation-delay) linear infinite;
+}

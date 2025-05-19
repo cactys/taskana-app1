@@ -6,6 +6,7 @@ import { Icon } from '@components/icon/Icon';
 import { buttonAction } from '@utils/utils';
 
 import styles from './header.module.css';
+import { useTaskContext } from '@hooks';
 
 /**
  * Компонент шапки приложения
@@ -19,6 +20,7 @@ export const Header = () => {
     buttonAction(undefined, startLoading, stopLoading, () => {
       handleOpenTaskEditor(true);
     });
+    handleOpenTaskEditor(true);
   };
 
   return (
