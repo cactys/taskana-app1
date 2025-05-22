@@ -50,6 +50,10 @@
   font-size: 0;
 }
 
+.fieldsetLegend {
+  font-size: 0;
+}
+
 .fieldsetWrapper {
   display: flex;
   flex-direction: column;

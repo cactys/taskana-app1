@@ -6,7 +6,7 @@ import { Icon } from '@components/icon/Icon';
 import { buttonAction } from '@utils/utils';
 
 import styles from './header.module.css';
-import { useTaskContext } from '@hooks';
+import { buttonAction } from '@utils/utils';
 
 /**
  * Компонент шапки приложения

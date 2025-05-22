@@ -4,7 +4,6 @@ import { SideBar } from '@components/sideBar/SideBar';
 import { TaskEditor } from '@components/taskEditor/TaskEditor';
 
 import styles from './content.module.css';
-import TaskEditor from '@components/taskEditor/TaskEditor';
 
 /**
  * Контейнер основного содержимого приложения
