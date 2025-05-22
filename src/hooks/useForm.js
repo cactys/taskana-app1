@@ -20,7 +20,8 @@ const useForm = () => {
     }
 
     if (name === 'title') {
-      if (value.length !== 0) {
+      const trimmedValue = value.trim();
+      if (trimmedValue.length > 0) {
         setIsInputBlur(true);
       } else {
         setIsInputBlur(false);

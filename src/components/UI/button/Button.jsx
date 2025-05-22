@@ -1,4 +1,3 @@
-import Icon from '@components/icon/Icon';
 import styles from './button.module.css';
 
 /**
@@ -6,6 +5,7 @@ import styles from './button.module.css';
  * @param {ReactNode} children - Содержимое кнопки (текст или другие компоненты)
  * @param {string} variant - Вариант кнопки (например, 'primary', 'secondary', 'danger')
  * @param {string} className - Дополнительные CSS классы
+ * @param {boolean} onLoading - Флаг, указывающий, находится ли кнопка в состоянии загрузки
  * @param {Object} props - Дополнительные атрибуты и настройки кнопки
  * @returns {JSX.Element} - JSX элемент кнопки с указанными свойствами
  */
@@ -32,26 +32,9 @@ const Button = ({
 
   const combinedClassNames = cn.join(' ');
 
-  const renderLoadingIcon = () => (
-    <Icon
-      id="loadingIcon"
-      stroke="var(--base-white)"
-      fill="none"
-      className={styles.loadingIcon}
-    />
-  );
-
-  const loadingStart = () => {
-    if (onLoading) {
-      return renderLoadingIcon();
-    } else {
-      return children;
-    }
-  };
-
   return (
     <button className={combinedClassNames} {...props}>
-      {loadingStart()}
+      {children}
     </button>
   );
 };

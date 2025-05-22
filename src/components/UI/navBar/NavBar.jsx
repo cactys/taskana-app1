@@ -12,7 +12,7 @@ const NavBar = () => {
     <nav className={styles.navbar}>
       <ul className={styles.navList}>
         <li>
-          <NavLink hrefLink={'/'}>
+          <NavLink hrefLink={'/'} tabIndex="4">
             <Icon
               id="inboxIcon"
               fill="var(--neutral-0)"

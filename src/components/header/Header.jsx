@@ -20,9 +20,9 @@ const Header = () => {
       setLoading(true);
       setTimeout(() => {
         setLoading(false);
-      }, 2000);
+        handleOpenTaskEditor(true);
+      }, 500);
     });
-    handleOpenTaskEditor(true);
   };
 
   return (
@@ -35,9 +35,27 @@ const Header = () => {
           variant="danger"
           onClick={handleOnLoading}
           onLoading={loading}
+          className={styles.addButton}
+          tabIndex="2"
         >
-          <Icon id="plusIcon" fill="var(--base-white)" />
-          Создать
+          {loading && (
+            <Icon
+              id="loadingIcon"
+              stroke="var(--base-white)"
+              fill="none"
+              className={styles.loadingIcon}
+            />
+          )}
+          <Icon
+            id="plusIcon"
+            fill="var(--base-white)"
+            className={`${styles.buttonIcon} ${loading && styles.onHidden}`}
+          />
+          <span
+            className={`${styles.buttonText} ${loading && styles.onHidden}`}
+          >
+            Создать
+          </span>
         </Button>
         <ThemeSwitcher />
       </div>

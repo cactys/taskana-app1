@@ -19,17 +19,19 @@ const ThemeSwitcher = () => {
 
   return (
     <label
+      htmlFor="themeSwitcher"
       className={styles.switchContainer}
       onKeyDown={handleKeyDown}
       tabIndex="-1"
     >
       <input
+        id="themeSwitcher"
         type="checkbox"
         className={styles.input}
         checked={isLightTheme}
         onChange={toggleTheme}
         aria-label="Переключить тему"
-        tabIndex="0"
+        tabIndex="3"
       />
       <div className={styles.track}>
         <div
@@ -42,10 +44,7 @@ const ThemeSwitcher = () => {
             isLightTheme ? styles.active : ''
           }`}
         >
-          <Icon
-            id="sunIcon"
-            className={styles.icon}
-          />
+          <Icon id="sunIcon" className={styles.icon} />
         </div>
         <div
           className={`${styles.iconContainer} ${
