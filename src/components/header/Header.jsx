@@ -20,7 +20,6 @@ export const Header = () => {
     buttonAction(undefined, startLoading, stopLoading, () => {
       handleOpenTaskEditor(true);
     });
-    handleOpenTaskEditor(true);
   };
 
   return (
