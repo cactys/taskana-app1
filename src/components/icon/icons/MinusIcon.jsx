@@ -1,4 +1,4 @@
-const MinusIcon = ({ ...props }) => {
+export const MinusIcon = ({ ...props }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -15,5 +15,3 @@ const MinusIcon = ({ ...props }) => {
     </svg>
   );
 };
-
-export default MinusIcon;

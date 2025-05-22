@@ -1,4 +1,4 @@
-const EmptyTaskImage = ({ ...props }) => {
+export  const EmptyTaskImage = ({ ...props }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -97,5 +97,3 @@ const EmptyTaskImage = ({ ...props }) => {
     </svg>
   );
 };
-
-export default EmptyTaskImage;

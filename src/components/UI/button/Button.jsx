@@ -9,7 +9,7 @@ import styles from './button.module.css';
  * @param {Object} props - Дополнительные атрибуты и настройки кнопки
  * @returns {JSX.Element} - JSX элемент кнопки с указанными свойствами
  */
-const Button = ({
+export const Button = ({
   children,
   variant = 'primary',
   className,
@@ -38,5 +38,3 @@ const Button = ({
     </button>
   );
 };
-
-export default Button;

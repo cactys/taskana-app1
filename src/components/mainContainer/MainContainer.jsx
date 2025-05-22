@@ -1,4 +1,4 @@
-import TaskList from '@components/UI/taskList/TaskList';
+import { TaskList } from '@components/UI/taskList/TaskList';
 
 import styles from './mainContainer.module.css';
 
@@ -6,13 +6,13 @@ import styles from './mainContainer.module.css';
  * Основной контейнер для содержимого страницы
  * @returns {JSX.Element} - JSX элемент основного контейнера
  */
-const MainContainer = () => {
+export const MainContainer = () => {
   return (
     <section className={styles.container}>
-      <h1 className={styles.title}>Входящие</h1>
+      <div className={styles.containerWrapper}>
+        <h1 className={styles.title}>Входящие</h1>
+      </div>
       <TaskList />
     </section>
   );
 };
-
-export default MainContainer;

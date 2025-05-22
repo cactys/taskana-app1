@@ -1,7 +1,15 @@
 import { lazy } from 'react';
 
-const EmptyTaskImage = lazy(() => import('./illustrations/EmptyTaskImage.jsx'));
-const NotebookImage = lazy(() => import('./illustrations/NotebookImage.jsx'));
+const EmptyTaskImage = lazy(() =>
+  import('./illustrations/EmptyTaskImage.jsx').then((module) => ({
+    default: module.EmptyTaskImage,
+  }))
+);
+const NotebookImage = lazy(() =>
+  import('./illustrations/NotebookImage.jsx').then((module) => ({
+    default: module.NotebookImage,
+  }))
+);
 
 const illustrations = {
   emptyTaskImage: EmptyTaskImage,
@@ -14,7 +22,7 @@ const illustrations = {
  * @param {Object} props - Свойства, которые будут переданы в компонент картинки
  * @returns {JSX.Element} - Выбранная картинка или null, если картинка не найдена
  */
-const Illustration = ({ id, ...props }) => {
+export const Illustration = ({ id, ...props }) => {
   const ImageComponent = illustrations[id];
 
   try {
@@ -24,5 +32,3 @@ const Illustration = ({ id, ...props }) => {
     return null;
   }
 };
-
-export default Illustration;

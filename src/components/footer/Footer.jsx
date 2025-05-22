@@ -4,7 +4,7 @@ import styles from './footer.module.css';
  * Компонент футера приложения
  * @returns {JSX.Element} - JSX элемент футера
  */
-const Footer = () => {
+export const Footer = ({ taskCount }) => {
   return (
     <footer className={styles.footer}>
       <div className={styles.footerContent}>
@@ -15,6 +15,7 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
             className={styles.link}
+            tabIndex={taskCount + 9}
           >
             PREAX
           </a>
@@ -23,5 +24,3 @@ const Footer = () => {
     </footer>
   );
 };
-
-export default Footer;

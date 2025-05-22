@@ -1,4 +1,4 @@
-const LoadingIcon = ({ ...props }) => {
+export const LoadingIcon = ({ ...props }) => {
   return (
     <svg
       width="24"
@@ -16,5 +16,3 @@ const LoadingIcon = ({ ...props }) => {
     </svg>
   );
 };
-
-export default LoadingIcon;

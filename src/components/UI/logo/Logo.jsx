@@ -4,7 +4,7 @@ import styles from './logo.module.css';
  * Логотип приложения
  * @returns {JSX.Element} - React-компонент логотипа приложения
  */
-const Logo = () => {
+export const Logo = () => {
   return (
     <a
       href="/"
@@ -17,5 +17,3 @@ const Logo = () => {
     </a>
   );
 };
-
-export default Logo;

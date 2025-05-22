@@ -1,0 +1,121 @@
+.priorityLabel {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--border-radius-md);
+  padding: 8px;
+  box-shadow: var(--priority-shadow);
+  background-color: var(--priority-color);
+  transition: background-color var(--transition-duration) ease,
+    outline var(--transition-duration) ease,
+    box-shadow var(--transition-duration) ease;
+  cursor: pointer;
+
+  &:has(.priorityCheck:checked) {
+    --priority-shadow: var(--sm-shadow);
+    cursor: default;
+
+    &:hover {
+      --priority-shadow: var(--sm-shadow-hover);
+    }
+
+    &:focus-visible {
+      --priority-shadow: var(--base-shadow-hover);
+      border-radius: var(--border-radius-md);
+      outline: 2px solid var(--neutral-900);
+      outline-offset: 2px;
+    }
+
+    &.has-minusIcon {
+      --priority-color: var(--neutral-200);
+
+      &:hover {
+        --priority-color: var(--neutral-300);
+      }
+
+      &:focus-visible {
+        --priority-color: var(--neutral-300);
+      }
+    }
+
+    &.has-chevronTopIcon {
+      --priority-color: var(--secondary-0);
+
+      &:hover {
+        --priority-color: var(--secondary-100);
+      }
+
+      &:focus-visible {
+        --priority-color: var(--secondary-100);
+      }
+    }
+
+    &.has-twoArrowIcon {
+      --priority-color: var(--primary-0);
+
+      &:hover {
+        --priority-color: var(--primary-100);
+      }
+
+      &:focus-visible {
+        --priority-color: var(--primary-100);
+      }
+    }
+  }
+
+  &:hover {
+    --priority-shadow: var(--sm-shadow-hover);
+
+    &.has-minusIcon {
+      --priority-color: var(--neutral-300);
+    }
+
+    &.has-chevronTopIcon {
+      --priority-color: var(--secondary-100);
+    }
+
+    &.has-twoArrowIcon {
+      --priority-color: var(--primary-100);
+    }
+  }
+
+  &:focus-visible {
+    --priority-shadow: var(--base-shadow-hover);
+    border-radius: var(--border-radius-md);
+    outline: 2px solid var(--neutral-900);
+    outline-offset: 2px;
+
+    &.has-minusIcon {
+      --priority-color: var(--neutral-300);
+    }
+
+    &.has-chevronTopIcon {
+      --priority-color: var(--secondary-100);
+    }
+
+    &.has-twoArrowIcon {
+      --priority-color: var(--primary-100);
+    }
+  }
+}
+
+.priorityCheck {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.minusIcon {
+  fill: var(--neutral-600);
+  transition: fill var(--transition-duration) ease;
+}
+
+.chevronTopIcon {
+  fill: var(--secondary-400);
+  transition: fill var(--transition-duration) ease;
+}
+
+.twoArrowIcon {
+  fill: var(--primary-400);
+  transition: fill var(--transition-duration) ease;
+}

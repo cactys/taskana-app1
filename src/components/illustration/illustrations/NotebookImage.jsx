@@ -1,4 +1,4 @@
-const NotebookImage = ({ ...props }) => {
+export const NotebookImage = ({ ...props }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -70,5 +70,3 @@ const NotebookImage = ({ ...props }) => {
     </svg>
   );
 };
-
-export default NotebookImage;

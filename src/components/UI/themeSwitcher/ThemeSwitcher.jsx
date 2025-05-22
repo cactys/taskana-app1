@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { ThemeContext } from '@context';
-import Icon from '@components/icon/Icon';
+import { Icon } from '@components/icon/Icon';
 
 import styles from './themeSwitcher.module.css';
 
@@ -8,7 +8,7 @@ import styles from './themeSwitcher.module.css';
  * Переключатель тем (светлая/темная)
  * @returns {JSX.Element} - JSX элемент компонента Switch
  */
-const ThemeSwitcher = () => {
+export const ThemeSwitcher = () => {
   const { isLightTheme, toggleTheme } = useContext(ThemeContext);
 
   const handleKeyDown = (e) => {
@@ -57,5 +57,3 @@ const ThemeSwitcher = () => {
     </label>
   );
 };
-
-export default ThemeSwitcher;

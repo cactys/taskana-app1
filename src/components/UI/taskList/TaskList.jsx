@@ -1,5 +1,6 @@
-import useTaskContext from '@hooks/useTaskContext';
-import Illustration from '@components/illustration/Illustration';
+import { useTaskContext } from '@hooks';
+import { Illustration } from '@components/illustration/Illustration';
+import { reverseList } from '@utils/utils';
 
 import styles from './taskList.module.css';
 
@@ -7,33 +8,49 @@ import styles from './taskList.module.css';
  * Список задач
  * @returns {JSX.Element} - JSX элемент списка задач
  */
-const TaskList = () => {
+export const TaskList = () => {
   const { tasks } = useTaskContext();
 
+  const reverseTaskList = reverseList(tasks);
+
   return (
-    <section className={styles.taskList}>
+    <div className={styles.taskContainer}>
       {!tasks.length ? (
-        <article className={styles.taskItem}>
-          <header className={styles.taskHeader}>
-            <h2 className={styles.taskTitle}>
+        <article className={styles.taskArticle}>
+          <header className={styles.articleHeader}>
+            <h2 className={styles.articleTitle}>
               Все твои задачи организованы как надо
             </h2>
-            <p className={styles.taskDescription}>
+            <p className={styles.articleDescription}>
               Отличная работа! Ты большой молодец!
             </p>
           </header>
-          <Illustration id="emptyTaskImage" className={styles.taskImage} />
+          <Illustration id="emptyTaskImage" className={styles.articleImage} />
         </article>
       ) : (
-        tasks.map((task) => (
-          <p key={task.id} className={styles.emptyState}>
-            {task.id} : {task.title} : {task.priority} : {task.createdAt} :{' '}
-            {task.updatedAt}
-          </p>
-        ))
+        <ul className={styles.taskList}>
+          {reverseTaskList.map((task, index) => (
+            <li key={task.id} className={styles.taskItem} tabIndex={index + 9}>
+              <label htmlFor={task.id} className={styles.itemLabel}>
+                <span
+                  className={`${styles.checkboxContainer} ${
+                    styles[`priority-${task.priority}`]
+                  }`}
+                  tabIndex={index + 10}
+                />
+                <input
+                  id={task.id}
+                  type="checkbox"
+                  className={`${styles.itemCheckbox} ${
+                    styles[`has-${task.priority}`]
+                  }`}
+                />
+                <span className={styles.itemText}>{task.title}</span>
+              </label>
+            </li>
+          ))}
+        </ul>
       )}
-    </section>
+    </div>
   );
 };
-
-export default TaskList;

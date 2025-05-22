@@ -1,27 +1,23 @@
-import { startTransition, useState } from 'react';
-import Logo from '@components/UI/logo/Logo';
-import Button from '@components/UI/button/Button';
-import ThemeSwitcher from '@components/UI/themeSwitcher/ThemeSwitcher';
-import Icon from '@components/icon/Icon';
+import { useLoading, useTaskContext } from '@hooks';
+import { Logo } from '@components/UI/logo/Logo';
+import { Button } from '@components/UI/button/Button';
+import { ThemeSwitcher } from '@components/UI/themeSwitcher/ThemeSwitcher';
+import { Icon } from '@components/icon/Icon';
 
 import styles from './header.module.css';
-import { useTaskContext } from '@hooks';
+import { buttonAction } from '@utils/utils';
 
 /**
  * Компонент шапки приложения
  * @returns {JSX.Element} - JSX элемент компонента Header
  */
-const Header = () => {
+export const Header = () => {
   const { handleOpenTaskEditor } = useTaskContext();
-  const [loading, setLoading] = useState(false);
+  const { loading, startLoading, stopLoading } = useLoading();
 
-  const handleOnLoading = () => {
-    startTransition(() => {
-      setLoading(true);
-      setTimeout(() => {
-        setLoading(false);
-        handleOpenTaskEditor(true);
-      }, 500);
+  const handleOpenEditor = () => {
+    buttonAction(undefined, startLoading, stopLoading, () => {
+      handleOpenTaskEditor(true);
     });
   };
 
@@ -33,7 +29,7 @@ const Header = () => {
           aria-label="Создать новую задачу"
           type="button"
           variant="danger"
-          onClick={handleOnLoading}
+          onClick={handleOpenEditor}
           onLoading={loading}
           className={styles.addButton}
           tabIndex="2"
@@ -62,5 +58,3 @@ const Header = () => {
     </header>
   );
 };
-
-export default Header;

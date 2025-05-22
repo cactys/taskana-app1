@@ -1,4 +1,4 @@
-const PlusIcon = ({ ...props }) => {
+export const PlusIcon = ({ ...props }) => {
   return (
     <svg
       width="24"
@@ -11,5 +11,3 @@ const PlusIcon = ({ ...props }) => {
     </svg>
   );
 };
-
-export default PlusIcon;

@@ -1,15 +1,15 @@
-import IncomingTasks from '@pages/incomingTasks/IncomingTasks';
-import NavBar from '@components/UI/navBar/NavBar';
-import SideBar from '@components/sideBar/SideBar';
+import { NavBar } from '@components/navBar/NavBar';
+import { IncomingTasks } from '@pages/incomingTasks/IncomingTasks';
+import { SideBar } from '@components/sideBar/SideBar';
+import { TaskEditor } from '@components/taskEditor/TaskEditor';
 
 import styles from './content.module.css';
-import TaskEditor from '@components/taskEditor/TaskEditor';
 
 /**
  * Контейнер основного содержимого приложения
  * @returns {JSX.Element} - JSX элемент страницы
  */
-const Content = () => {
+export const Content = () => {
   return (
     <div className={styles.content}>
       <NavBar />
@@ -19,5 +19,3 @@ const Content = () => {
     </div>
   );
 };
-
-export default Content;
