@@ -13,7 +13,8 @@
   padding: 24px 16px;
   overflow-y: auto;
   background-color: var(--neutral-100);
-  transition: background-color var(--transition-duration), border-right var(--transition-duration) ease;
+  transition: background-color var(--transition-duration) ease,
+    border-right var(--transition-duration) ease;
 }
 
 .navList {

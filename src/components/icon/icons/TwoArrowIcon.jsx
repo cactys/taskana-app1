@@ -1,4 +1,4 @@
-const TwoArrowIcon = ({ ...props }) => {
+export const TwoArrowIcon = ({ ...props }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -15,5 +15,3 @@ const TwoArrowIcon = ({ ...props }) => {
     </svg>
   );
 };
-
-export default TwoArrowIcon;

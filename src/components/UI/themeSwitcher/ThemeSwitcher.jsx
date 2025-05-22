@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { ThemeContext } from '@context';
-import Icon from '@components/icon/Icon';
+import { Icon } from '@components/icon/Icon';
 
 import styles from './themeSwitcher.module.css';
 
@@ -8,7 +8,7 @@ import styles from './themeSwitcher.module.css';
  * Переключатель тем (светлая/темная)
  * @returns {JSX.Element} - JSX элемент компонента Switch
  */
-const ThemeSwitcher = () => {
+export const ThemeSwitcher = () => {
   const { isLightTheme, toggleTheme } = useContext(ThemeContext);
 
   const handleKeyDown = (e) => {
@@ -19,17 +19,19 @@ const ThemeSwitcher = () => {
 
   return (
     <label
+      htmlFor="themeSwitcher"
       className={styles.switchContainer}
       onKeyDown={handleKeyDown}
       tabIndex="-1"
     >
       <input
+        id="themeSwitcher"
         type="checkbox"
         className={styles.input}
         checked={isLightTheme}
         onChange={toggleTheme}
         aria-label="Переключить тему"
-        tabIndex="0"
+        tabIndex="3"
       />
       <div className={styles.track}>
         <div
@@ -42,10 +44,7 @@ const ThemeSwitcher = () => {
             isLightTheme ? styles.active : ''
           }`}
         >
-          <Icon
-            id="sunIcon"
-            className={styles.icon}
-          />
+          <Icon id="sunIcon" className={styles.icon} />
         </div>
         <div
           className={`${styles.iconContainer} ${
@@ -58,5 +57,3 @@ const ThemeSwitcher = () => {
     </label>
   );
 };
-
-export default ThemeSwitcher;

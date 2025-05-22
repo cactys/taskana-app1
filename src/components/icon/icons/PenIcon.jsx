@@ -1,4 +1,4 @@
-const PenIcon = ({ ...props }) => {
+export const PenIcon = ({ ...props }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -11,5 +11,3 @@ const PenIcon = ({ ...props }) => {
     </svg>
   );
 };
-
-export default PenIcon;

@@ -1,4 +1,4 @@
-const InboxIcon = ({ ...props }) => {
+export const InboxIcon = ({ ...props }) => {
   return (
     <svg
       width="24"
@@ -11,5 +11,3 @@ const InboxIcon = ({ ...props }) => {
     </svg>
   );
 };
-
-export default InboxIcon;

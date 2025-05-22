@@ -1,4 +1,4 @@
-const ChevronBottomIcon = ({ ...props }) => {
+export const ChevronBottomIcon = ({ ...props }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -15,5 +15,3 @@ const ChevronBottomIcon = ({ ...props }) => {
     </svg>
   );
 };
-
-export default ChevronBottomIcon;

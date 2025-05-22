@@ -28,7 +28,8 @@
   color: var(--neutral-600);
   font: var(--typography-subtitle2);
   text-decoration: none;
-  transition: outline-offset var(--transition-duration), color var(--transition-duration) ease;
+  transition: outline-offset var(--transition-duration) ease,
+    color var(--transition-duration) ease;
 
   &:focus-visible {
     border-radius: var(--border-radius-sm);
