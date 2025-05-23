@@ -130,6 +130,8 @@
   &:hover {
     box-shadow: none;
     background-color: var(--button-loading-color);
+  }
+  
   &:focus-visible {
     box-shadow: var(--header-button-shadow-hover);
     outline: 2px solid var(--neutral-900);
