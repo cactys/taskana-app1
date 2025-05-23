@@ -4,7 +4,6 @@
   align-items: center;
   column-gap: 8px;
   border-radius: var(--border-radius-md);
-  padding: 8px 16px 8px 12px;
   box-shadow: var(--shadow);
   font: var(--typography-button);
   transition: background-color var(--transition-duration) ease,
@@ -41,6 +40,7 @@
   --button-loading-color: var(--primary-300);
   color: var(--base-white);
   background-color: var(--primary-400);
+  padding: 8px 16px 8px 12px;
 
   &:hover {
     background-color: var(--primary-500);
@@ -55,6 +55,11 @@
   &:active {
     background-color: var(--primary-300);
   }
+}
+
+.primary,
+.secondary {
+  padding: 12px 16px;
 }
 
 .primary {

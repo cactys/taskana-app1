@@ -41,9 +41,7 @@ export const TaskList = () => {
                 <input
                   id={task.id}
                   type="checkbox"
-                  className={`${styles.itemCheckbox} ${
-                    styles[`has-${task.priority}`]
-                  }`}
+                  className={styles.itemCheckbox}
                 />
                 <span className={styles.itemText}>{task.title}</span>
               </label>
