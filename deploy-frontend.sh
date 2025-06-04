@@ -12,8 +12,8 @@ else
 fi
 
 # Удаление старой версии приложения
-sudo rm -rf /var/www/taskana
-sudo rm -r ~/taskana-app1.tar.gz
+sudo rm -rf /var/www/taskana || true
+sudo rm -r ~/taskana-app1.tar.gz || true
 
 # Загрузка артефакта
 if curl -u "${NEXUS_REPO_USER}:${NEXUS_REPO_PASS}" -o taskana-app1.tar.gz "${ARTIFACT_URL}"; then
@@ -24,12 +24,12 @@ else
 fi
 
 # Разархивирование артефакта
-sudo mkdir -p /var/www/taskana
+sudo mkdir -p /var/www/taskana || true
 sudo tar -xzvf taskana-app1.tar.gz -C /var/www/taskana || true
 echo "Артефакт успешно разархивирован."
 
 # Изменение владельца и группы для директории приложения
-sudo chown frontend:_nginx -R /var/www/taskana
+sudo chown frontend:_nginx -R /var/www/taskana || true
 echo "Владелец и группа для директории /var/www/taskana изменены на frontend:_nginx."
 
 # Перезапуск Nginx
