@@ -19,7 +19,7 @@ variables:
     - ubuntu_taskana_runner
   rules:
     - changes:
-        - "**/*"
+        - "src/**/*"
 
 build-frontend-code-job:
   stage: build
