@@ -1,0 +1,115 @@
+stages:
+  - build
+  - release
+  - deploy
+  - notify
+
+# cache:
+#   paths:
+#     - dist
+
+variables:
+  BUILD_NAME: "taskana-app1"
+  VERSION: "1.0.${CI_PIPELINE_IID}"
+  ARTIFACT_NAME: "${BUILD_NAME}-${VERSION}"
+  ARTIFACT_URL: "${NEXUS_REPO_URL}/repository/${BUILD_NAME}/${VERSION}/${ARTIFACT_NAME}.tar.gz"
+
+.default-rules:
+  tags:
+    - ubuntu_runner
+  rules:
+    - changes:
+        - "**/*"
+
+build-frontend-code-job:
+  stage: build
+  extends: .default-rules
+  script:
+    - npm install
+    - npm run build
+  environment:
+    name: production
+    url: https://taskana.khortys.space
+    on_stop: stop_environment
+  artifacts:
+    name: "${ARTIFACT_NAME}"
+    paths:
+      - "./dist/*"
+    expire_in: 1 week
+
+stop_environment:
+  stage: build
+  variables:
+    GIT_STRATEGY: none
+  script:
+    - echo "Stopping environment"
+  when: manual
+  allow_failure: true
+  environment:
+    name: production
+    action: stop
+
+upload-frontend-release:
+  stage: release
+  extends: .default-rules
+  script:
+    - |
+      tar czvf ${ARTIFACT_NAME}.tar.gz dist
+      echo "🔗 Ссылка на артефакт: ${ARTIFACT_URL}"
+      if curl -v -u "${NEXUS_REPO_USER}:${NEXUS_REPO_PASS}" \
+        --upload-file ${ARTIFACT_NAME}.tar.gz \
+        ${ARTIFACT_URL}; then
+        echo "✅ Сборка успешно загружена в Nexus."
+        echo "📎 Версия: ${VERSION}"
+        echo "📦 Артефакт: ${ARTIFACT_NAME}.tar.gz"
+      else
+        echo "❌ Ошибка при загрузке сборки в Nexus."
+        exit 1
+      fi
+  needs:
+    - job: build-frontend-code-job
+
+deploy-frontend-job:
+  extends: .default-rules
+  stage: deploy
+  before_script:
+    #устанавливаем ssh-agent для удобства аутентификации по ssh
+    - "command -v ssh-agent > /dev/null || ( apt-get update && apt-get install openssh-client -y )"
+    - eval $(ssh-agent -s)
+    #сохраняем сгенеренный ранее приватный ключ для раннера
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - touch ~/.ssh/known_hosts
+    - echo "$SSH_KNOWN_HOSTS" >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+  script:
+    # скачиваем ранее собранный артефакт с Nexus. При этом необходимо заранее
+    # прописать креды от Nexus в переменные в настройке пайплайна
+    # - ssh -v ${DEV_USER}@${DEV_HOST}
+    - apt-get update && apt-get install -y bash
+    - ssh ${DEV_USER}@${DEV_HOST} "export "NEXUS_REPO_USER=${NEXUS_REPO_USER}"; export "NEXUS_REPO_PASS=${NEXUS_REPO_PASS}"; export "ARTIFACT_URL=${ARTIFACT_URL}"; export "ARTIFACT_NAME=${ARTIFACT_NAME}";setsid /bin/bash -s " < deploy-frontend.sh
+  needs:
+    - job: upload-frontend-release
+
+telegram-notification-frontend:
+  stage: notify
+  extends: .default-rules
+  script:
+    - |
+      MESSAGE="🚀 Владимир Х Frontend успешно собран!
+      🔗 Ссылка на артефакт: ${ARTIFACT_URL}
+      🔄 Ветка: ${CI_COMMIT_BRANCH}
+      📎 Версия: ${VERSION}
+      📦 Артефакт: ${ARTIFACT_NAME}.tar.gz"
+
+      if curl -s -X POST -H 'Content-Type: application/json' \
+        -d "{\"chat_id\": \"${TG_CHAT_ID}\", \"text\": \"${MESSAGE}\", \"parse_mode\": \"Markdown\"}" \
+        https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage; then
+        echo "✅ Уведомление отправлено успешно."
+      else
+        echo "❌ Ошибка при отправке уведомления."
+        exit 1
+      fi
+  needs:
+    - job: upload-frontend-release
