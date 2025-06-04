@@ -1,5 +1,5 @@
-import Icon from '@components/icon/Icon';
-import NavLink from '../navLink/NavLink';
+import { Icon } from '@components/icon/Icon';
+import { NavLink } from '@components/UI/navLink/NavLink';
 
 import styles from './navBar.module.css';
 
@@ -7,12 +7,12 @@ import styles from './navBar.module.css';
  * Навигационная панель
  * @returns {JSX.Element} - JSX элемент навигационной панели
  */
-const NavBar = () => {
+export const NavBar = () => {
   return (
     <nav className={styles.navbar}>
       <ul className={styles.navList}>
         <li>
-          <NavLink hrefLink={'/'}>
+          <NavLink hrefLink={'/'} tabIndex="4">
             <Icon
               id="inboxIcon"
               fill="var(--neutral-0)"
@@ -25,5 +25,3 @@ const NavBar = () => {
     </nav>
   );
 };
-
-export default NavBar;
