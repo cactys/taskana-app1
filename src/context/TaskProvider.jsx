@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react';
 import TaskContext from './TaskContext';
+import { generateUniqueId, timeStamp } from '@utils/utils';
 
 /**
  * Провайдер контекста задач
@@ -7,28 +8,36 @@ import TaskContext from './TaskContext';
  * @returns {JSX.Element} - JSX элемент провайдера контекста
  */
 const TaskProvider = ({ children }) => {
-  // Исходные данные из TaskList.jsx
-  const [tasks, setTasks] = useState([
-    {
-      id: 1,
-      title: 'Все твои задачи организованы как надо',
-      description: 'Отличная работа! Ты большой молодец!',
-      image: 'emptyTaskImage',
-    },
-  ]);
+  const [tasks, setTasks] = useState([]);
+  const [isOpenTaskEditor, setIsOpenTaskEditor] = useState(false);
 
   const valueTask = useMemo(() => {
-    // Методы для работы с задачами
+    const handleOpenTaskEditor = () => setIsOpenTaskEditor(!isOpenTaskEditor);
+
     const addTask = (newTask) => {
-      setTasks([...tasks, { ...newTask, id: Date.now() }]);
+      setTasks([
+        ...tasks,
+        {
+          ...newTask,
+          id: generateUniqueId(),
+          createdAt: timeStamp(),
+          updatedAt: timeStamp(),
+        },
+      ]);
     };
 
     const deleteTask = (taskId) => {
       setTasks(tasks.filter((task) => task.id !== taskId));
     };
 
-    return { tasks, addTask, deleteTask };
-  }, [tasks]);
+    return {
+      tasks,
+      addTask,
+      deleteTask,
+      isOpenTaskEditor,
+      handleOpenTaskEditor,
+    };
+  }, [tasks, isOpenTaskEditor]);
 
   return (
     <TaskContext.Provider value={valueTask}>{children}</TaskContext.Provider>

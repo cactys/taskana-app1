@@ -8,7 +8,7 @@ import styles from './navLink.module.css';
  * @param {Object} settings - Дополнительные атрибуты и настройки ссылки
  * @returns {JSX.Element} - JSX элемент ссылки с указанными свойствами
  */
-const NavLink = ({ children, hrefLink, className, ...settings }) => {
+export const NavLink = ({ children, hrefLink, className, ...settings }) => {
   return (
     <a
       href={hrefLink}
@@ -19,5 +19,3 @@ const NavLink = ({ children, hrefLink, className, ...settings }) => {
     </a>
   );
 };
-
-export default NavLink;

@@ -1,0 +1,140 @@
+@import url('@assets/animations.css');
+
+.taskEditor {
+  position: fixed;
+  right: 0;
+  z-index: 1;
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  min-width: 400px;
+  height: calc(100vh - 64px);
+  border-left: 1px solid var(--neutral-300);
+  opacity: 0;
+  background-color: var(--neutral-100);
+  transition: transform var(--task-editor-open-delay) ease-out,
+    visibility var(--task-editor-open-delay) ease-out,
+    opacity var(--task-editor-open-delay) ease-out,
+    background-color var(--transition-duration) ease,
+    border-left var(--transition-duration) ease;
+  transform: translateX(100%);
+}
+
+.isOpen {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.taskContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.taskHeader {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+  padding: 24px;
+  background-color: var(--neutral-100);
+  transition: background-color var(--transition-duration) ease;
+}
+
+.taskTitle {
+  color: var(--neutral-800);
+  font: var(--typography-h1);
+  transition: color var(--transition-duration) ease;
+}
+
+.fieldsetLegend {
+  font-size: 0;
+}
+
+.fieldsetWrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+  padding: 0;
+}
+
+.taskLabel {
+  display: inline-flex;
+  column-gap: 4px;
+  color: var(--neutral-800);
+  font: var(--typography-text-label);
+  transition: color var(--transition-duration) ease;
+}
+
+.taskLabel span {
+  color: var(--primary-400);
+  font: var(--typography-subtitle1);
+}
+
+.taskContent {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - (64px + 56px));
+  padding: 0px 24px 24px 24px;
+}
+
+.priorityWrapper {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 16px;
+  padding-top: 5px;
+}
+
+.taskPriority {
+  color: var(--neutral-800);
+  font: var(--typography-text-label);
+  transition: color var(--transition-duration) ease;
+}
+
+.priorityField {
+  display: inline-flex;
+  column-gap: 8px;
+  padding: 0;
+}
+
+.taskFooter {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  column-gap: 16px;
+  border-top: 1px solid var(--neutral-300);
+  padding: 16px 24px;
+  background-color: var(--neutral-100);
+  transition: border-top var(--transition-duration) ease,
+    background-color var(--transition-duration) ease;
+}
+
+.footerButton {
+  position: relative;
+}
+
+.buttonText {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity var(--transition-duration) ease,
+    visibility var(--transition-duration) ease,
+    color var(--transition-duration) ease;
+}
+
+.loadingIcon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  animation: loading var(--loading-animation-delay) linear infinite;
+}
+
+.onHidden {
+  visibility: hidden;
+  opacity: 0;
+}

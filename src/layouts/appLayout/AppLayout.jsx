@@ -1,5 +1,5 @@
-import Header from '@components/header/Header';
-import Content from '@components/content/Content';
+import { Header } from '@components/header/Header';
+import { Content } from '@components/content/Content';
 
 import styles from './appLayout.module.css';
 
@@ -7,7 +7,7 @@ import styles from './appLayout.module.css';
  * Основной макет приложения
  * @returns {JSX.Element} - JSX элемент макета приложения
  */
-const AppLayout = () => {
+export const AppLayout = () => {
   return (
     <div className={styles.layout}>
       <Header />
@@ -15,5 +15,3 @@ const AppLayout = () => {
     </div>
   );
 };
-
-export default AppLayout;

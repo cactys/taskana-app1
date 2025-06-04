@@ -1,13 +1,11 @@
-import Statistic from '@components/UI/statistic/Statistic';
+import { Statistic } from '@components/UI/statistic/Statistic';
 
-import styles from './SideBar.module.css';
+import styles from './sideBar.module.css';
 
-const SideBar = () => {
+export const SideBar = () => {
   return (
     <div className={`${styles.sideBar}`}>
       <Statistic />
     </div>
   );
 };
-
-export default SideBar;

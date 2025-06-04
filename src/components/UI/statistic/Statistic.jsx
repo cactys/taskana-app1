@@ -1,4 +1,4 @@
-import Illustration from '@components/illustration/Illustration';
+import { Illustration } from '@components/illustration/Illustration';
 
 import styles from './statistic.module.css';
 
@@ -6,7 +6,7 @@ import styles from './statistic.module.css';
  * Компонент статистики
  * @returns {JSX.Element} - JSX элемент статистики
  */
-const Statistic = () => {
+export const Statistic = () => {
   return (
     <div className={styles.statistic}>
       <Illustration id="notebookImage" className={styles.statisticImage} />
@@ -17,5 +17,3 @@ const Statistic = () => {
     </div>
   );
 };
-
-export default Statistic;

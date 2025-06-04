@@ -21,17 +21,35 @@
   column-gap: 24px;
 }
 
-.onLoading {
-  background-color: var(--primary-300);
-  width: 108px;
-  justify-content: center;
+.addButton {
+  position: relative;
+}
+
+.buttonIcon {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity var(--transition-duration) ease,
+    visibility var(--transition-duration) ease;
+}
+
+.buttonText {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity var(--transition-duration) ease,
+    visibility var(--transition-duration) ease;
 }
 
 .loadingIcon {
-  animation: loading 2s linear infinite;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  animation: loading var(--loading-animation-delay) linear infinite;
 }
 
-.buttonTitle {
-  color: var(--base-white);
-  font: var(--typography-button);
+.onHidden {
+  visibility: hidden;
+  opacity: 0;
 }
