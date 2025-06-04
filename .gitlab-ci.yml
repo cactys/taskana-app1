@@ -16,7 +16,7 @@ variables:
 
 .default-rules:
   tags:
-    - ubuntu_runner
+    - ubuntu_taskana_runner
   rules:
     - changes:
         - "**/*"
