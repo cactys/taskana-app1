@@ -49,6 +49,17 @@ stop_environment:
     name: production
     action: stop
 
+# sonarqube-frontend-sast:
+#   stage: test
+#   image: sonarsource/sonar-scanner-cli:latest
+#   extends: .default-rules
+#   script:
+#     - cd ${FRONTEND_DIR}
+#     - sonar-scanner -X ${SONAR_SETTINGS_FRONT}
+#   allow_failure: false
+#   needs:
+#     - job: build-frontend-code-job
+
 upload-frontend-release:
   stage: release
   extends: .default-rules
