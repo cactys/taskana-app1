@@ -3,7 +3,7 @@
   top: 0;
   width: 100%;
   background-color: var(--neutral-0);
-  transition: background-color var(--transition-duration) ease;
+  transition-duration: var(--transition-duration);
 }
 
 .footerContent {
@@ -18,7 +18,7 @@
   color: var(--neutral-600);
   font: var(--typography-subtitle2);
   text-align: center;
-  transition: color var(--transition-duration) ease;
+  transition-duration: var(--transition-duration);
 }
 
 .link {
@@ -28,8 +28,7 @@
   color: var(--neutral-600);
   font: var(--typography-subtitle2);
   text-decoration: none;
-  transition: outline-offset var(--transition-duration) ease,
-    color var(--transition-duration) ease;
+  transition-duration: var(--transition-duration);
 
   &:focus-visible {
     border-radius: var(--border-radius-sm);
@@ -47,7 +46,7 @@
     height: 1px;
     opacity: 1;
     background-color: var(--neutral-600);
-    transition: all var(--transition-duration) ease;
+    transition-duration: var(--transition-duration);
   }
 
   &:hover::after {

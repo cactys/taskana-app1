@@ -6,7 +6,7 @@
   height: 40px;
   padding: 0 14px;
   text-decoration: none;
-  transition: outline-offset var(--transition-duration) ease;
+  transition-duration: var(--transition-duration);
 
   &:focus-visible {
     border-radius: var(--border-radius-md);
@@ -34,10 +34,11 @@
   height: 40px;
   border-radius: var(--border-radius-md);
   overflow: hidden;
-  background: linear-gradient(to bottom, var(--primary-400-500));
-  transition: all var(--transition-duration) ease;
+  background: linear-gradient(to bottom, var(--base-primary-gradient));
+  transition-duration: var(--transition-duration);
   transform-origin: left;
 }
+
 .logoText {
   color: var(--base-white);
   font: var(--typography-h1);

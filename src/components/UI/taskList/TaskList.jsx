@@ -3,6 +3,7 @@ import { Illustration } from '@components/illustration/Illustration';
 import { reverseList } from '@utils/utils';
 
 import styles from './taskList.module.css';
+import TaskItem from '../taskItem/TaskItem';
 
 /**
  * Список задач
@@ -31,20 +32,12 @@ export const TaskList = () => {
         <ul className={styles.taskList}>
           {reverseTaskList.map((task, index) => (
             <li key={task.id} className={styles.taskItem} tabIndex={index + 9}>
-              <label htmlFor={task.id} className={styles.itemLabel}>
-                <span
-                  className={`${styles.checkboxContainer} ${
-                    styles[`priority-${task.priority}`]
-                  }`}
-                  tabIndex={index + 10}
-                />
-                <input
-                  id={task.id}
-                  type="checkbox"
-                  className={styles.itemCheckbox}
-                />
-                <span className={styles.itemText}>{task.title}</span>
-              </label>
+              <TaskItem
+                index={index}
+                id={task.id}
+                priority={task.priority}
+                title={task.title}
+              />
             </li>
           ))}
         </ul>

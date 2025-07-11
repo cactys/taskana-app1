@@ -10,9 +10,7 @@
   padding: 8px;
   box-shadow: var(--base-shadow);
   background-color: var(--neutral-800);
-  transition: background-color var(--transition-duration) ease,
-    outline-offset var(--transition-duration) ease,
-    box-shadow var(--transition-duration) ease;
+  transition-duration: var(--transition-duration);
   cursor: pointer;
 
   &:focus-visible {
