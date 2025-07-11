@@ -11,28 +11,13 @@ import styles from './themeSwitcher.module.css';
 export const ThemeSwitcher = () => {
   const { isLightTheme, toggleTheme } = useContext(ThemeContext);
 
-  const handleKeyDown = (e) => {
-    if (e.key === 'Enter') {
-      toggleTheme();
-    }
-  };
-
   return (
-    <label
-      htmlFor="themeSwitcher"
-      className={styles.switchContainer}
-      onKeyDown={handleKeyDown}
-      tabIndex="-1"
+    <button
+      tabIndex="3"
+      type="button"
+      className={styles.switchButton}
+      onClick={toggleTheme}
     >
-      <input
-        id="themeSwitcher"
-        type="checkbox"
-        className={styles.input}
-        checked={isLightTheme}
-        onChange={toggleTheme}
-        aria-label="Переключить тему"
-        tabIndex="3"
-      />
       <div className={styles.track}>
         <div
           className={`${styles.thumb} ${
@@ -54,6 +39,6 @@ export const ThemeSwitcher = () => {
           <Icon id="moonIcon" className={styles.icon} />
         </div>
       </div>
-    </label>
+    </button>
   );
 };

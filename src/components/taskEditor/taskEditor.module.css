@@ -12,11 +12,7 @@
   border-left: 1px solid var(--neutral-300);
   opacity: 0;
   background-color: var(--neutral-100);
-  transition: transform var(--task-editor-open-delay) ease-out,
-    visibility var(--task-editor-open-delay) ease-out,
-    opacity var(--task-editor-open-delay) ease-out,
-    background-color var(--transition-duration) ease,
-    border-left var(--transition-duration) ease;
+  transition-duration: var(--transition-duration);
   transform: translateX(100%);
 }
 
@@ -41,13 +37,13 @@
   row-gap: 24px;
   padding: 24px;
   background-color: var(--neutral-100);
-  transition: background-color var(--transition-duration) ease;
+  transition-duration: var(--transition-duration);
 }
 
 .taskTitle {
   color: var(--neutral-800);
   font: var(--typography-h1);
-  transition: color var(--transition-duration) ease;
+  transition-duration: var(--transition-duration);
 }
 
 .fieldsetLegend {
@@ -66,7 +62,7 @@
   column-gap: 4px;
   color: var(--neutral-800);
   font: var(--typography-text-label);
-  transition: color var(--transition-duration) ease;
+  transition-duration: var(--transition-duration);
 }
 
 .taskLabel span {
@@ -91,7 +87,7 @@
 .taskPriority {
   color: var(--neutral-800);
   font: var(--typography-text-label);
-  transition: color var(--transition-duration) ease;
+  transition-duration: var(--transition-duration);
 }
 
 .priorityField {
@@ -108,8 +104,7 @@
   border-top: 1px solid var(--neutral-300);
   padding: 16px 24px;
   background-color: var(--neutral-100);
-  transition: border-top var(--transition-duration) ease,
-    background-color var(--transition-duration) ease;
+  transition-duration: var(--transition-duration);
 }
 
 .footerButton {
@@ -119,9 +114,7 @@
 .buttonText {
   visibility: visible;
   opacity: 1;
-  transition: opacity var(--transition-duration) ease,
-    visibility var(--transition-duration) ease,
-    color var(--transition-duration) ease;
+  transition-duration: var(--transition-duration);
 }
 
 .loadingIcon {

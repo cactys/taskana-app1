@@ -62,10 +62,18 @@ export const priorityKeyDown = (
  * @param {Object} evn событие нажатия клавиши
  * @param {boolean} isInputBlur фокусировка на поле формы
  * @param {Function} resetForm сброс формы
+ * @param {Function} handleOpenTaskEditor функция открытия формы редактирования задачи
  * @param {Function} handleCreate функция создания задачи
  */
-export const formKeyDown = (evn, isInputBlur, resetForm, handleCreate) => {
+export const formKeyDown = (
+  evn,
+  isInputBlur,
+  resetForm,
+  handleOpenTaskEditor,
+  handleCreate
+) => {
   if (evn.key === 'Escape') {
+    handleOpenTaskEditor(false);
     resetForm();
   } else if (
     evn.key === 'Enter' &&
@@ -95,6 +103,6 @@ export const buttonAction = (
     setTimeout(() => {
       action();
       stopLoading();
-    }, 500);
+    }, 600);
   }
 };

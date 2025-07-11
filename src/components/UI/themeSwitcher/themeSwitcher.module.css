@@ -1,41 +1,34 @@
-.switchContainer {
+.switchButton {
   position: relative;
   display: inline-block;
   border-radius: var(--border-radius-md);
   padding: 4px;
   box-shadow: var(--shadow);
   background-color: var(--base-800);
-  transition: outline-offset var(--transition-duration) ease;
+  transition-duration: var(--transition-duration);
   cursor: pointer;
 
-  &:has(.input:focus-visible) {
+  &:focus-visible {
     outline: 2px solid var(--base-white);
     outline-offset: 2px;
   }
 
-  &:has(.input:focus-visible) .thumb {
+  &:focus-visible .thumb {
     background-color: var(--base-white);
   }
 
-  &:has(.input:hover) .thumb {
+  &:hover .thumb {
     background-color: var(--base-white);
   }
 
-  &:has(.input:focus-visible) .active .icon {
+  &:focus-visible .active .icon {
     fill: var(--base-900);
   }
 
-  &:has(.input:hover) .active .icon {
+  &:hover .active .icon {
     fill: var(--base-900);
   }
 
-}
-
-.input {
-  position: absolute;
-  width: 0;
-  height: 0;
-  opacity: 0;
 }
 
 .track {
@@ -56,8 +49,7 @@
   border-radius: var(--border-radius-sm);
   box-shadow: var(--shadow);
   background-color: var(--primary-400);
-  transition: background-color var(--transition-duration) ease,
-    transform var(--transition-duration) ease;
+  transition-duration: var(--transition-duration);
 }
 
 .light {
@@ -68,7 +60,6 @@
   transform: translateX(36px);
 }
 
-/* Статичные контейнеры для иконок */
 .iconContainer {
   z-index: 2;
   display: flex;
@@ -77,15 +68,14 @@
   width: 32px;
   height: 32px;
   opacity: 0.5;
-  transition: opacity var(--transition-duration) ease;
+  transition-duration: var(--transition-duration);
 }
 
 .active {
   opacity: 1;
 }
 
-/* Иконка */
 .icon {
   fill: var(--base-white);
-  transition: fill var(--transition-duration) ease;
+  transition-duration: var(--transition-duration);
 }

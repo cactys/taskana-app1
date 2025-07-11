@@ -3,9 +3,9 @@ import { Logo } from '@components/UI/logo/Logo';
 import { Button } from '@components/UI/button/Button';
 import { ThemeSwitcher } from '@components/UI/themeSwitcher/ThemeSwitcher';
 import { Icon } from '@components/icon/Icon';
+import { buttonAction } from '@utils/utils';
 
 import styles from './header.module.css';
-import { buttonAction } from '@utils/utils';
 
 /**
  * Компонент шапки приложения
@@ -39,7 +39,7 @@ export const Header = () => {
               id="loadingIcon"
               stroke="var(--base-white)"
               fill="none"
-              className={styles.loadingIcon}
+              className={`${styles.loadingIcon} ${loading && styles.isLoading}`}
             />
           )}
           <Icon

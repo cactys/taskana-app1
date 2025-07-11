@@ -13,8 +13,7 @@
   padding: 24px 16px;
   overflow-y: auto;
   background-color: var(--neutral-100);
-  transition: background-color var(--transition-duration) ease,
-    border-right var(--transition-duration) ease;
+  transition-duration: var(--transition-duration);
 }
 
 .navList {
@@ -26,11 +25,11 @@
 }
 
 .linkIcon {
-  transition: fill var(--transition-duration) ease;
+  transition-duration: var(--transition-duration);
 }
 
 .buttonTitle {
   color: var(--neutral-0);
   font: var(--typography-button);
-  transition: color var(--transition-duration) ease;
+  transition-duration: var(--transition-duration);
 }
