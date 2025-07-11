@@ -1,3 +1,4 @@
+import { initialFormState } from '@utils/constants';
 import { useCallback, useState } from 'react';
 
 /**
@@ -9,13 +10,7 @@ import { useCallback, useState } from 'react';
  * @returns {Function} resetForm - Функция для сброса формы.
  */
 const useForm = () => {
-  const [inputValue, setInputValue] = useState({
-    id: '',
-    priority: 1,
-    title: '',
-    createdAt: '',
-    updatedAt: '',
-  });
+  const [inputValue, setInputValue] = useState(initialFormState);
   const [isInputBlur, setIsInputBlur] = useState(false);
 
   const handleChange = (event) => {
@@ -39,14 +34,7 @@ const useForm = () => {
 
   const resetForm = useCallback(() => {
     setIsInputBlur(false);
-    setInputValue({
-      ...inputValue,
-      id: '',
-      priority: 1,
-      title: '',
-      createdAt: '',
-      updatedAt: '',
-    });
+    setInputValue({ ...inputValue, ...initialFormState });
   }, [setInputValue, inputValue]);
 
   return { inputValue, setInputValue, isInputBlur, handleChange, resetForm };

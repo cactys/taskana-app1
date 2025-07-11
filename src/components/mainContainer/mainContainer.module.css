@@ -25,12 +25,12 @@
   width: 100%;
   padding: 24px;
   background-color: var(--neutral-0);
-  transition: background-color var(--transition-duration) ease;
+  transition-duration: var(--transition-duration);
 }
 
 .title {
   margin-bottom: -5px;
   color: var(--neutral-800);
   font: var(--typography-h1);
-  transition: color var(--transition-duration) ease;
+  transition-duration: var(--transition-duration);
 }

@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import ThemeContext from './ThemContext';
+import ThemeContext from './ThemeContext';
 
 /**
  * Провайдер контекста смены темы

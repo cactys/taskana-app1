@@ -1,5 +1,6 @@
 import { useRef, useEffect } from 'react';
 import { useForm, useLoading, useTaskContext } from '@hooks';
+import { ModalOverlayLayout } from '@layouts/modalOverlayLayout/ModalOverlayLayout';
 import { priorityInput } from '@utils/constants';
 import { Icon } from '@components/icon/Icon';
 import { Button } from '@components/UI/button/Button';
@@ -50,7 +51,11 @@ export const TaskEditor = () => {
   };
 
   const handleFormKeyDown = (e) => {
-    formKeyDown(e, isInputBlur, resetForm, handleCreate);
+    formKeyDown(e, isInputBlur, resetForm, handleOpenTaskEditor, handleCreate);
+  };
+
+  const handleOnCloseModal = () => {
+    handleOpenTaskEditor(false);
   };
 
   useEffect(() => {
@@ -63,112 +68,115 @@ export const TaskEditor = () => {
   }, [isOpenTaskEditor]);
 
   return (
-    <form
-      name="taskEditorForm"
-      className={`${styles.taskEditor} ${
-        isOpenTaskEditor ? styles.isOpen : ''
-      }`}
-      onKeyDown={handleFormKeyDown}
-      onSubmit={handleCreate}
-    >
-      <div className={styles.taskContainer}>
-        <header className={styles.taskHeader}>
-          <h2 className={styles.taskTitle}>Создание задачи</h2>
-          <fieldset className={styles.fieldsetWrapper}>
-            <legend className={styles.fieldsetLegend}>Название задачи</legend>
-            <label
-              className={styles.taskLabel}
-              htmlFor="taskInput"
-              tabIndex="-1"
-            >
-              Название <span>*</span>
-            </label>
-            <TaskInput
-              inputRef={inputRef}
-              handleChange={handleChange}
-              inputValue={inputValue}
-              isInputBlur={isInputBlur}
-              resetForm={resetForm}
-            />
-          </fieldset>
-        </header>
-        <div className={styles.taskContent}>
-          <div className={styles.priorityWrapper}>
-            <span className={styles.taskPriority}>Приоритет</span>
-            <fieldset className={styles.priorityField}>
-              <legend className={styles.fieldsetLegend}>
-                Выберите приоритет
-              </legend>
-              {priorityInput.map(({ priority, iconName }, index) => (
-                <PrioritySelect
-                  key={priority}
-                  priority={priority}
-                  iconName={iconName}
-                  index={index}
-                  handlePriorityKeyDown={handlePriorityKeyDown}
-                  labelRef={priorityLabelRef}
-                  handleChange={handleChange}
-                  inputValue={inputValue}
-                />
-              ))}
+    <>
+      {isOpenTaskEditor && <ModalOverlayLayout onClose={handleOnCloseModal} />}
+      <form
+        name="taskEditorForm"
+        className={`${styles.taskEditor} ${
+          isOpenTaskEditor ? styles.isOpen : ''
+        }`}
+        onKeyDown={handleFormKeyDown}
+        onSubmit={handleCreate}
+      >
+        <div className={styles.taskContainer}>
+          <header className={styles.taskHeader}>
+            <h2 className={styles.taskTitle}>Создание задачи</h2>
+            <fieldset className={styles.fieldsetWrapper}>
+              <legend className={styles.fieldsetLegend}>Название задачи</legend>
+              <label
+                className={styles.taskLabel}
+                htmlFor="taskInput"
+                tabIndex="-1"
+              >
+                Название <span>*</span>
+              </label>
+              <TaskInput
+                inputRef={inputRef}
+                handleChange={handleChange}
+                inputValue={inputValue}
+                isInputBlur={isInputBlur}
+                resetForm={resetForm}
+              />
             </fieldset>
+          </header>
+          <div className={styles.taskContent}>
+            <div className={styles.priorityWrapper}>
+              <span className={styles.taskPriority}>Приоритет</span>
+              <fieldset className={styles.priorityField}>
+                <legend className={styles.fieldsetLegend}>
+                  Выберите приоритет
+                </legend>
+                {priorityInput.map(({ priority, iconName }, index) => (
+                  <PrioritySelect
+                    key={priority}
+                    priority={priority}
+                    iconName={iconName}
+                    index={index}
+                    handlePriorityKeyDown={handlePriorityKeyDown}
+                    labelRef={priorityLabelRef}
+                    handleChange={handleChange}
+                    inputValue={inputValue}
+                  />
+                ))}
+              </fieldset>
+            </div>
           </div>
         </div>
-      </div>
-      <footer className={styles.taskFooter}>
-        <Button
-          type="button"
-          aria-label="Создать задачу"
-          onClick={handleCreate}
-          disabled={!createLoading && !isInputBlur}
-          variant="primary"
-          onLoading={createLoading}
-          className={styles.footerButton}
-          tabIndex="7"
-        >
-          {createLoading && (
-            <Icon
-              id="loadingIcon"
-              className={styles.loadingIcon}
-              stroke="var(--neutral-100)"
-              fill="none"
-            />
-          )}
-          <span
-            className={`${styles.buttonText} ${
-              createLoading && styles.onHidden
-            }`}
+        <footer className={styles.taskFooter}>
+          <Button
+            type="button"
+            aria-label="Создать задачу"
+            onClick={handleCreate}
+            disabled={!createLoading && !isInputBlur}
+            variant="primary"
+            onLoading={createLoading}
+            className={styles.footerButton}
+            tabIndex="7"
           >
-            Создать
-          </span>
-        </Button>
-        <Button
-          type="button"
-          aria-label="Отменить создание задачи"
-          onClick={handleCancel}
-          variant="secondary"
-          onLoading={cancelLoading}
-          className={styles.footerButton}
-          tabIndex="8"
-        >
-          {cancelLoading && (
-            <Icon
-              id="loadingIcon"
-              className={styles.loadingIcon}
-              stroke="var(--neutral-800)"
-              fill="none"
-            />
-          )}
-          <span
-            className={`${styles.buttonText} ${
-              cancelLoading && styles.onHidden
-            }`}
+            {createLoading && (
+              <Icon
+                id="loadingIcon"
+                className={styles.loadingIcon}
+                stroke="var(--neutral-100)"
+                fill="none"
+              />
+            )}
+            <span
+              className={`${styles.buttonText} ${
+                createLoading && styles.onHidden
+              }`}
+            >
+              Создать
+            </span>
+          </Button>
+          <Button
+            type="button"
+            aria-label="Отменить создание задачи"
+            onClick={handleCancel}
+            variant="secondary"
+            onLoading={cancelLoading}
+            className={styles.footerButton}
+            tabIndex="8"
           >
-            Отмена
-          </span>
-        </Button>
-      </footer>
-    </form>
+            {cancelLoading && (
+              <Icon
+                id="loadingIcon"
+                className={styles.loadingIcon}
+                stroke="var(--neutral-800)"
+                fill="none"
+              />
+            )}
+            <span
+              className={`${styles.buttonText} ${
+                cancelLoading && styles.onHidden
+              }`}
+            >
+              Отмена
+            </span>
+          </Button>
+        </footer>
+      </form>
+    </>
   );
 };
 

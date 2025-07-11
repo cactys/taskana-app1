@@ -8,13 +8,14 @@
   width: 100%;
 }
 
-.statisticImage, path {
-  transition: fill var(--transition-duration) ease;
+.statisticImage,
+path {
+  transition-duration: var(--transition-duration);
 }
 
 .statisticText {
   color: var(--neutral-800);
   font: var(--typography-subtitle2);
   text-align: center;
-  transition: color var(--transition-duration) ease;
+  transition-duration: var(--transition-duration);
 }

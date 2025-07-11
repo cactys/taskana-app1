@@ -2,36 +2,6 @@
   /* Минимальная ширина */
   --min-width: 1280px;
 
-  /* Нейтральные светлые цвета */
-  --neutral-0: #FFFFFF;
-  --neutral-100: #FBFBFB;
-  --neutral-200: #F3F3F3;
-  --neutral-300: #ECECEC;
-  --neutral-400: #BFBFBF;
-  --neutral-500: #8C8C8C;
-  --neutral-600: #6C6C6C;
-  --neutral-700: #393939;
-  --neutral-800: #1C1C1C;
-  --neutral-900: #141414;
-
-  /* Вторичные светлые цвета */
-  --secondary-0: #F5F0FF;
-  --secondary-100: #EADFFF;
-  --secondary-200: #D9C5FF;
-  --secondary-300: #B792FF;
-  --secondary-400: #742CFF;
-  --secondary-500: #581BCC;
-
-  /* Основные цвета */
-  --primary-0: #FFF4F4;
-  --primary-100: #FFCECE;
-  --primary-200: #FCA9A9;
-  --primary-300: #F25959;
-  --primary-400: #D51010;
-  --primary-500: #A60C0C;
-  --primary-600: #760909;
-  --primary-400-500: var(--primary-400), var(--primary-500);
-
   /* Базовые цвета */
   --base-white: #FFFFFF;
   --base-600: #6C6C6C;
@@ -78,10 +48,14 @@
   --sm-shadow: 2px 2px 4px 0 #0000001a;
   --sm-shadow-hover: 2px 8px 12px 0 #00000033;
 
+  /* Градиенты */
+  --base-primary-gradient: #D51010, #A60C0C;
+  --primary-400-500: var(--primary-400), var(--primary-500);
+
   /* Время анимации */
   --transition-duration: 0.2s;
   --task-editor-open-delay: 0.4s;
-  --loading-animation-delay: 2s;
+  --loading-animation-delay: 0.6s;
 
   /* шрифт */
   --font-family-source-sans3: 'Source Sans 3', sans-serif;
@@ -93,6 +67,43 @@
   --typography-subtitle2: var(--font-weight-regular) var(--font-size-md)/var(--line-height-md) var(--font-family-source-sans3);
   --typography-button: var(--font-weight-semibold) var(--font-size-md)/var(--line-height-md) var(--font-family-source-sans3);
   --typography-text-label: var(--font-weight-bold) var(--font-size-lg)/var(--line-height-md) var(--font-family-source-sans3);
+}
+
+[data-theme="light"] {
+  /* Нейтральные светлые цвета */
+  --neutral-0: #FFFFFF;
+  --neutral-100: #FBFBFB;
+  --neutral-200: #F3F3F3;
+  --neutral-300: #ECECEC;
+  --neutral-400: #BFBFBF;
+  --neutral-500: #8C8C8C;
+  --neutral-600: #6C6C6C;
+  --neutral-700: #393939;
+  --neutral-800: #1C1C1C;
+  --neutral-900: #141414;
+
+  /* Вторичные светлые цвета */
+  --secondary-0: #F5F0FF;
+  --secondary-100: #EADFFF;
+  --secondary-200: #D9C5FF;
+  --secondary-300: #B792FF;
+  --secondary-400: #742CFF;
+  --secondary-500: #581BCC;
+
+  /* Основные цвета */
+  --primary-0: #FFF4F4;
+  --primary-100: #FFCECE;
+  --primary-200: #FCA9A9;
+  --primary-300: #F25959;
+  --primary-400: #D51010;
+  --primary-500: #A60C0C;
+  --primary-600: #760909;
+
+  /* Тень */
+  --base-shadow: 2px 2px 4px 0 #00000080;
+  --base-shadow-hover: 2px 8px 12px 0 #000000cc;
+  --sm-shadow: 2px 2px 4px 0 #0000004d;
+  --sm-shadow-hover: 2px 8px 12px 0 var(--neutral-200);
 }
 
 [data-theme="dark"] {
@@ -115,6 +126,15 @@
   --secondary-300: #803EFF;
   --secondary-400: #9D6AFF;
   --secondary-500: #B792FF;
+
+  /* Основные цвета */
+  --primary-0: #300B0B;
+  --primary-100: #461313;
+  --primary-200: #760909;
+  --primary-300: #A60C0C;
+  --primary-400: #D51010;
+  --primary-500: #F25959;
+  --primary-600: #760909;
 
   /* Тень */
   --base-shadow: 2px 2px 4px 0 #00000080;
