@@ -1,4 +1,5 @@
-import { useLoading, useTaskContext } from '@hooks';
+import { useLoading, useContext } from '@hooks';
+import { TaskContext } from '@context';
 import { Logo } from '@components/UI/logo/Logo';
 import { Button } from '@components/UI/button/Button';
 import { ThemeSwitcher } from '@components/UI/themeSwitcher/ThemeSwitcher';
@@ -13,7 +14,7 @@ import { buttonAction } from '@utils/utils';
  * @returns {JSX.Element} - JSX элемент компонента Header
  */
 export const Header = () => {
-  const { handleOpenTaskEditor } = useTaskContext();
+  const { handleOpenTaskEditor } = useContext(TaskContext);
   const { loading, startLoading, stopLoading } = useLoading();
 
   const handleOpenEditor = () => {
@@ -37,14 +38,14 @@ export const Header = () => {
         >
           {loading && (
             <Icon
-              id="loadingIcon"
+              id="loading"
               stroke="var(--base-white)"
               fill="none"
               className={`${styles.loadingIcon} ${loading && styles.isLoading}`}
             />
           )}
           <Icon
-            id="plusIcon"
+            id="plus"
             fill="var(--base-white)"
             className={`${styles.buttonIcon} ${loading && styles.onHidden}`}
           />

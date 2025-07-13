@@ -34,7 +34,7 @@
   height: 40px;
   border-radius: var(--border-radius-md);
   overflow: hidden;
-  background: linear-gradient(to bottom, var(--base-primary-gradient));
+  background: linear-gradient(to bottom, var(--base-primary-400-500));
   transition-duration: var(--transition-duration);
   transform-origin: left;
 }

@@ -14,7 +14,7 @@ export const NavBar = () => {
         <li>
           <NavLink hrefLink={'/'} tabIndex="4">
             <Icon
-              id="inboxIcon"
+              id="inbox"
               fill="var(--neutral-0)"
               className={styles.linkIcon}
             />
