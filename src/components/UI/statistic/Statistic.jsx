@@ -9,7 +9,7 @@ import styles from './statistic.module.css';
 export const Statistic = () => {
   return (
     <div className={styles.statistic}>
-      <Illustration id="notebookImage" className={styles.statisticImage} />
+      <Illustration id="notebook" className={styles.statisticImage} />
       <p className={styles.statisticText}>
         Здесь мы поможем тебе управлять твоими задачами, отслеживать статистику
         и&nbsp;самочувствие.

@@ -1,5 +1,6 @@
 import { useRef, useEffect } from 'react';
-import { useForm, useLoading, useTaskContext } from '@hooks';
+import { TaskContext } from '@context';
+import { useForm, useLoading, useContext } from '@hooks';
 import { ModalOverlayLayout } from '@layouts/modalOverlayLayout/ModalOverlayLayout';
 import { priorityInput } from '@utils/constants';
 import { Icon } from '@components/icon/Icon';
@@ -11,7 +12,8 @@ import { buttonAction, formKeyDown, priorityKeyDown } from '@utils/utils';
 import styles from './taskEditor.module.css';
 
 export const TaskEditor = () => {
-  const { addTask, isOpenTaskEditor, handleOpenTaskEditor } = useTaskContext();
+  const { addTask, isOpenTaskEditor, handleOpenTaskEditor } =
+    useContext(TaskContext);
   const { inputValue, isInputBlur, handleChange, resetForm } = useForm();
   const {
     loading: createLoading,
@@ -135,7 +137,7 @@ export const TaskEditor = () => {
           >
             {createLoading && (
               <Icon
-                id="loadingIcon"
+                id="loading"
                 className={styles.loadingIcon}
                 stroke="var(--neutral-100)"
                 fill="none"
@@ -160,7 +162,7 @@ export const TaskEditor = () => {
           >
             {cancelLoading && (
               <Icon
-                id="loadingIcon"
+                id="loading"
                 className={styles.loadingIcon}
                 stroke="var(--neutral-800)"
                 fill="none"

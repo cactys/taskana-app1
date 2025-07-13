@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext } from '@hooks';
 import { ThemeContext } from '@context';
 import { Icon } from '@components/icon/Icon';
 
@@ -29,14 +29,14 @@ export const ThemeSwitcher = () => {
             isLightTheme ? styles.active : ''
           }`}
         >
-          <Icon id="sunIcon" className={styles.icon} />
+          <Icon id="sun" className={styles.icon} />
         </div>
         <div
           className={`${styles.iconContainer} ${
             !isLightTheme ? styles.active : ''
           }`}
         >
-          <Icon id="moonIcon" className={styles.icon} />
+          <Icon id="moon" className={styles.icon} />
         </div>
       </div>
     </button>

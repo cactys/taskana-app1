@@ -29,7 +29,7 @@ export const TaskInput = ({
         disabled={!isInputBlur}
         onClick={resetForm}
       >
-        <Icon id="cancelIcon" className={styles.cancelIcon} />
+        <Icon id="cancel" className={styles.cancelIcon} />
       </button>
     </label>
   );

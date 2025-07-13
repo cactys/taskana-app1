@@ -1,6 +1,7 @@
-import { useTaskContext } from '@hooks';
+import { useContext } from '@hooks';
 import { Illustration } from '@components/illustration/Illustration';
 import { reverseList } from '@utils/utils';
+import { TaskContext } from '@context';
 
 import styles from './taskList.module.css';
 import TaskItem from '../taskItem/TaskItem';
@@ -10,7 +11,7 @@ import TaskItem from '../taskItem/TaskItem';
  * @returns {JSX.Element} - JSX элемент списка задач
  */
 export const TaskList = () => {
-  const { tasks } = useTaskContext();
+  const { tasks } = useContext(TaskContext);
 
   const reverseTaskList = reverseList(tasks);
 
@@ -26,7 +27,7 @@ export const TaskList = () => {
               Отличная работа! Ты большой молодец!
             </p>
           </header>
-          <Illustration id="emptyTaskImage" className={styles.articleImage} />
+          <Illustration id="emptyTask" className={styles.articleImage} />
         </article>
       ) : (
         <ul className={styles.taskList}>
