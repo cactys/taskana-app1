@@ -4,7 +4,7 @@ import { Button } from '@components/UI/button/Button';
 import { Icon } from '@components/icon/Icon';
 import { ModalOverlayLayout } from '@layouts/modalOverlayLayout/ModalOverlayLayout';
 import { keyDown } from '@utils/utils';
-import styles from './Dropdown.module.css';
+import styles from './dropdown.module.css';
 
 const LazyInput = lazy(() =>
   import('../UI/filterInput/FilterInput').then((module) => ({
