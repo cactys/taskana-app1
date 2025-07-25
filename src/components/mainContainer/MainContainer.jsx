@@ -1,11 +1,12 @@
 import { TaskList } from '@components/UI/taskList/TaskList';
-
-import styles from './mainContainer.module.css';
 import { Dropdown } from '@components/dropdown/Dropdown';
 
+import styles from './mainContainer.module.css';
+
 /**
- * Основной контейнер для содержимого страницы
- * @returns {JSX.Element} - JSX элемент основного контейнера
+ * Основной контейнер страницы "Входящие".
+ *
+ * @returns {JSX.Element} JSX элемент, содержащий структурированное основное содержимое страницы.
  */
 export const MainContainer = () => {
   return (

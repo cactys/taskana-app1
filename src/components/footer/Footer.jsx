@@ -1,8 +1,9 @@
 import styles from './footer.module.css';
 
 /**
- * Компонент футера приложения
- * @returns {JSX.Element} - JSX элемент футера
+ * Компонент футера приложения.
+ *
+ * @returns {JSX.Element} JSX-разметка футера
  */
 export const Footer = () => {
   return (

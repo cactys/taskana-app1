@@ -1,13 +1,14 @@
 import styles from './button.module.css';
 
 /**
- * Компонент кнопки
- * @param {ReactNode} children - Содержимое кнопки (текст или другие компоненты)
- * @param {string} variant - Вариант кнопки (например, 'primary', 'secondary', 'danger', 'editing')
- * @param {string} className - Дополнительные CSS классы
- * @param {boolean} onLoading - Флаг, указывающий, находится ли кнопка в состоянии загрузки
- * @param {Object} props - Дополнительные атрибуты и настройки кнопки
- * @returns {JSX.Element} - JSX элемент кнопки с указанными свойствами
+ * Компонент кнопки с вариантами оформления и состоянием загрузки.
+ *
+ * @param {Object} props - Свойства компонента.
+ * @param {React.ReactNode} props.children - Содержимое кнопки (текст или компоненты).
+ * @param {string} [props.variant='primary'] - Вариант оформления кнопки ('primary', 'secondary', 'danger', 'editing' и др.).
+ * @param {string} [props.className] - Дополнительные CSS-классы.
+ * @param {boolean} [props.onLoading] - Флаг состояния загрузки (активирует стили и поведение кнопки).
+ * @returns {JSX.Element} Кнопка с комбинированными стилями и переданными атрибутами.
  */
 export const Button = ({
   children,
@@ -33,7 +34,10 @@ export const Button = ({
   const combinedClassNames = cn.join(' ');
 
   return (
-    <button className={combinedClassNames} {...props}>
+    <button
+      className={combinedClassNames}
+      {...props}
+    >
       {children}
     </button>
   );

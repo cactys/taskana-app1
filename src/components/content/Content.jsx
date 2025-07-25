@@ -6,8 +6,9 @@ import { TaskEditor } from '@components/taskEditor/TaskEditor';
 import styles from './content.module.css';
 
 /**
- * Контейнер основного содержимого приложения
- * @returns {JSX.Element} - JSX элемент страницы
+ * Контейнер основного содержимого приложения.
+ *
+ * @returns {JSX.Element} Разметка контейнера основного содержимого
  */
 export const Content = () => {
   return (

@@ -4,6 +4,7 @@ import { Button } from '@components/UI/button/Button';
 import { Icon } from '@components/icon/Icon';
 import { ModalOverlayLayout } from '@layouts/modalOverlayLayout/ModalOverlayLayout';
 import { keyDown } from '@utils/utils';
+import styles from './Dropdown.module.css';
 
 const LazyInput = lazy(() =>
   import('../UI/filterInput/FilterInput').then((module) => ({
@@ -11,8 +12,13 @@ const LazyInput = lazy(() =>
   }))
 );
 
-import styles from './Dropdown.module.css';
-
+/**
+ * Компонент Dropdown — выпадающее меню для выбора и фильтрации задач.
+ *
+ * @param {Object} props
+ * @param {string} props.title — Заголовок выпадающего списка
+ * @returns {JSX.Element} JSX-разметка компонента Dropdown
+ */
 export const Dropdown = ({ title }) => {
   const {
     handleDropdownMenu,
@@ -21,6 +27,7 @@ export const Dropdown = ({ title }) => {
     handleSelectOption,
     filters,
   } = useContext(FilterContext);
+
   const filterLabelRef = useRef([]);
 
   const handleFilterKeyDown = (e, index) => {
@@ -41,19 +48,18 @@ export const Dropdown = ({ title }) => {
   return (
     <>
       {openDropdownMenu && <ModalOverlayLayout onClose={handleDropdownMenu} />}
+
       <div className={styles.dropdown}>
         <Button
+          type="button"
+          className={`${styles.trigger} ${!openDropdownMenu && styles.unSelected}`}
           variant="secondary"
-          className={`${styles.trigger} ${
-            !openDropdownMenu && styles.unSelected
-          }`}
-          onClick={handleDropdownMenu}
           aria-haspopup="listbox"
           aria-expanded={openDropdownMenu}
           aria-controls="dropdown-listbox"
           aria-label="Сортировка задач"
           tabIndex={0}
-          type="button"
+          onClick={handleDropdownMenu}
         >
           <Icon id={selectOption.iconName} className={styles.icon} />
           {`По ${selectOption.label.toLowerCase()}`}
@@ -63,15 +69,14 @@ export const Dropdown = ({ title }) => {
         <ul
           id="dropdown-listbox"
           role="listbox"
-          className={`${styles.list} ${
-            openDropdownMenu ? styles.open : styles.closed
-          }`}
+          className={`${styles.list} ${openDropdownMenu ? styles.open : styles.closed}`}
           inert={!openDropdownMenu ? '' : undefined}
         >
           <header className={styles.listHeader}>
             <Icon id="filter" className={styles.icon} />
             <h3 className={styles.listTitle}>{title}</h3>
           </header>
+
           {filters.map((option, index) => (
             <li key={index} id={`option-${index}`} role="option">
               <Suspense fallback={null}>

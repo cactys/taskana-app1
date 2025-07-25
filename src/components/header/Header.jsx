@@ -5,13 +5,12 @@ import { Button } from '@components/UI/button/Button';
 import { ThemeSwitcher } from '@components/UI/themeSwitcher/ThemeSwitcher';
 import { Icon } from '@components/icon/Icon';
 import { buttonAction } from '@utils/utils';
-
 import styles from './header.module.css';
-import { buttonAction } from '@utils/utils';
 
 /**
- * Компонент шапки приложения
- * @returns {JSX.Element} - JSX элемент компонента Header
+ * Компонент шапки приложения.
+ *
+ * @returns {JSX.Element} JSX-разметка шапки
  */
 export const Header = () => {
   const { handleOpenTaskEditor } = useContext(TaskContext);
@@ -28,19 +27,19 @@ export const Header = () => {
       <Logo />
       <div className={styles.headerContent}>
         <Button
-          aria-label="Создать новую задачу"
           type="button"
+          className={styles.addButton}
           variant="danger"
+          aria-label="Создать новую задачу"
+          tabIndex={0}
           onClick={handleOpenEditor}
           onLoading={loading}
-          className={styles.addButton}
-          tabIndex={0}
         >
           {loading && (
             <Icon
               id="loading"
-              stroke="var(--base-white)"
               fill="none"
+              stroke="var(--base-white)"
               className={`${styles.loadingIcon} ${loading && styles.isLoading}`}
             />
           )}

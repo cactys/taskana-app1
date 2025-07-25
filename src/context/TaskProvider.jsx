@@ -4,9 +4,11 @@ import FilterContext from './FilterContext';
 import { generateUniqueId, timeStamp } from '@utils/utils';
 
 /**
- * Провайдер контекста задач
+ * Провайдер контекста задач.
+ * Управляет состоянием задач, сортировкой, открытием редактора задач и CRUD операциями.
+ *
  * @param {ReactNode} children - Дочерние компоненты
- * @returns {JSX.Element} - JSX элемент провайдера контекста
+ * @returns {JSX.Element} Провайдер TaskContext с логикой управления задачами
  */
 const TaskProvider = ({ children }) => {
   const { selectOption } = useContext(FilterContext);
@@ -18,6 +20,7 @@ const TaskProvider = ({ children }) => {
     if (!selectOption?.value) return tasks;
 
     const [key, direction] = selectOption.value.split(':');
+
     return [...tasks].sort((a, b) => {
       const aValue = a[key];
       const bValue = b[key];

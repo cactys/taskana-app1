@@ -11,6 +11,18 @@ import { buttonAction, formKeyDown, keyDown } from '@utils/utils';
 
 import styles from './taskEditor.module.css';
 
+/**
+ * Редактор задачи с возможностью создания, редактирования и удаления.
+ * Использует контекст задач и кастомные хуки для формы и загрузки.
+ *
+ * Основные возможности:
+ * - Управление состоянием формы задачи (название, приоритет).
+ * - Создание новой задачи и обновление существующей.
+ * - Удаление задачи.
+ * - Управление загрузкой и состояниями кнопок.
+ *
+ * @returns {JSX.Element} JSX элемент редактора задачи.
+ */
 export const TaskEditor = () => {
   const {
     addTask,
@@ -20,6 +32,7 @@ export const TaskEditor = () => {
     updateTask,
     deleteTask,
   } = useContext(TaskContext);
+
   const {
     inputValue,
     isInputBlur,
@@ -28,6 +41,7 @@ export const TaskEditor = () => {
     setFormData,
     isChanged,
   } = useForm();
+
   const {
     loading: createLoading,
     startLoading: startCreateLoading,
@@ -43,6 +57,7 @@ export const TaskEditor = () => {
     startLoading: startDeleteLoading,
     stopLoading: stopDeleteLoading,
   } = useLoading();
+
   const priorityLabelRef = useRef([]);
   const inputRef = useRef(null);
   const prevIsOpen = useRef(false);
@@ -67,22 +82,21 @@ export const TaskEditor = () => {
           resetForm();
         }
       );
+      return;
     }
 
-    if (!editableTask) {
-      buttonAction(
-        isInputBlur,
-        startCreateLoading,
-        stopCreateLoading,
-        () => {
-          addTask(inputValue);
-        },
-        () => {
-          handleOpenTaskEditor(false);
-          resetForm();
-        }
-      );
-    }
+    buttonAction(
+      isInputBlur,
+      startCreateLoading,
+      stopCreateLoading,
+      () => {
+        addTask(inputValue);
+      },
+      () => {
+        handleOpenTaskEditor(false);
+        resetForm();
+      }
+    );
   };
 
   const handleCancel = (e) => {
@@ -131,9 +145,7 @@ export const TaskEditor = () => {
 
   useEffect(() => {
     if (isOpenTaskEditor && inputRef.current) {
-      const timer = setTimeout(() => {
-        inputRef.current.focus();
-      }, 200);
+      const timer = setTimeout(() => inputRef.current.focus(), 200);
       return () => clearTimeout(timer);
     }
   }, [isOpenTaskEditor]);
@@ -155,6 +167,7 @@ export const TaskEditor = () => {
   return (
     <div inert={!isOpenTaskEditor ? '' : undefined}>
       {isOpenTaskEditor && <ModalOverlayLayout onClose={handleOnCloseModal} />}
+
       <form
         name="taskEditorForm"
         className={`${styles.taskEditor} ${
@@ -166,11 +179,13 @@ export const TaskEditor = () => {
         <div className={styles.taskContainer}>
           <header className={styles.taskHeader}>
             <h2 className={styles.taskTitle}>Создание задачи</h2>
+
             <fieldset className={styles.fieldsetWrapper}>
               <legend className={styles.fieldsetLegend}>Название задачи</legend>
               <label className={styles.taskLabel} htmlFor="taskInput">
                 Название <span>*</span>
               </label>
+
               <TaskInput
                 inputRef={inputRef}
                 handleChange={handleChange}
@@ -180,6 +195,7 @@ export const TaskEditor = () => {
               />
             </fieldset>
           </header>
+
           <div className={styles.taskContent}>
             <div className={styles.priorityWrapper}>
               <span className={styles.taskPriority}>Приоритет</span>
@@ -187,6 +203,7 @@ export const TaskEditor = () => {
                 <legend className={styles.fieldsetLegend}>
                   Выберите приоритет
                 </legend>
+
                 {priorityInput.map(({ priority, iconName }, index) => (
                   <PrioritySelect
                     key={priority}
@@ -203,6 +220,7 @@ export const TaskEditor = () => {
             </div>
           </div>
         </div>
+
         <footer className={styles.taskFooter}>
           <Button
             type="button"
@@ -229,6 +247,7 @@ export const TaskEditor = () => {
               {editableTask ? 'Сохранить' : 'Создать'}
             </span>
           </Button>
+
           <Button
             type="button"
             aria-label="Отменить создание задачи"
@@ -253,6 +272,7 @@ export const TaskEditor = () => {
               Отмена
             </span>
           </Button>
+
           {editableTask && (
             <Button
               type="button"

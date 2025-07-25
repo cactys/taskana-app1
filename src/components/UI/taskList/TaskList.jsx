@@ -7,8 +7,11 @@ import styles from './taskList.module.css';
 import TaskItem from '../taskItem/TaskItem';
 
 /**
- * Список задач
- * @returns {JSX.Element} - JSX элемент списка задач
+ * Компонент списка задач.
+ * Отображает задачи в обратном порядке.
+ * Если задач нет — показывает приветственный блок с иллюстрацией.
+ *
+ * @returns {JSX.Element} JSX элемент списка задач или информационного сообщения
  */
 export const TaskList = () => {
   const { tasks, editTask } = useContext(TaskContext);

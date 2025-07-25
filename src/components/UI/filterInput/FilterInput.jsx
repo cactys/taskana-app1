@@ -3,6 +3,19 @@ import { Icon } from '@components/icon/Icon';
 
 import styles from './filterInput.module.css';
 
+/**
+ * Компонент опции фильтра с поддержкой клавиатурной навигации и выбором.
+ *
+ * @param {Object} props - Свойства компонента.
+ * @param {Object} props.option - Объект опции фильтра { value, label, iconName, mode }.
+ * @param {number} props.index - Индекс текущей опции в списке.
+ * @param {(option: Object) => void} props.handleSelectOption - Коллбек выбора опции.
+ * @param {string} props.isSelected - Значение выбранной опции для сравнения.
+ * @param {(event: KeyboardEvent, index: number) => void} props.handleFilterKeyDown - Обработчик клавиш для навигации.
+ * @param {React.MutableRefObject<Array>} props.labelRef - Реф для управления фокусом по опциям.
+ *
+ * @returns {JSX.Element} Отрендеренный элемент опции с чекбоксом/радио и иконками.
+ */
 export const FilterInput = memo(
   ({
     option,
@@ -42,9 +55,7 @@ export const FilterInput = memo(
         {option.label}
         <Icon
           id="check"
-          className={`${styles.checkIcon} ${select && styles.checked} ${
-            styles.icon
-          }`}
+          className={`${styles.checkIcon} ${select ? styles.checked : ''} ${styles.icon}`}
         />
       </label>
     );

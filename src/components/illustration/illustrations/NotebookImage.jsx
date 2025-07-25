@@ -1,9 +1,15 @@
+/**
+ * Компонент SVG-изображения "NotebookImage" — ноутбук с цветовой палитрой из CSS-переменных.
+ *
+ * @param {React.SVGProps<SVGSVGElement>} props - Пропсы SVG элемента, например, className, style, onClick и т.д.
+ * @returns {JSX.Element} SVG изображение ноутбука с заданными параметрами.
+ */
 export const NotebookImage = ({ ...props }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="234"
-      height="168"
+      width={props.width ?? 234}
+      height={props.height ?? 168}
       viewBox="0 0 234 168"
       {...props}
     >

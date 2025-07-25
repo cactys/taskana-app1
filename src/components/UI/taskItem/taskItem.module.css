@@ -131,8 +131,8 @@
 
 .buttonEdit {
   opacity: 0;
-  cursor: default;
   transition-duration: var(--transition-duration);
+  cursor: default;
 
   &:hover .buttonIcon {
     fill: var(--neutral-800);
