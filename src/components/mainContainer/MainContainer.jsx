@@ -2,7 +2,6 @@ import { TaskList } from '@components/UI/taskList/TaskList';
 
 import styles from './mainContainer.module.css';
 import { Dropdown } from '@components/dropdown/Dropdown';
-import { filterOptions } from '@utils/constants';
 
 /**
  * Основной контейнер для содержимого страницы
@@ -13,7 +12,7 @@ export const MainContainer = () => {
     <section className={styles.container}>
       <div className={styles.containerWrapper}>
         <h1 className={styles.title}>Входящие</h1>
-        <Dropdown title="Сортировка по:" options={filterOptions} />
+        <Dropdown title="Сортировка по:" />
       </div>
       <TaskList />
     </section>

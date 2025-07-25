@@ -23,7 +23,7 @@
       outline-offset: 2px;
     }
 
-    &.has-minusIcon {
+    &.has-minus {
       --priority-color: var(--neutral-200);
 
       &:hover {
@@ -35,7 +35,7 @@
       }
     }
 
-    &.has-chevronTopIcon {
+    &.has-chevronTop {
       --priority-color: var(--secondary-0);
 
       &:hover {
@@ -47,7 +47,7 @@
       }
     }
 
-    &.has-twoArrowIcon {
+    &.has-twoArrow {
       --priority-color: var(--primary-0);
 
       &:hover {
@@ -63,15 +63,15 @@
   &:hover {
     --priority-shadow: var(--sm-shadow-hover);
 
-    &.has-minusIcon {
+    &.has-minus {
       --priority-color: var(--neutral-300);
     }
 
-    &.has-chevronTopIcon {
+    &.has-chevronTop {
       --priority-color: var(--secondary-100);
     }
 
-    &.has-twoArrowIcon {
+    &.has-twoArrow {
       --priority-color: var(--primary-100);
     }
   }
@@ -82,15 +82,15 @@
     outline: 2px solid var(--neutral-900);
     outline-offset: 2px;
 
-    &.has-minusIcon {
+    &.has-minus {
       --priority-color: var(--neutral-300);
     }
 
-    &.has-chevronTopIcon {
+    &.has-chevronTop {
       --priority-color: var(--secondary-100);
     }
 
-    &.has-twoArrowIcon {
+    &.has-twoArrow {
       --priority-color: var(--primary-100);
     }
   }
@@ -103,17 +103,17 @@
   opacity: 0;
 }
 
-.minusIcon {
+.minus {
   fill: var(--neutral-600);
   transition-duration: var(--transition-duration);
 }
 
-.chevronTopIcon {
+.chevronTop {
   fill: var(--secondary-400);
   transition-duration: var(--transition-duration);
 }
 
-.twoArrowIcon {
+.twoArrow {
   fill: var(--primary-400);
   transition-duration: var(--transition-duration);
 }

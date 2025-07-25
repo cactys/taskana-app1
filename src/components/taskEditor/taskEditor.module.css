@@ -117,6 +117,15 @@
   transition-duration: var(--transition-duration);
 }
 
+.deleteButton {
+  margin-left: auto;
+  padding: 12px;
+}
+
+.trashIcon {
+  fill: var(--primary-400);
+}
+
 .loadingIcon {
   position: absolute;
   top: 0;

@@ -1,5 +1,4 @@
-import { Suspense } from 'react';
-import { getLazyComponentById } from '@utils/utils';
+import { getComponentById } from '@utils/utils';
 
 /**
  * Компонент-обёртка для отображения иконок с ленивой загрузкой.
@@ -8,16 +7,12 @@ import { getLazyComponentById } from '@utils/utils';
  * @returns {JSX.Element|null}
  */
 export const Icon = ({ id, ...props }) => {
-  const LazyIcon = getLazyComponentById(id, {
-    prefix: '../components/icon/icons',
+  const Icon = getComponentById(id, {
+    prefix: 'icon/icons',
     suffix: 'Icon',
   });
 
-  if (!LazyIcon) return null;
+  if (!Icon) return null;
 
-  return (
-    <Suspense fallback={null}>
-      <LazyIcon {...props} />
-    </Suspense>
-  );
+  return <Icon {...props} />;
 };

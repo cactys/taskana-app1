@@ -1,4 +1,5 @@
-import { lazy } from 'react';
+import { iconComponentMap } from '@components/icon/iconMap';
+import { illustrationComponentMap } from '@components/illustration/illustrationMap';
 
 /**
  * Генерация уникального идентификатора
@@ -22,7 +23,7 @@ export const timeStamp = () => {
  * @param {Array<any>} data - Массив, который нужно развернуть
  * @returns {Array<any>} Новый массив в обратном порядке
  */
-export const reverseList = (data) => data.slice().reverse();
+export const reverseList = (data = []) => [...data].slice().reverse();
 
 /**
  * Обработка клавиатурной навигации по приоритетам задачи
@@ -32,27 +33,43 @@ export const reverseList = (data) => data.slice().reverse();
  * @param {(event: { target: { name: string, value: string } }) => void} handleChange - Обработчик изменения значения
  * @param {(newIndex: number) => void} handleFocus - Обработчик смены фокуса по индексу
  */
-export const priorityKeyDown = (
+export const keyDown = (
   evn,
   index,
   priorities,
+  filters,
   handleChange,
   handleFocus
 ) => {
   switch (evn.key) {
     case 'ArrowUp':
     case 'ArrowLeft':
-      handleFocus(index > 0 ? index - 1 : priorities.length - 1);
+      if (priorities) {
+        handleFocus(index > 0 ? index - 1 : priorities.length - 1);
+      }
+      if (filters) {
+        handleFocus(index > 0 ? index - 1 : filters.length - 1);
+      }
       break;
     case 'ArrowDown':
     case 'ArrowRight':
-      handleFocus(index < priorities.length - 1 ? index + 1 : 0);
+      if (priorities) {
+        handleFocus(index < priorities.length - 1 ? index + 1 : 0);
+      }
+      if (filters) {
+        handleFocus(index < filters.length - 1 ? index + 1 : 0);
+      }
       break;
     case 'Enter':
     case ' ':
-      handleChange({
-        target: { name: 'priority', value: priorities[index] },
-      });
+      if (priorities) {
+        handleChange({
+          target: { name: 'priority', value: priorities[index] },
+        });
+      }
+      if (filters) {
+        handleChange({ ...filters[index] });
+      }
       break;
     default:
       break;
@@ -98,15 +115,25 @@ export const buttonAction = (
   isInputBlur = true,
   startLoading,
   stopLoading,
-  action
+  action,
+  onFinish
 ) => {
   if (isInputBlur) {
     startLoading();
     setTimeout(() => {
       action();
       stopLoading();
+
+      if (typeof onFinish === 'function') {
+        onFinish();
+      }
     }, 600);
   }
+};
+
+const componentMap = {
+  'icon/icons': iconComponentMap,
+  'illustration/illustrations': illustrationComponentMap,
 };
 
 /**
@@ -117,17 +144,20 @@ export const buttonAction = (
  * @param {string} options.suffix - Суффикс имени компонента (например, "Icon", "Image").
  * @returns {React.LazyExoticComponent<React.ComponentType<any>>|undefined} Компонент или undefined, если не найден.
  */
-export const getLazyComponentById = (id, { prefix = '', suffix = '' } = {}) => {
-  try {
-    const componentName = id.charAt(0).toUpperCase() + id.slice(1) + suffix;
+export const getComponentById = (id, { prefix = '', suffix = '' } = {}) => {
+  const componentName = id.charAt(0).toUpperCase() + id.slice(1) + suffix;
 
-    return lazy(() =>
-      import(`${prefix}/${componentName}.jsx`).then((module) => ({
-        default: module[componentName],
-      }))
-    );
-  } catch (error) {
-    console.warn(`Компонент "${id}" не найден в ${prefix}.`, error);
+  const group = componentMap[prefix];
+  if (!group) {
+    console.warn(`Префикс "${prefix}" не найден`);
     return undefined;
   }
+
+  const Component = group[componentName];
+  if (!Component) {
+    console.warn(`Компонент ${componentName} не найден`);
+    return undefined;
+  }
+
+  return Component;
 };

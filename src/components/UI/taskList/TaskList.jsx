@@ -11,9 +11,13 @@ import TaskItem from '../taskItem/TaskItem';
  * @returns {JSX.Element} - JSX элемент списка задач
  */
 export const TaskList = () => {
-  const { tasks } = useContext(TaskContext);
+  const { tasks, editTask } = useContext(TaskContext);
 
   const reverseTaskList = reverseList(tasks);
+
+  const handleEditTask = (id) => {
+    editTask(id);
+  };
 
   return (
     <div className={styles.taskContainer}>
@@ -32,14 +36,14 @@ export const TaskList = () => {
       ) : (
         <ul className={styles.taskList}>
           {reverseTaskList.map((task, index) => (
-            <li key={task.id} className={styles.taskItem} tabIndex={index + 9}>
-              <TaskItem
-                index={index}
-                id={task.id}
-                priority={task.priority}
-                title={task.title}
-              />
-            </li>
+            <TaskItem
+              key={task.id}
+              index={index}
+              id={task.id}
+              priority={task.priority}
+              title={task.title}
+              handleEditTask={handleEditTask}
+            />
           ))}
         </ul>
       )}

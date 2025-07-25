@@ -33,7 +33,7 @@ export const Header = () => {
           onClick={handleOpenEditor}
           onLoading={loading}
           className={styles.addButton}
-          tabIndex="2"
+          tabIndex={0}
         >
           {loading && (
             <Icon

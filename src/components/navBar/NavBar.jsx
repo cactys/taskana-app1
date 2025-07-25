@@ -12,7 +12,7 @@ export const NavBar = () => {
     <nav className={styles.navbar}>
       <ul className={styles.navList}>
         <li>
-          <NavLink hrefLink={'/'} tabIndex="4">
+          <NavLink hrefLink={'/'} tabIndex={0}>
             <Icon
               id="inbox"
               fill="var(--neutral-0)"

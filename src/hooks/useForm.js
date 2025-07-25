@@ -1,5 +1,5 @@
 import { initialFormState } from '@utils/constants';
-import { useCallback, useState } from 'react';
+import { useCallback, useMemo, useRef, useState } from 'react';
 
 /**
  * Хук useForm используется для управления состоянием формы.
@@ -12,6 +12,7 @@ import { useCallback, useState } from 'react';
 const useForm = () => {
   const [inputValue, setInputValue] = useState(initialFormState);
   const [isInputBlur, setIsInputBlur] = useState(false);
+  const initialDataRef = useRef(initialFormState);
 
   const handleChange = (event) => {
     const { value, name, type } = event.target;
@@ -37,7 +38,33 @@ const useForm = () => {
     setInputValue({ ...inputValue, ...initialFormState });
   }, [setInputValue, inputValue]);
 
-  return { inputValue, setInputValue, isInputBlur, handleChange, resetForm };
+  const setFormData = useCallback((task) => {
+    if (!task) return;
+    const newData = {
+      title: task.title || '',
+      priority: task.priority || 1,
+    };
+    setInputValue(newData);
+    initialDataRef.current = newData;
+    setIsInputBlur(!!task.title?.trim());
+  }, []);
+
+  const isChanged = useMemo(() => {
+    const { title, priority } = inputValue;
+    const { title: initialTitle, priority: initialPriority } =
+      initialDataRef.current;
+    return title !== initialTitle || priority !== initialPriority;
+  }, [inputValue]);
+
+  return {
+    inputValue,
+    setInputValue,
+    isInputBlur,
+    handleChange,
+    resetForm,
+    setFormData,
+    isChanged,
+  };
 };
 
 export default useForm;

@@ -10,7 +10,7 @@ export const TaskInput = ({
   resetForm,
 }) => {
   return (
-    <label className={styles.inputWrapper} htmlFor="taskInput" tabIndex="-1">
+  <label className={styles.inputWrapper} htmlFor="taskInput" tabIndex={-1}>
       <input
         id="taskInput"
         onChange={handleChange}
@@ -19,8 +19,8 @@ export const TaskInput = ({
         type="text"
         placeholder="Название задачи"
         className={styles.taskInput}
-        tabIndex="5"
         ref={inputRef}
+        tabIndex={0}
       />
       <button
         className={styles.taskCancel}
@@ -28,6 +28,7 @@ export const TaskInput = ({
         type="button"
         disabled={!isInputBlur}
         onClick={resetForm}
+        tabIndex={-1}
       >
         <Icon id="cancel" className={styles.cancelIcon} />
       </button>

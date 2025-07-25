@@ -1,5 +1,4 @@
-import { Suspense } from 'react';
-import { getLazyComponentById } from '@utils/utils';
+import { getComponentById } from '@utils/utils';
 
 /**
  * Компонент-обёртка для отображения иллюстраций с ленивой загрузкой.
@@ -9,16 +8,12 @@ import { getLazyComponentById } from '@utils/utils';
  * @returns {JSX.Element|null}
  */
 export const Illustration = ({ id, ...props }) => {
-  const LazyImage = getLazyComponentById(id, {
-    prefix: '../components/illustration/illustrations',
+  const Image = getComponentById(id, {
+    prefix: 'illustration/illustrations',
     suffix: 'Image',
   });
 
-  if (!LazyImage) return null;
+  if (!Image) return null;
 
-  return (
-    <Suspense fallback={null}>
-      <LazyImage {...props} />
-    </Suspense>
-  );
+  return <Image {...props} />;
 };
