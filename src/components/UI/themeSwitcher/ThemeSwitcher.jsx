@@ -13,10 +13,10 @@ export const ThemeSwitcher = () => {
 
   return (
     <button
-      tabIndex="3"
       type="button"
       className={styles.switchButton}
       onClick={toggleTheme}
+      tabIndex={0}
     >
       <div className={styles.track}>
         <div

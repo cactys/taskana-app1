@@ -14,9 +14,11 @@
   --base-primary-500: #A60C0C;
   --base-primary-400-500: var(--base-primary-400), var(--base-primary-500);
 
-  /* Радиус границ */
+  /* Границы */
   --border-radius-sm: 4px;
   --border-radius-md: 8px;
+  --border-color: var(--neutral-900);
+  --border-width: 4px;
 
   /* Переменные типографики */
   /* Размеры шрифтов */
@@ -63,6 +65,7 @@
   /* Стили типографики */
   --typography-h1: var(--font-weight-bold) var(--font-size-4xl)/var(--line-height-3xl) var(--font-family-source-sans3);
   --typography-h2: var(--font-weight-bold) var(--font-size-2xl)/var(--line-height-xl) var(--font-family-source-sans3);
+  --typography-h3: var(--font-weight-bold) var(--font-size-md)/var(--line-height-md) var(--font-family-source-sans3);
   --typography-subtitle1: var(--font-weight-regular) var(--font-size-lg)/var(--line-height-md) var(--font-family-source-sans3);
   --typography-subtitle2: var(--font-weight-regular) var(--font-size-md)/var(--line-height-md) var(--font-family-source-sans3);
   --typography-button: var(--font-weight-semibold) var(--font-size-md)/var(--line-height-md) var(--font-family-source-sans3);
@@ -100,11 +103,8 @@
   --primary-600: #760909;
   --primary-400-500: var(--primary-400), var(--primary-500);
 
-  /* Тень */
-  --base-shadow: 2px 2px 4px 0 #00000080;
-  --base-shadow-hover: 2px 8px 12px 0 #000000cc;
-  --sm-shadow: 2px 2px 4px 0 #0000004d;
-  --sm-shadow-hover: 2px 8px 12px 0 var(--neutral-200);
+  /* Настройки теней */
+  --primary-shadow-drop: 0 0 12px 4px #0000001a;
 }
 
 [data-theme="dark"] {
@@ -138,9 +138,6 @@
   --primary-600: #760909;
   --primary-400-500: var(--primary-400), var(--primary-500);
 
-  /* Тень */
-  --base-shadow: 2px 2px 4px 0 #00000080;
-  --base-shadow-hover: 2px 8px 12px 0 #000000cc;
-  --sm-shadow: 2px 2px 4px 0 #0000004d;
-  --sm-shadow-hover: 2px 8px 12px 0 var(--neutral-200);
+  /* Настройки теней */
+  --primary-shadow-drop: 0 0 16px 8px #00000066;
 }

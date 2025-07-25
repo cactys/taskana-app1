@@ -13,12 +13,11 @@ export const PrioritySelect = ({
 }) => {
   return (
     <label
-      key={priority}
       htmlFor={iconName}
       className={`${styles.priorityLabel} ${styles[`has-${iconName}`]}`}
       onKeyDown={(e) => handlePriorityKeyDown(e, index)}
       ref={(el) => (labelRef.current[index] = el)}
-      tabIndex="6"
+      tabIndex={0}
     >
       <input
         type="radio"
@@ -28,7 +27,7 @@ export const PrioritySelect = ({
         value={priority}
         onChange={handleChange}
         checked={inputValue.priority === priority}
-        tabIndex="-1"
+        tabIndex={-1}
       />
       <Icon id={iconName} className={styles[`${iconName}`]} />
     </label>

@@ -13,12 +13,52 @@ export const initialFormState = {
 };
 
 export const filterOptions = [
-  { label: 'Приоритету', iconName: 'fromUnimportant' },
-  { label: 'Приоритету', iconName: 'ofImportance' },
-  { label: 'Алфавиту', iconName: 'sortAlphaAsc' },
-  { label: 'Алфавиту', iconName: 'sortAlphaDesc' },
-  { label: 'Дате создания', iconName: 'moreToLess' },
-  { label: 'Дате создания', iconName: 'lessToMore' },
-  { label: 'Дате обновления', iconName: 'newOld' },
-  { label: 'Дате обновления', iconName: 'oldNew' },
+  {
+    label: 'Приоритету',
+    value: 'priority:asc',
+    iconName: 'fromUnimportant',
+    mode: 'radio',
+  },
+  {
+    label: 'Приоритету',
+    value: 'priority:desc',
+    iconName: 'ofImportance',
+    mode: 'radio',
+  },
+  {
+    label: 'Алфавиту',
+    value: 'title:asc',
+    iconName: 'sortAlphaAsc',
+    mode: 'radio',
+  },
+  {
+    label: 'Алфавиту',
+    value: 'title:desc',
+    iconName: 'sortAlphaDesc',
+    mode: 'radio',
+  },
+  {
+    label: 'Дате создания',
+    value: 'createdAt:asc',
+    iconName: 'moreToLess',
+    mode: 'radio',
+  },
+  {
+    label: 'Дате создания',
+    value: 'createdAt:desc',
+    iconName: 'lessToMore',
+    mode: 'radio',
+  },
+  {
+    label: 'Дате обновления',
+    value: 'updatedAt:asc',
+    iconName: 'newOld',
+    mode: 'radio',
+  },
+  {
+    label: 'Дате обновления',
+    value: 'updatedAt:desc',
+    iconName: 'oldNew',
+    mode: 'radio',
+  },
 ];

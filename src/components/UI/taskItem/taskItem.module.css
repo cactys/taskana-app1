@@ -1,6 +1,55 @@
+.taskItem {
+  border-radius: var(--border-radius-md);
+  padding: 8px 8px 8px 16px;
+  transition-duration: var(--transition-duration);
+
+  &:hover {
+    box-shadow: var(--sm-shadow);
+    background-color: var(--neutral-100);
+
+    .buttonEdit {
+      opacity: 1;
+      cursor: pointer;
+    }
+  }
+
+  &:focus-visible {
+    box-shadow: var(--sm-shadow);
+    outline: 2px solid var(--neutral-800);
+    outline-offset: 2px;
+    background-color: var(--neutral-100);
+
+    .buttonEdit {
+      opacity: 1;
+      cursor: pointer;
+    }
+  }
+
+  &:has(.checkboxContainer:focus-visible) {
+    box-shadow: var(--sm-shadow);
+    background-color: var(--neutral-100);
+
+    .buttonEdit {
+      opacity: 1;
+      cursor: pointer;
+    }
+  }
+
+  &:has(.buttonEdit:focus-visible) {
+    box-shadow: var(--sm-shadow);
+    background-color: var(--neutral-100);
+
+    .buttonEdit {
+      opacity: 1;
+      cursor: pointer;
+    }
+  }
+}
+
+
 .itemLabel {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   column-gap: 16px;
   padding: 8px 0px;
 }
@@ -72,9 +121,24 @@
 
 .itemText {
   display: -webkit-box;
+  margin-right: auto;
   overflow: hidden;
   overflow-wrap: break-word;
   color: var(--neutral-800);
   font: var(--typography-subtitle1);
   transition-duration: var(--transition-duration);
+}
+
+.buttonEdit {
+  opacity: 0;
+  cursor: default;
+  transition-duration: var(--transition-duration);
+
+  &:hover .buttonIcon {
+    fill: var(--neutral-800);
+  }
+}
+
+.buttonIcon {
+  fill: var(--neutral-600);
 }
