@@ -1,10 +1,16 @@
+/**
+ * Иконка "Луна" (Moon).
+ *
+ * @param {React.SVGProps<SVGSVGElement>} props - SVG-пропсы для элемента <svg>
+ * @returns {JSX.Element} SVG-иконка луны
+ */
 export const MoonIcon = ({ ...props }) => {
   return (
     <svg
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
+      width={props.width ?? 24}
+      height={props.height ?? 24}
+      viewBox="0 0 24 24"
       {...props}
     >
       <path d="M13.113 4C8.74 4 5.2 7.582 5.2 12s3.54 8 7.913 8a7.85 7.85 0 0 0 5.515-2.264.574.574 0 0 0 .11-.668.569.569 0 0 0-.602-.304c-.347.061-.7.093-1.065.093-3.43 0-6.214-2.814-6.214-6.286a6.293 6.293 0 0 1 3.162-5.475.573.573 0 0 0-.234-1.064 8.405 8.405 0 0 0-.672-.028V4Z" />

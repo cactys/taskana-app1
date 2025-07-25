@@ -1,34 +1,21 @@
-import { lazy } from 'react';
-
-const EmptyTaskImage = lazy(() =>
-  import('./illustrations/EmptyTaskImage.jsx').then((module) => ({
-    default: module.EmptyTaskImage,
-  }))
-);
-const NotebookImage = lazy(() =>
-  import('./illustrations/NotebookImage.jsx').then((module) => ({
-    default: module.NotebookImage,
-  }))
-);
-
-const illustrations = {
-  emptyTaskImage: EmptyTaskImage,
-  notebookImage: NotebookImage,
-};
+import { getComponentById } from '@utils/utils';
 
 /**
- * Компонент для рендеринга различных картинок
- * @param {string} id - Идентификатор картинки ('emptyTaskImage', 'notebookImage')
- * @param {Object} props - Свойства, которые будут переданы в компонент картинки
- * @returns {JSX.Element} - Выбранная картинка или null, если картинка не найдена
+ * Компонент-обёртка для ленивой загрузки и отображения SVG-иллюстраций по их идентификатору.
+ *
+ * @param {Object} props - Свойства компонента.
+ * @param {string} props.id - Уникальный идентификатор иллюстрации, по которому определяется компонент изображения.
+ * @param {Record<string, any>} [props] - Дополнительные пропсы, передаваемые внутрь компонента изображения (например, className, style и т.д.).
+ *
+ * @returns {JSX.Element|null} Рендерит компонент изображения, если он найден, или `null` в противном случае.
  */
 export const Illustration = ({ id, ...props }) => {
-  const ImageComponent = illustrations[id];
+  const Image = getComponentById(id, {
+    prefix: 'illustration/illustrations',
+    suffix: 'Image',
+  });
 
-  try {
-    return <ImageComponent {...props} />;
-  } catch (error) {
-    console.warn(`Картинка "${id}" не найдена.`, error);
-    return null;
-  }
+  if (!Image) return null;
+
+  return <Image {...props} />;
 };

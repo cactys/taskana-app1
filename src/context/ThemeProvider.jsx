@@ -2,9 +2,13 @@ import { useEffect, useMemo, useState } from 'react';
 import ThemeContext from './ThemeContext';
 
 /**
- * Провайдер контекста смены темы
+ * Провайдер контекста для управления темой приложения (светлая/темная).
+ *
+ * Отвечает за хранение состояния текущей темы, переключение темы и синхронизацию с атрибутом
+ * data-theme в корневом элементе документа для стилизации.
+ *
  * @param {ReactNode} children - Дочерние компоненты
- * @returns {JSX.Element} - JSX элемент провайдера контекста
+ * @returns {JSX.Element} JSX элемент провайдера контекста
  */
 const ThemeProvider = ({ children }) => {
   const [isLightTheme, setIsLightTheme] = useState(true);

@@ -4,27 +4,36 @@
   align-items: center;
   column-gap: 8px;
   border-radius: var(--border-radius-md);
-  box-shadow: var(--shadow);
+  padding: var(--button-padding);
+  box-shadow: var(--button-box-shadow);
+  color: var(--button-color);
   font: var(--typography-button);
+  background-color: var(--button-background-color);
   transition-duration: var(--transition-duration);
   cursor: pointer;
 
   &:hover {
     box-shadow: var(--header-button-shadow-hover);
+    background-color: var(--button-background-color);
+  }
+
+  &:focus-visible {
+    box-shadow: var(--button-box-shadow);
+    outline: var(--button-outline);
+    outline-offset: var(--button-offset);
+    background-color: var(--button-focus-bg);
   }
 
   &:active {
     box-shadow: none;
+    background-color: var(--button-background-color);
   }
 
   &:disabled {
     box-shadow: var(--shadow);
     opacity: 0.5;
+    background-color: var(--button-background-color);
     cursor: default;
-
-    &:hover {
-      background-color: var(--button-background-color);
-    }
 
     &:active {
       box-shadow: var(--shadow);
@@ -36,94 +45,135 @@
 .danger {
   --button-background-color: var(--primary-400);
   --button-loading-color: var(--primary-300);
-  color: var(--base-white);
-  background-color: var(--primary-400);
-  padding: 8px 16px 8px 12px;
+  --button-color: var(--base-white);
+  --button-padding: 8px 16px 8px 12px;
+  --button-box-shadow: var(--header-shadow);
 
   &:hover {
-    background-color: var(--primary-500);
+    --button-background-color: var(--primary-500);
   }
 
   &:focus-visible {
-    box-shadow: var(--header-button-shadow-hover);
-    outline: 2px solid var(--base-white);
-    outline-offset: 2px;
+    --button-focus-bg: var(--primary-400);
+    --button-box-shadow: var(--header-button-shadow-hover);
+    --button-outline: 2px solid var(--base-white);
+    --button-offset: 2px;
   }
 
   &:active {
-    background-color: var(--primary-300);
+    --button-background-color: var(--primary-300);
+  }
+
+  &:disabled {
+    --button-background-color: var(--primary-400);
+
+    &:active {
+      --button-background-color: var(--primary-400);
+    }
   }
 }
 
 .primary,
 .secondary {
-  padding: 12px 16px;
+  --button-padding: 12px 16px;
 }
 
 .primary {
   --button-background-color: var(--neutral-800);
   --button-loading-color: var(--neutral-600);
-  color: var(--neutral-0);
-  background-color: var(--neutral-800);
+  --button-color: var(--neutral-0);
+  --button-box-shadow: var(--sm-shadow);
 
   &:hover {
-    background-color: var(--neutral-700);
+    --button-background-color: var(--neutral-700);
+    --button-box-shadow: var(--sm-shadow-hover);
   }
 
   &:focus-visible {
-    background-color: var(--neutral-700);
-  }
-
-  &:focus-visible {
-    box-shadow: var(--header-button-shadow-hover);
-    outline: 2px solid var(--neutral-900);
-    outline-offset: 2px;
-    outline: 2px solid var(--neutral-900);
-    outline-offset: 2px;
+    --button-focus-bg: var(--neutral-700);
+    --button-box-shadow: var(--sm-shadow-hover);
+    --button-outline: 2px solid var(--neutral-900);
+    --button-offset: 2px;
   }
 
   &:active {
-    background-color: var(--neutral-600);
+    --button-background-color: var(--neutral-600);
+  }
+
+  &:disabled {
+    --button-background-color: var(--neutral-800);
+
+    &:active {
+      --button-background-color: var(--neutral-800);
+    }
   }
 }
 
 .secondary {
   --button-background-color: var(--neutral-200);
   --button-loading-color: var(--neutral-100);
-  color: var(--neutral-800);
-  background-color: var(--neutral-200);
+  --button-color: var(--neutral-800);
+  --button-box-shadow: var(--sm-shadow);
 
   &:hover {
-    background-color: var(--neutral-300);
-    background-color: var(--neutral-600);
-  }
-}
-
-.secondary {
-  --button-background-color: var(--neutral-200);
-  --button-loading-color: var(--neutral-100);
-  color: var(--neutral-800);
-  background-color: var(--neutral-200);
-
-  &:hover {
-    background-color: var(--neutral-300);
+    --button-background-color: var(--neutral-300);
+    --button-box-shadow: var(--sm-shadow-hover);
   }
 
   &:focus-visible {
-    box-shadow: var(--header-button-shadow-hover);
-    outline: 2px solid var(--neutral-900);
-    outline-offset: 2px;
+    --button-box-shadow: var(--header-button-shadow-hover);
+    --button-outline: 2px solid var(--neutral-900);
+    --button-offset: 2px;
   }
 
   &:active {
-    background-color: var(--neutral-100);
+    --button-background-color: var(--neutral-100);
+  }
+
+  &:disabled {
+    --button-background-color: var(--neutral-200);
+
+    &:active {
+      --button-background-color: var(--neutral-200);
+    }
+  }
+}
+
+.editing {
+  --button-background-color: inherit;
+  --button-color: var(--neutral-600);
+  --button-padding: 8px;
+  box-shadow: none;
+
+  &:hover {
+    --button-background-color: var(--neutral-300);
+  }
+
+  &:focus-visible {
+    --button-box-shadow: var(--sm-shadow-hover);
+    --button-outline: 2px solid var(--neutral-900);
+    --button-offset: 2px;
+  }
+
+  &:active {
+    --button-background-color: var(--neutral-100);
+  }
+
+  &:disabled {
+    --button-background-color: inherit;
+    box-shadow: none;
+
+    &:active {
+      --button-background-color: inherit;
+      box-shadow: none;
+    }
   }
 }
 
 .onLoading {
+  box-shadow: none;
   background-color: var(--button-loading-color);
   cursor: default;
-  box-shadow: none;
 
   &:hover {
     box-shadow: none;
@@ -138,16 +188,5 @@
 
   &:active {
     background-color: var(--neutral-100);
-  }
-}
-
-.onLoading {
-  background-color: var(--button-loading-color);
-  cursor: default;
-  box-shadow: none;
-
-  &:hover {
-    box-shadow: none;
-    background-color: var(--button-loading-color);
   }
 }

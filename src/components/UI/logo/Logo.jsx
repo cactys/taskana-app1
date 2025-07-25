@@ -1,8 +1,9 @@
 import styles from './logo.module.css';
 
 /**
- * Логотип приложения
- * @returns {JSX.Element} - React-компонент логотипа приложения
+ * Компонент логотипа, ведущий на главную страницу.
+ *
+ * @returns {JSX.Element} Элемент логотипа с переходом на главную
  */
 export const Logo = () => {
   return (
@@ -10,7 +11,7 @@ export const Logo = () => {
       href="/"
       className={styles.logo}
       aria-label="Taskana - на главную"
-      tabIndex="1"
+      tabIndex={0}
     >
       <div className={styles.logoBox} />
       <p className={styles.logoText}>taskana</p>

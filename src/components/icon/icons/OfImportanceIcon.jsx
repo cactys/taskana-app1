@@ -1,0 +1,29 @@
+/**
+ * Иконка "Важное" (OfImportance).
+ *
+ * @param {React.SVGProps<SVGSVGElement>} props - Пропсы SVG-элемента (например, className, style, aria-label)
+ * @returns {JSX.Element} SVG-иконка "Важное"
+ */
+export const OfImportanceIcon = ({ ...props }) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={props.width ?? 24}
+      height={props.height ?? 24}
+      viewBox="0 0 24 24"
+      {...props}
+    >
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M7.05 20.25a.75.75 0 0 1-.75-.75V6.454L3.557 9.502a.75.75 0 1 1-1.114-1.004l4.05-4.5a.75.75 0 0 1 1.12.007l3.95 4.5a.75.75 0 1 1-1.127.99L7.8 6.49V19.5a.75.75 0 0 1-.75.75ZM20.65 5.375c0 .207-.15.375-.333.375h-5.334c-.184 0-.333-.168-.333-.375S14.8 5 14.983 5h5.334c.184 0 .333.168.333.375Z"
+      />
+      <path
+        fill="var(--base-primary-400)"
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M17.437 12.827a.333.333 0 0 1 .426 0l2.667 2.223a.333.333 0 1 1-.427.512l-2.453-2.045-2.453 2.045a.333.333 0 1 1-.427-.512l2.667-2.223Zm.426 3.111 2.667 2.223a.333.333 0 0 1-.427.512l-2.453-2.045-2.453 2.045a.333.333 0 1 1-.427-.512l2.667-2.223a.333.333 0 0 1 .426 0Z"
+      />
+    </svg>
+  );
+};
