@@ -1,18 +1,26 @@
-import { useTaskContext } from '@hooks';
+import { useContext } from '@hooks';
 import { Illustration } from '@components/illustration/Illustration';
 import { reverseList } from '@utils/utils';
+import { TaskContext } from '@context';
 
 import styles from './taskList.module.css';
 import TaskItem from '../taskItem/TaskItem';
 
 /**
- * Список задач
- * @returns {JSX.Element} - JSX элемент списка задач
+ * Компонент списка задач.
+ * Отображает задачи в обратном порядке.
+ * Если задач нет — показывает приветственный блок с иллюстрацией.
+ *
+ * @returns {JSX.Element} JSX элемент списка задач или информационного сообщения
  */
 export const TaskList = () => {
-  const { tasks } = useTaskContext();
+  const { tasks, editTask } = useContext(TaskContext);
 
   const reverseTaskList = reverseList(tasks);
+
+  const handleEditTask = (id) => {
+    editTask(id);
+  };
 
   return (
     <div className={styles.taskContainer}>
@@ -26,19 +34,19 @@ export const TaskList = () => {
               Отличная работа! Ты большой молодец!
             </p>
           </header>
-          <Illustration id="emptyTaskImage" className={styles.articleImage} />
+          <Illustration id="emptyTask" className={styles.articleImage} />
         </article>
       ) : (
         <ul className={styles.taskList}>
           {reverseTaskList.map((task, index) => (
-            <li key={task.id} className={styles.taskItem} tabIndex={index + 9}>
-              <TaskItem
-                index={index}
-                id={task.id}
-                priority={task.priority}
-                title={task.title}
-              />
-            </li>
+            <TaskItem
+              key={task.id}
+              index={index}
+              id={task.id}
+              priority={task.priority}
+              title={task.title}
+              handleEditTask={handleEditTask}
+            />
           ))}
         </ul>
       )}

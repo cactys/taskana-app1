@@ -1,9 +1,15 @@
-export  const EmptyTaskImage = ({ ...props }) => {
+/**
+ * SVG-изображение, отображающее пустое состояние задачи.
+ *
+ * @param {React.SVGProps<SVGSVGElement>} [props] - Дополнительные SVG атрибуты.
+ * @returns {JSX.Element} Отрендеренное SVG изображение.
+ */
+export const EmptyTaskImage = ({ ...props }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="464"
-      height="320"
+      width={props.width ?? 464}
+      height={props.height ?? 320}
       viewBox="0 0 464 320"
       {...props}
     >

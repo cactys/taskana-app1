@@ -7,10 +7,6 @@
   width: 100%;
   height: calc(100vh - (64px + 56px));
   overflow-y: auto;
-
-  @media screen and (min-width: calc(1600px + 1px)) {
-    padding-left: 160px;
-  }
 }
 
 .containerWrapper {
@@ -23,12 +19,14 @@
   align-items: center;
   gap: 24px;
   width: 100%;
+  max-width: 996px;
   padding: 24px;
   background-color: var(--neutral-0);
   transition-duration: var(--transition-duration);
 }
 
 .title {
+  margin-right: auto;
   margin-bottom: -5px;
   color: var(--neutral-800);
   font: var(--typography-h1);

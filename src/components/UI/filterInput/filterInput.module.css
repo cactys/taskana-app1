@@ -1,0 +1,38 @@
+.customOption {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 8px;
+  width: 100%;
+  border: none;
+  border-radius: var(--border-radius-sm);
+  padding: 8px;
+  color: var(--neutral-800);
+  text-align: left;
+  transition-duration: var(--transition-duration);
+
+  &:hover {
+    background: var(--neutral-200);
+  }
+
+  & input[type="radio"] {
+    display: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.checkIcon {
+  margin-left: auto;
+  opacity: 0;
+  transition-duration: var(--transition-duration);
+}
+
+.checked {
+  opacity: 1;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  fill: var(--neutral-800);
+}

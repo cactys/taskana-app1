@@ -19,24 +19,6 @@
   padding: 0px 24px 24px 24px;
 }
 
-.taskItem {
-  border-radius: var(--border-radius-md);
-  padding: 8px 8px 8px 16px;
-  transition-duration: var(--transition-duration);
-
-  &:hover {
-    box-shadow: var(--sm-shadow);
-    background-color: var(--neutral-100);
-  }
-
-  &:focus-visible {
-    box-shadow: var(--sm-shadow);
-    outline: 2px solid var(--neutral-800);
-    outline-offset: 2px;
-    background-color: var(--neutral-100);
-  }
-}
-
 .taskArticle {
   display: flex;
   flex-direction: column;

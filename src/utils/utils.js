@@ -1,56 +1,58 @@
+import { iconComponentMap } from '@components/icon/iconMap';
+import { illustrationComponentMap } from '@components/illustration/illustrationMap';
+
 /**
  * Генерация уникального идентификатора
- * @returns {string} уникальный идентификатор
+ * @returns {string} Уникальный идентификатор (например: "k3h4f9z")
  */
-export const generateUniqueId = () => {
-  return Math.random().toString(36).substring(2, 9);
-};
+export const generateUniqueId = () => Math.random().toString(36).substring(2, 9);
 
 /**
- * Форматирование времени в формате 2025-05-22T12:35:34.370Z
- * @returns {string} время в формате 2025-05-22T12:35:34.370Z
+ * Возвращает текущую временную метку в формате ISO 8601
+ * @returns {string} Строка в формате "YYYY-MM-DDTHH:mm:ss.sssZ"
  */
-export const timeStamp = () => {
-  const now = new Date();
-  return now.toISOString();
-};
+export const timeStamp = () => new Date().toISOString();
 
 /**
- * Сортировка списка задач
- * @param {Object} data список задач
- * @returns {Object} развернутый список задач
+ * Возвращает копию массива в обратном порядке
+ * @param {Array<any>} data - Массив, который нужно развернуть
+ * @returns {Array<any>} Новый массив в обратном порядке
  */
-export const reverseList = (data) => data.slice().reverse();
+export const reverseList = (data = []) => [...data].slice().reverse();
 
 /**
- * Навигация по приоритетам задач при нажатии клавиш
- * @param {Object} evn событие нажатия клавиши
- * @param {number} index индекс задачи
- * @param {Object} priorities приоритеты задачи
- * @param {Function} handleChange функция изменения значения поля формы
- * @param {Function} handleFocus функция изменения индекса задачи при нажатии клавиши
+ * Обработка клавиатурной навигации по приоритетам задачи или фильтрам
+ * @param {KeyboardEvent} evn - Событие нажатия клавиши
+ * @param {number} index - Индекс текущего элемента
+ * @param {Array<string>} [priorities] - Список приоритетов (необязательно)
+ * @param {Array} [filters] - Список фильтров (необязательно)
+ * @param {function} handleChange - Обработчик изменения значения
+ * @param {function} handleFocus - Обработчик смены фокуса по индексу
  */
-export const priorityKeyDown = (
+export const keyDown = (
   evn,
   index,
   priorities,
+  filters,
   handleChange,
   handleFocus
 ) => {
   switch (evn.key) {
     case 'ArrowUp':
     case 'ArrowLeft':
-      handleFocus(index > 0 ? index - 1 : priorities.length - 1);
+      if (priorities) handleFocus(index > 0 ? index - 1 : priorities.length - 1);
+      if (filters) handleFocus(index > 0 ? index - 1 : filters.length - 1);
       break;
     case 'ArrowDown':
     case 'ArrowRight':
-      handleFocus(index < priorities.length - 1 ? index + 1 : 0);
+      if (priorities) handleFocus(index < priorities.length - 1 ? index + 1 : 0);
+      if (filters) handleFocus(index < filters.length - 1 ? index + 1 : 0);
       break;
     case 'Enter':
     case ' ':
-      handleChange({
-        target: { name: 'priority', value: priorities[index] },
-      });
+      if (priorities)
+        handleChange({ target: { name: 'priority', value: priorities[index] } });
+      if (filters) handleChange({ ...filters[index] });
       break;
     default:
       break;
@@ -58,20 +60,14 @@ export const priorityKeyDown = (
 };
 
 /**
- * Событие нажатия клавиш в форме создания задачи
- * @param {Object} evn событие нажатия клавиши
- * @param {boolean} isInputBlur фокусировка на поле формы
- * @param {Function} resetForm сброс формы
- * @param {Function} handleOpenTaskEditor функция открытия формы редактирования задачи
- * @param {Function} handleCreate функция создания задачи
+ * Обработка клавиш в форме создания задачи
+ * @param {KeyboardEvent} evn - Событие нажатия клавиши
+ * @param {boolean} isInputBlur - Флаг, указывающий на потерю фокуса с инпута
+ * @param {function} resetForm - Функция сброса формы
+ * @param {function} handleOpenTaskEditor - Функция открытия/закрытия редактора задачи
+ * @param {function} handleCreate - Функция создания новой задачи
  */
-export const formKeyDown = (
-  evn,
-  isInputBlur,
-  resetForm,
-  handleOpenTaskEditor,
-  handleCreate
-) => {
+export const formKeyDown = (evn, isInputBlur, resetForm, handleOpenTaskEditor, handleCreate) => {
   if (evn.key === 'Escape') {
     handleOpenTaskEditor(false);
     resetForm();
@@ -86,23 +82,56 @@ export const formKeyDown = (
 };
 
 /**
- * Обработка нажатия кнопки
- * @param {boolean} isInputBlur фокусировка на поле формы - true по умолчанию
- * @param {Function} startLoading функция загрузки кнопки
- * @param {Function} stopLoading функция отключения загрузки кнопки
- * @param {Function} action функция выполнения действия
+ * Выполнение действия по нажатию кнопки с анимацией загрузки
+ * @param {boolean} [isInputBlur=true] - Флаг потери фокуса с поля формы
+ * @param {function} startLoading - Функция включения состояния загрузки
+ * @param {function} stopLoading - Функция отключения состояния загрузки
+ * @param {function} action - Действие, которое необходимо выполнить
+ * @param {function} [onFinish] - Функция, вызываемая после завершения действия
  */
 export const buttonAction = (
   isInputBlur = true,
   startLoading,
   stopLoading,
-  action
+  action,
+  onFinish
 ) => {
   if (isInputBlur) {
     startLoading();
     setTimeout(() => {
       action();
       stopLoading();
+      if (typeof onFinish === 'function') {
+        onFinish();
+      }
     }, 600);
   }
+};
+
+const componentMap = {
+  'icon/icons': iconComponentMap,
+  'illustration/illustrations': illustrationComponentMap,
+};
+
+/**
+ * Возвращает лениво загружаемый React-компонент по идентификатору.
+ * @param {string} id - Идентификатор компонента (например, "emptyTaskImage", "check", "sun").
+ * @param {Object} options - Опции загрузки.
+ * @param {string} options.prefix - Путь к папке с компонентами (например, "icon/icons").
+ * @param {string} options.suffix - Суффикс имени компонента (например, "Icon", "Image").
+ * @returns {React.ComponentType|undefined} Компонент или undefined, если не найден.
+ */
+export const getComponentById = (id, { prefix = '', suffix = '' } = {}) => {
+  const componentName = id.charAt(0).toUpperCase() + id.slice(1) + suffix;
+  const group = componentMap[prefix];
+  if (!group) {
+    console.warn(`Префикс "${prefix}" не найден`);
+    return undefined;
+  }
+  const Component = group[componentName];
+  if (!Component) {
+    console.warn(`Компонент ${componentName} не найден`);
+    return undefined;
+  }
+  return Component;
 };

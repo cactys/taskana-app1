@@ -1,10 +1,16 @@
+/**
+ * Иконка "Плюс" (PlusIcon).
+ *
+ * @param {React.SVGProps<SVGSVGElement>} props - Свойства SVG (className, style, aria и т.п.)
+ * @returns {JSX.Element} SVG-иконка
+ */
 export const PlusIcon = ({ ...props }) => {
   return (
     <svg
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
+      width={props.width ?? 24}
+      height={props.height ?? 24}
+      viewBox="0 0 24 24"
       {...props}
     >
       <path d="M5.571 3A2.574 2.574 0 0 0 3 5.571V18.43A2.574 2.574 0 0 0 5.571 21H18.43A2.574 2.574 0 0 0 21 18.429V5.57A2.574 2.574 0 0 0 18.429 3H5.57Zm5.465 12.536v-2.572H8.464A.962.962 0 0 1 7.5 12c0-.534.43-.964.964-.964h2.572V8.464c0-.534.43-.964.964-.964s.964.43.964.964v2.572h2.572c.534 0 .964.43.964.964s-.43.964-.964.964h-2.572v2.572c0 .534-.43.964-.964.964a.962.962 0 0 1-.964-.964Z" />

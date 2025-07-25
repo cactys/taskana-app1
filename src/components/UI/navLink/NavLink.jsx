@@ -1,18 +1,23 @@
 import styles from './navLink.module.css';
 
 /**
- * Компонент ссылки для навигации
- * @param {ReactNode} children - Содержимое ссылки (текст или другие компоненты)
- * @param {string} hrefLink - Адрес ссылки
- * @param {string} className - Дополнительные CSS классы
- * @param {Object} settings - Дополнительные атрибуты и настройки ссылки
- * @returns {JSX.Element} - JSX элемент ссылки с указанными свойствами
+ * Компонент ссылки для навигации.
+ *
+ * @param {Object} props - Свойства компонента.
+ * @param {ReactNode} props.children - Содержимое ссылки (текст или дочерние компоненты).
+ * @param {string} props.hrefLink - Адрес ссылки.
+ * @param {string} [props.className] - Дополнительные CSS классы.
+ * @param {Object} [props.settings] - Дополнительные атрибуты для `<a>`.
+ *
+ * @returns {JSX.Element} JSX элемент ссылки с указанными свойствами.
  */
 export const NavLink = ({ children, hrefLink, className, ...settings }) => {
+  const combinedClassName = [styles.navLink, className].filter(Boolean).join(' ');
+
   return (
     <a
       href={hrefLink}
-      className={`${styles.navLink} ${className || ''}`}
+      className={combinedClassName}
       {...settings}
     >
       {children}
