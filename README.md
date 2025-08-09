@@ -7,12 +7,10 @@ Taskana App - интерактивное приложение для управ�
 
 Проект создан в рамках бесплатной стажировки на платформе [PREAX](https://preax.ru) - онлайн акселераторе опыта работы для IT-специалистов.
 
-![image](https://github.com/user-attachments/assets/362bad3a-b729-4864-84eb-50fd3fb6443d)
-![image](https://github.com/user-attachments/assets/8f88b649-b206-4199-aa13-6b0077d25938)
-![image](https://github.com/user-attachments/assets/8f88b649-b206-4199-aa13-6b0077d25938)
-![image](https://github.com/user-attachments/assets/b99ab2dd-880c-4592-8757-7f77e47fe35f)
-![image](https://github.com/user-attachments/assets/cf1dd62d-de5f-4e7c-b1e6-dc2eb86cef9d)
-![image](https://github.com/user-attachments/assets/cf1dd62d-de5f-4e7c-b1e6-dc2eb86cef9d)
+<img width="1280" height="860" alt="taskana-app1 vercel app_" src="https://github.com/user-attachments/assets/7eb8a6db-b7fb-4402-bbbf-b6aa4c07cfda" />
+<img width="1278" height="859" alt="image" src="https://github.com/user-attachments/assets/ba36fd68-81a9-4007-ab8d-a4b6104efc6e" />
+<img width="1280" height="860" alt="taskana-app1 vercel app_ (1)" src="https://github.com/user-attachments/assets/c970931b-4eb4-4a90-a8e4-842758ef98e7" />
+<img width="1283" height="861" alt="image" src="https://github.com/user-attachments/assets/c7925a1a-8f4b-43cb-b775-795955496aa5" />
 
 ## 🔧 Инструкция по установке и запуску:
 
