@@ -9,6 +9,7 @@ import styles from './mainContainer.module.css';
  * @returns {JSX.Element} JSX элемент, содержащий структурированное основное содержимое страницы.
  */
 export const MainContainer = () => {
+export const MainContainer = () => {
   return (
     <section className={styles.container}>
       <div className={styles.containerWrapper}>

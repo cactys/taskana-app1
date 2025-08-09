@@ -1,4 +1,5 @@
 .taskContainer {
+.taskContainer {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -6,6 +7,7 @@
   align-items: center;
   gap: 4px;
   width: 100%;
+  padding-top: 5px;
   padding-top: 5px;
 }
 
@@ -20,6 +22,7 @@
 }
 
 .taskArticle {
+.taskArticle {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -29,6 +32,7 @@
 }
 
 .articleHeader {
+.articleHeader {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -37,11 +41,13 @@
 }
 
 .articleTitle {
+.articleTitle {
   color: var(--neutral-800);
   font: var(--typography-h2);
   transition-duration: var(--transition-duration);
 }
 
+.articleDescription {
 .articleDescription {
   color: var(--neutral-800);
   font: var(--typography-subtitle1);

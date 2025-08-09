@@ -2,6 +2,7 @@
   position: relative;
   display: inline-block;
   border-radius: var(--border-radius-md);
+  border-radius: var(--border-radius-md);
   padding: 4px;
   box-shadow: var(--shadow);
   background-color: var(--base-800);
@@ -38,6 +39,7 @@
   align-items: center;
   column-gap: 4px;
   border-radius: var(--border-radius-sm);
+  border-radius: var(--border-radius-sm);
 }
 
 /* Тумблер без иконки */
@@ -46,6 +48,7 @@
   z-index: 1;
   width: 32px;
   height: 32px;
+  border-radius: var(--border-radius-sm);
   border-radius: var(--border-radius-sm);
   box-shadow: var(--shadow);
   background-color: var(--primary-400);

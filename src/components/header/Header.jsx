@@ -20,6 +20,10 @@ export const Header = () => {
     buttonAction(undefined, startLoading, stopLoading, () => {
       handleOpenTaskEditor(true);
     });
+  const handleOpenEditor = () => {
+    buttonAction(undefined, startLoading, stopLoading, () => {
+      handleOpenTaskEditor(true);
+    });
   };
 
   return (
@@ -35,6 +39,7 @@ export const Header = () => {
           onClick={handleOpenEditor}
           onLoading={loading}
         >
+          {loading && (
           {loading && (
             <Icon
               id="loading"

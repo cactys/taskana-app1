@@ -14,7 +14,7 @@ export const IncomingTasks = () => {
   return (
     <main className={styles.incomingTasks}>
       <MainContainer />
-      <Footer />
+      <Footer taskCount={tasks.length} />
     </main>
   );
 };

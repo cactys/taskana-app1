@@ -35,6 +35,11 @@
     outline: 2px solid var(--neutral-800);
     outline-offset: 4px;
   }
+  &:focus-visible {
+    border-radius: var(--border-radius-sm);
+    outline: 2px solid var(--neutral-800);
+    outline-offset: 4px;
+  }
 
   &::after {
     content: '';
@@ -53,7 +58,14 @@
     bottom: -5px;
     opacity: 0;
   }
+  &:hover::after {
+    bottom: -5px;
+    opacity: 0;
+  }
 
+  &:hover {
+    color: var(--neutral-800);
+  }
   &:hover {
     color: var(--neutral-800);
   }

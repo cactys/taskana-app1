@@ -7,8 +7,13 @@
   width: 100%;
   height: calc(100vh - (64px + 56px));
   overflow-y: auto;
+
+  @media screen and (min-width: calc(1600px + 1px)) {
+    padding-left: 160px;
+  }
 }
 
+.containerWrapper {
 .containerWrapper {
   position: sticky;
   top: 0;

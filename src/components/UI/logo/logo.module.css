@@ -21,6 +21,19 @@
   &:hover .logoBox {
     width: 100%;
   }
+  &:focus-visible {
+    border-radius: var(--border-radius-md);
+    outline: 2px solid var(--base-white);
+    outline-offset: 4px;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  &:hover .logoBox {
+    width: 100%;
+  }
 }
 
 .logoBox {
@@ -32,6 +45,7 @@
   align-items: center;
   width: 40px;
   height: 40px;
+  border-radius: var(--border-radius-md);
   border-radius: var(--border-radius-md);
   overflow: hidden;
   background: linear-gradient(to bottom, var(--base-primary-400-500));

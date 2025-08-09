@@ -1,5 +1,7 @@
 import { Statistic } from '@components/UI/statistic/Statistic';
+import { Statistic } from '@components/UI/statistic/Statistic';
 
+import styles from './sideBar.module.css';
 import styles from './sideBar.module.css';
 
 /**

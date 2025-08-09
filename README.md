@@ -9,7 +9,9 @@ Taskana App - интерактивное приложение для управ�
 
 ![image](https://github.com/user-attachments/assets/362bad3a-b729-4864-84eb-50fd3fb6443d)
 ![image](https://github.com/user-attachments/assets/8f88b649-b206-4199-aa13-6b0077d25938)
+![image](https://github.com/user-attachments/assets/8f88b649-b206-4199-aa13-6b0077d25938)
 ![image](https://github.com/user-attachments/assets/b99ab2dd-880c-4592-8757-7f77e47fe35f)
+![image](https://github.com/user-attachments/assets/cf1dd62d-de5f-4e7c-b1e6-dc2eb86cef9d)
 ![image](https://github.com/user-attachments/assets/cf1dd62d-de5f-4e7c-b1e6-dc2eb86cef9d)
 
 ## 🔧 Инструкция по установке и запуску:

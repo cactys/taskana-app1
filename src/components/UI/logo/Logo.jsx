@@ -6,6 +6,7 @@ import styles from './logo.module.css';
  * @returns {JSX.Element} Элемент логотипа с переходом на главную
  */
 export const Logo = () => {
+export const Logo = () => {
   return (
     <a
       href="/"
