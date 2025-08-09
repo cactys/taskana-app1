@@ -1,7 +1,6 @@
 import { useContext } from '@hooks';
 import { ThemeContext } from '@context';
 import { Icon } from '@components/icon/Icon';
-import { Icon } from '@components/icon/Icon';
 
 import styles from './themeSwitcher.module.css';
 
@@ -11,7 +10,6 @@ import styles from './themeSwitcher.module.css';
  *
  * @returns {JSX.Element} JSX элемент кнопки переключения темы
  */
-export const ThemeSwitcher = () => {
 export const ThemeSwitcher = () => {
   const { isLightTheme, toggleTheme } = useContext(ThemeContext);
 
